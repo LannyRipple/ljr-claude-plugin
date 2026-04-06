@@ -8,6 +8,7 @@ description: >-
 
 # Dev Panes
 
-Invoke the `using-tmux` skill to open a left bash shell pane in the current
+Invoke the `using-tmux` skill. Using that skill's pane-state reference, check
+whether a left shell pane already exists. If one is found, notify the user and
+stop without splitting. Otherwise, open a left bash shell pane in the current
 working directory (show-and-shell workflow), leaving Claude Code on the right.
-Check first that a left shell pane doesn't already exist before splitting.
