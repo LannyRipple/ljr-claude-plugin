@@ -1,24 +1,21 @@
 ---
 name: skill-review
 description: >-
-  Reviews Claude Code skills — the SKILL.md and any files it references — to find bugs,
-  improve clarity, fix instruction flow, and strengthen directiveness. Also adds
-  Requirement Levels vocabulary (MUST/SHOULD) to skills where strict instruction-following is required.
-  Trigger when the user asks to review, audit, improve, critique, or debug a skill; says
-  "this skill isn't working right", "can you look at this skill", "help me improve my
-  skill", or "find bugs in my skill"; or asks to "add requirement levels", "tighten this
-  skill's language", or "this skill isn't following its instructions even though the
-  language looks right". Also trigger when the user mentions a SKILL.md file and wants
-  feedback on it.
+  Reviews Claude Code skills and helps create or update them.
+
+  **Workflow 1 — Review:** Trigger when the user asks to review, audit, improve, critique,
+  or debug a skill; says "this skill isn't working right", "can you look at this skill",
+  "help me improve my skill", or "find bugs in my skill"; or asks to "add requirement
+  levels", "tighten this skill's language", or "this skill isn't following its instructions
+  even though the language looks right". Also trigger when the user mentions a SKILL.md
+  file and wants feedback on it.
+
+  **Workflow 2 — Create or Update:** Trigger when the user asks to create a new skill,
+  write a skill, turn a workflow into a skill, or update/restructure an existing skill's
+  content or layout.
 ---
 
 # Skill Review
-
-Your job is to review a Claude Code skill — its SKILL.md and any files it references —
-and make targeted improvements to how clearly and effectively the skill instructs Claude.
-
-You are reviewing *as Claude*: you know what makes instructions easy to follow, what
-phrasing gets ignored, what flow causes confusion. Use that perspective.
 
 ## Before You Start
 
@@ -38,19 +35,38 @@ approve before any edits are applied is their safety gate.
 If the skill is not under git control, no additional preparation is needed — the review
 document is the safety gate regardless of version control status.
 
-## Review Criteria
+---
+
+## Workflow Routing
+
+| What the user wants | Workflow |
+|---------------------|----------|
+| Review, audit, critique, debug, improve an existing skill | Workflow 1 — Review |
+| Create a new skill, write a skill, turn a workflow into a skill, update an existing skill's content or layout | Workflow 2 — Create or Update |
+
+---
+
+## Workflow 1 — Review
+
+Your job is to review a Claude Code skill — its SKILL.md and any files it references —
+and make targeted improvements to how clearly and effectively the skill instructs Claude.
+
+You are reviewing *as Claude*: you know what makes instructions easy to follow, what
+phrasing gets ignored, what flow causes confusion. Use that perspective.
+
+### Review Criteria
 
 Use these four lenses throughout the review. They apply both section-by-section and
 to the skill as a whole.
 
-### 1. Clarity
+#### 1. Clarity
 
 Can Claude follow this instruction without ambiguity? Watch for:
 - Vague verbs ("handle", "deal with", "ensure") where a specific action is needed
 - Instructions that assume knowledge Claude won't have at that point
 - Steps that could be read multiple ways
 
-### 2. Flow
+#### 2. Flow
 
 Does information arrive before it is needed? Poor flow introduces a term or tool and
 only explains it later. Good flow defines things before using them.
@@ -66,7 +82,7 @@ only explains it later. Good flow defines things before using them.
 Read the skill as if you've never seen it before. If you encounter something unexplained,
 note it — that's a flow problem.
 
-### 3. Direction
+#### 3. Direction
 
 Are mandatory actions unmistakably mandatory? Is it obvious when Claude acts vs. when the
 user acts? Weak phrasing ("you might want to", "consider", "it's a good idea to") can
@@ -75,7 +91,7 @@ cause Claude to treat required steps as optional. Strengthen where it matters.
 Also look for gaps: information or steps that would make the skill more effective but are
 currently missing.
 
-### 4. Bug
+#### 4. Bug
 
 Is the skill technically correct? Watch for:
 - Wrong API calls, flags, or syntax in commands or code examples
@@ -85,7 +101,7 @@ Is the skill technically correct? Watch for:
 Bugs are distinct from clarity problems — a buggy instruction can be perfectly clear and
 still wrong. Label these separately so the skill author knows to verify, not just reword.
 
-## Review Document Format
+### Review Document Format
 
 After collecting all issues, produce a review document in this format before making any
 changes. This gives the user a full picture and a chance to exclude anything before edits start.
@@ -116,14 +132,14 @@ Rules for the document:
 
 ---
 
-## Requirement Levels Preamble
+### Requirement Levels Preamble
 
 Some skills need vocabulary that distinguishes hard requirements from strong recommendations.
 When a skill uses imperative language but Claude is not treating it with the expected
 strictness, explicit requirement levels help — they give Claude a defined framework for
 weighing whether a step is mandatory or advisory.
 
-### When to add the preamble
+#### When to add the preamble
 
 Add it when the skill matches any of these risk profiles:
 
@@ -137,13 +153,13 @@ Also add it when the user reports that the skill isn't following its own instruc
 despite the language appearing clear — this is the signal that the vocabulary distinction
 is missing.
 
-### Where to insert
+#### Where to insert
 
 Right after the skill's opening description paragraph (the "Your job is…" intro),
 before the first major section heading. It should be the reader's first encounter with
 the terms before any MUST or SHOULD appears.
 
-### Preamble text
+#### Preamble text
 
 Insert exactly:
 
@@ -162,11 +178,11 @@ deciding to deviate from a SHOULD — it describes what breaks when you skip it.
 
 ---
 
-## Review Steps
+### Review Steps
 
 Work through these in order. Steps 1–4 are collection only — do not apply any changes yet.
 
-### Step 1: Section-by-Section Review of SKILL.md
+#### Step 1: Section-by-Section Review of SKILL.md
 
 Read each section. When a section uses `@filename` syntax or contains a markdown link to
 another file, read that file immediately as part of reviewing the section — the quality
@@ -179,7 +195,7 @@ collected issues in working memory — you will output them at once in Step 5.
 
 Do not apply fixes yet.
 
-### Step 2: Whole-Skill Review of SKILL.md
+#### Step 2: Whole-Skill Review of SKILL.md
 
 Read SKILL.md as a whole. The section-by-section pass can miss issues that span sections —
 information placed later than it's needed, repeated context, or a skill that has grown long
@@ -197,14 +213,14 @@ the vocabulary is undefined without it.
 
 Do not apply fixes yet.
 
-### Step 3: Verify Referenced Files
+#### Step 3: Verify Referenced Files
 
 Confirm that every file referenced in SKILL.md was reviewed during Step 1. For any that
 were not, review them now using the same four lenses and record issues.
 
 Do not apply fixes yet.
 
-### Step 4: Check Frontmatter
+#### Step 4: Check Frontmatter
 
 Review the `name` and `description` fields. Verify that `name` matches the directory name —
 this is the slug used to invoke the skill as `/name`; if they don't match, record a `bug`
@@ -215,7 +231,7 @@ labeled `direction`.
 
 Do not apply fixes yet.
 
-### Step 5: Produce Review Document
+#### Step 5: Produce Review Document
 
 Output the full review document using the format above. Tell the user explicitly:
 the changes listed are permanent once applied — this is their opportunity to exclude
@@ -224,21 +240,21 @@ them now and wait for answers before proceeding.
 
 Do not apply any fixes until the user explicitly confirms.
 
-### Step 6: Apply Fixes
+#### Step 6: Apply Fixes
 
 Apply all approved fixes in order using the Edit tool to make targeted changes to
 SKILL.md or the relevant referenced file. Prefer minimal diffs — change only what the
 fix requires. For questions that were answered, apply the agreed-upon change. Skip any
 issues the user excluded.
 
-### Step 7: Summary
+#### Step 7: Summary
 
 Present a summary as a bullet list: one item per change, format `[file:section] — what
 changed`.
 
 ---
 
-## Handling a Standalone "Add Requirement Levels" Request
+### Handling a Standalone "Add Requirement Levels" Request
 
 *Skip this section if you are running a full review. Only follow this section when the
 user's sole request is to add requirement levels.*
@@ -263,3 +279,52 @@ If the user asks to "add requirement levels" or says the skill isn't obeying ins
      what breaks if it is skipped
 
 If the user chooses to proceed with a full review instead, restart from Step 1 above.
+
+---
+
+## Workflow 2 — Create or Update
+
+Your job is to help the user write a new skill or update an existing one, then review it
+using Workflow 1 when the skill is in good shape.
+
+### Step 1: Load Construction Guidance
+
+Read `references/skill-construction-guidance.md` before doing anything else. It covers
+file anatomy, progressive disclosure, frontmatter conventions, writing patterns, and style
+guidance. Keep it in mind throughout this workflow.
+
+### Step 2: Capture Intent
+
+The current conversation may already contain a workflow the user wants to capture (e.g.,
+"turn this into a skill"). If so, extract answers from the conversation history first —
+the tools used, the sequence of steps, corrections the user made, input/output formats
+observed. Fill gaps and confirm with the user before writing.
+
+Gather:
+1. What should this skill enable Claude to do?
+2. When should this skill trigger? (what user phrases or contexts)
+3. What is the expected output or behavior?
+4. Are there multiple workflows or operation modes?
+
+Ask one clarifying question at a time. Do not start writing until all four questions above have been answered, even if briefly.
+
+### Step 3: Draft the Skill
+
+Based on the conversation and construction guidance:
+- Write `SKILL.md` with correct frontmatter (`name`, `description`)
+- If the skill has multiple workflows or operation modes, add a routing table near the top
+- Move large or domain-specific content to `references/` files; keep SKILL.md under 500 lines
+- If the skill needs bundled scripts, describe what each script should do in a comment
+  block rather than writing the implementation — do not write non-trivial scripts without
+  the user's explicit direction
+
+Present the draft to the user. Ask for feedback before treating it as final.
+
+### Step 4: Iterate
+
+Revise based on the user's feedback. Repeat until the user is satisfied with the content.
+
+### Step 5: Review
+
+When the skill is in good shape, run Workflow 1 on it. Follow Workflow 1 from Step 1
+through Step 7 — the creation process does not skip the review.
