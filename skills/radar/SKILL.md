@@ -31,13 +31,11 @@ deciding to deviate from a SHOULD — it describes what breaks when you skip it.
 
 Memory file: `$HOME/tmp/radar-memory.md`
 
-**Tmux layout** — At startup, MUST invoke the `dev-panes` skill to establish the two-pane
-layout (left bash shell, right Claude Code). Check first that a left shell pane doesn't
-already exist before splitting.
-If `$TMUX_PANE` is empty the user is not in tmux — skip pane setup and deliver all output
-in chat.
-*Rationale: agenda output MUST go to the shell pane (see Agenda Display below); that pane
-must exist before anything is written.*
+**Tmux layout** — If `$TMUX_PANE` is empty the user is not in tmux — skip pane setup and
+deliver all output in chat. Otherwise, the user manages their own pane layout (e.g. via
+`/dev-panes`). Radar does not invoke `dev-panes` or split panes at startup.
+*Rationale: agenda output goes to a show-and-go pane opened above Claude Code (see Agenda
+Display below); no pre-existing shell pane is required.*
 
 **Memory file** — On first use:
 1. Check whether `$HOME/tmp` exists. If not, stop and ask the user where they'd like the file.
@@ -96,29 +94,26 @@ most. `CronCreate` jobs auto-expire after 7 days (weekly jobs fire only once bef
 so they are a poor fit for open-ended monitoring or reminders that need to persist until
 explicitly resolved. When in doubt, put it in the memory file.
 
-## Agenda Display (tmux — Shell Pane)
+## Agenda Display (tmux — Show-and-Go Pane)
 
-MUST present the date-check and reminder output in the left shell pane created by
-`dev-panes`. All tmux commands require `dangerouslyDisableSandbox: true`. For pane lookup
-patterns, refer to the "Checking Pane State" and "Pane Addressing" sections of the
-`using-tmux` skill.
+MUST present the date-check and reminder output in a show-and-go pane opened above Claude
+Code. This is Workflow 3 (show-and-go) from the `using-tmux` skill — refer to
+`references/workflow-3-show-and-go.md` in that skill for the full pattern. All tmux
+commands require `dangerouslyDisableSandbox: true`.
 
-**Finding the shell pane:**
+**Displaying the agenda:**
+1. Write the agenda text to a temp file (use `$TMPDIR`):
 ```bash
-SHELL_PANE=$(tmux list-panes -t "$TMUX_PANE" -F "#{pane_id}:#{pane_current_command}" \
-  | grep ':bash$' | cut -d: -f1)
+printf '\n=== Radar Agenda ===\n\n<content>\n' > "$TMPDIR/radar-agenda.txt"
+```
+2. Open a show-and-go pane above Claude Code:
+```bash
+tmux split-window -bv -t "$TMUX_PANE" \
+  'cat "$TMPDIR/radar-agenda.txt"; echo; read -p "[Press Enter to close]"'
 ```
 
-**Before writing — MUST announce and confirm:**
-MUST announce intent in chat and confirm the shell pane is not in active use before
-sending anything to it.
-*Rationale: the shell pane is interactive — writing without confirming can interrupt
-active work.*
-
-**Writing:**
-```bash
-tmux send-keys -t "$SHELL_PANE" "printf '\\n* <agenda content>\\n'" Enter
-```
+The pane closes when the user presses Enter, reclaiming screen space. No announce-and-confirm
+is needed — opening a new pane does not interrupt existing work.
 
 ## Scope
 
