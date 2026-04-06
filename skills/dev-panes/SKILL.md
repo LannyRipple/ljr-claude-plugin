@@ -8,7 +8,15 @@ description: >-
 
 # Dev Panes
 
-Invoke the `using-tmux` skill. Using that skill's pane-state reference, check
-whether a left shell pane already exists. If one is found, notify the user and
-stop without splitting. Otherwise, open a left bash shell pane in the current
-working directory (show-and-shell workflow), leaving Claude Code on the right.
+Run `~/.claude/plugins/marketplaces/ljr-marketplace/skills/dev-panes/scripts/setup-dev-panes.sh` with `dangerouslyDisableSandbox: true`,
+passing the current working directory as the first argument.
+
+Interpret the output:
+
+- **`ALREADY_EXISTS:<id>`** — Tell the user a shell pane already exists (pane `<id>`);
+  nothing was changed.
+- **`CREATED:<id>`** — Tell the user the dev layout is ready (shell pane `<id>` on the
+  left, Claude Code on the right).
+- **Non-zero exit (check stderr for the `ERROR:` message)** — Show the error message to the user
+  and ask whether to investigate the cause or fall back to the general `using-tmux` skill
+  for manual setup.

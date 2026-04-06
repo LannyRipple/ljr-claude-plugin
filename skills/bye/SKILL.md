@@ -9,51 +9,23 @@ description: >-
 
 # Bye
 
-Clean up all tmux panes created during this session, then exit Claude Code.
+Run `~/.claude/plugins/marketplaces/ljr-marketplace/skills/bye/scripts/bye.sh`
+with `dangerouslyDisableSandbox: true`.
 
-## Requirement Levels
+Interpret the output:
 
-Terms in this skill use these levels:
+- **`NOT_IN_TMUX`** — Tell the user they are not in tmux; no panes to clean up.
+  Do not send `/exit` or any tmux commands. Stop here.
 
-- **MUST** / **MUST NOT** — No exceptions. Follow regardless of context.
-- **SHOULD** / **SHOULD NOT** — Strong recommendation. Follow it unless you have a
-  specific reason not to; note when you deviate and why.
+- **`CLEANED:<n>`** — If `<n>` is 0, tell the user there were no extra panes to clean
+  up. If `<n> > 0`, tell the user `<n>` pane(s) were removed. In both cases, using
+  `dangerouslyDisableSandbox: true`, send the exit sequence to `$TMUX_PANE`:
+  ```bash
+  tmux send-keys -t "$TMUX_PANE" '/exit' Enter
+  tmux send-keys -t "$TMUX_PANE" 'tmux kill-pane -t "$TMUX_PANE"' Enter
+  ```
+  The first keystroke exits Claude Code. The second sits in the shell buffer —
+  once Claude Code exits and the shell returns, it fires and closes the pane.
 
-Every MUST and SHOULD in this skill is paired with a rationale. Read the rationale before
-deciding to deviate from a SHOULD — it describes what breaks when you skip it.
-
-## Steps
-
-All tmux commands require `dangerouslyDisableSandbox: true`. If `$TMUX_PANE`
-is empty the user is not in tmux — skip pane cleanup, output `Panes cleaned up.
-Ready for /exit.` in chat, and stop.
-
-1. **List panes** — Get all panes in the current window:
-   ```bash
-   tmux list-panes -t "$TMUX_PANE" -F "#{pane_id}:#{pane_current_command}"
-   ```
-
-2. **Identify panes to kill** — The Claude Code pane is `$TMUX_PANE`. Every
-   other pane in the window was created by a using-tmux workflow and should
-   be killed.
-
-3. **Kill non-Claude panes** — For each pane ID that is not `$TMUX_PANE`:
-   ```bash
-   tmux kill-pane -t <pane-id>
-   ```
-   MUST NOT kill `$TMUX_PANE` here — killing it mid-execution aborts the skill
-   before step 4 can run. The pane is closed cleanly in step 4 instead.
-   MUST NOT use `kill-session` or `kill-server` — these destroy the user's entire
-   tmux session, not just this window's panes.
-
-4. **Exit** — Announce in chat first, then send keystrokes to the Claude Code pane:
-   > Panes cleaned up. Exiting.
-
-   ```bash
-   tmux send-keys -t "$TMUX_PANE" '/exit' Enter
-   tmux send-keys -t "$TMUX_PANE" 'tmux kill-pane -t "$TMUX_PANE"' Enter
-   ```
-
-   The first send-keys exits Claude Code. The second sits in the input buffer —
-   once Claude Code exits and the shell returns, the buffered command fires and
-   closes the pane.
+- **Non-zero exit** — Show the stderr error to the user and stop. Do not attempt
+  to send `/exit`.
