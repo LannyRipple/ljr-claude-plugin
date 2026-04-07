@@ -37,12 +37,31 @@ document is the safety gate regardless of version control status.
 
 ---
 
+## Requirement Levels
+
+Terms in this skill use these levels:
+
+- **MUST** / **MUST NOT** — No exceptions. Follow regardless of context.
+- **SHOULD** / **SHOULD NOT** — Strong recommendation. Follow it unless you have a
+  specific reason not to; note when you deviate and why.
+
+Every MUST and SHOULD in this skill is paired with a rationale. Read the rationale before
+deciding to deviate from a SHOULD — it describes what breaks when you skip it.
+
+---
+
 ## Workflow Routing
 
 | What the user wants | Workflow |
 |---------------------|----------|
 | Review, audit, critique, debug, improve an existing skill | Workflow 1 — Review |
 | Create a new skill, write a skill, turn a workflow into a skill, update an existing skill's content or layout | Workflow 2 — Create or Update |
+
+Any request to modify, edit, change, or update a skill's content — including targeted
+single-step changes — SHOULD enter Workflow 2. Rationale: a bypassed review is the primary
+source of undetected regressions. Bypass only when the change is purely cosmetic
+(correcting a typo, fixing whitespace) with no risk of altering how Claude interprets or
+executes the skill.
 
 ---
 
@@ -184,10 +203,10 @@ Work through these in order. Steps 1–4 are collection only — do not apply an
 
 #### Step 1: Section-by-Section Review of SKILL.md
 
-Read each section. When a section uses `@filename` syntax or contains a markdown link to
-another file, read that file immediately as part of reviewing the section — the quality
-of the section often depends on what's in the reference, and deferring it means you're
-reviewing blind.
+Read each section. When a section uses `@filename` syntax, contains a markdown link to
+another file, or instructs Claude to read a file, read that file immediately as part of
+reviewing the section — the quality of the section often depends on what's in the
+reference, and deferring it means you're reviewing blind.
 
 For each issue found, record the label, your understanding of the intent, and your proposed
 fix. If intent is genuinely ambiguous, record the question instead of guessing. Hold all
@@ -233,10 +252,11 @@ Do not apply fixes yet.
 
 #### Step 5: Produce Review Document
 
-Output the full review document using the format above. Tell the user explicitly:
-the changes listed are permanent once applied — this is their opportunity to exclude
-anything they don't want changed. For any questions you recorded in Steps 1–4, ask
-them now and wait for answers before proceeding.
+Output the full review document using the format above. For any questions you recorded
+in Steps 1–4, ask them now and wait for answers before proceeding. After presenting the
+document, output this as a standalone line:
+
+`⚠ Exclude, modify, or discuss anything you do not want changed before confirming — The changes above are permanent once applied.`
 
 Do not apply any fixes until the user explicitly confirms.
 
@@ -290,8 +310,9 @@ using Workflow 1 when the skill is in good shape.
 ### Step 1: Load Construction Guidance
 
 Read `references/skill-construction-guidance.md` before doing anything else. It covers
-file anatomy, progressive disclosure, frontmatter conventions, writing patterns, and style
-guidance. Keep it in mind throughout this workflow.
+description-writing patterns, progressive disclosure organization, writing style, and skill
+triggering — and links to the official docs for file anatomy and frontmatter schema.
+Keep it in mind throughout this workflow.
 
 ### Step 2: Capture Intent
 
@@ -311,12 +332,14 @@ Ask one clarifying question at a time. Do not start writing until all four quest
 ### Step 3: Draft the Skill
 
 Based on the conversation and construction guidance:
+
+**Script constraint:** Do not implement non-trivial scripts without explicit user direction.
+Describe the script's purpose in a comment block and stop there.
+
 - Write `SKILL.md` with correct frontmatter (`name`, `description`)
 - If the skill has multiple workflows or operation modes, add a routing table near the top
 - Move large or domain-specific content to `references/` files; keep SKILL.md under 500 lines
-- If the skill needs bundled scripts, describe what each script should do in a comment
-  block rather than writing the implementation — do not write non-trivial scripts without
-  the user's explicit direction
+- If the skill needs bundled scripts, describe what each script should do in a comment block
 
 Present the draft to the user. Ask for feedback before treating it as final.
 
@@ -326,5 +349,39 @@ Revise based on the user's feedback. Repeat until the user is satisfied with the
 
 ### Step 5: Review
 
-When the skill is in good shape, run Workflow 1 on it. Follow Workflow 1 from Step 1
-through Step 7 — the creation process does not skip the review.
+Your context is contaminated — you authored or edited this skill and know the intent behind
+every choice. A solo review will miss issues your familiarity obscures. Run the review twice
+and merge the results.
+
+**5a. Your review**
+Run Workflow 1 Steps 1–4 on the current skill. Collect your issues but do not output them yet.
+
+**5b. Sub-agent review**
+Spawn a sub-agent with no prior context about the target skill. The sub-agent prompt must
+include:
+- The path to this skill's own SKILL.md file — you know it, because you are currently
+  executing from it. Tell the sub-agent to read that file first to load the Workflow 1
+  review criteria, steps, and document format natively.
+- The full text of the target skill's SKILL.md and all referenced files, pasted directly
+  into the prompt.
+- Instruction to apply Workflow 1 Steps 1–4 to the target skill content and return only
+  the issues section of the Review Document.
+
+The sub-agent has no knowledge of how the target skill was written. Its findings represent
+what a reader encountering the skill cold will stumble over.
+
+**5c. Merge**
+Compare the two issue lists. For each item:
+- **Both found** — include it; high confidence
+- **Your find only** — include all of them; mark any that rely on intent you know but the
+  skill never states with `(author context)` after the label, so the user can weigh it
+  knowing the finding depends on unstated intent
+- **Sub-agent only** — include all of them; these are exactly the gaps your context hid
+  from you
+
+**5d. Produce unified review document**
+Output the merged issue list using the Review Document Format from Workflow 1. In the
+Summary paragraph, note how many issues were unique to each reviewer and how many were shared.
+
+Then continue with Workflow 1 Steps 5 through 7 — present to user, await confirmation,
+apply fixes, summary.

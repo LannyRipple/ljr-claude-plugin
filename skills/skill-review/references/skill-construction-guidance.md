@@ -6,34 +6,42 @@
 
 Use this guidance when drafting or updating skill files.
 
+For the canonical reference on file structure, frontmatter field schema, bundled resource
+directories, the three-level loading system, and `@filename` import syntax, see the
+official Claude Code documentation:
+
+- [Skills guide](https://docs.anthropic.com/en/docs/claude-code/skills)
+- [Plugins reference](https://docs.anthropic.com/en/docs/claude-code/plugins-reference)
+
+This document covers the opinionated patterns and decisions the official docs leave open.
+
 ---
 
-## Anatomy of a Skill
+## Writing Effective Descriptions
 
-```
-skill-name/
-├── SKILL.md (required)
-│   ├── YAML frontmatter (name, description required)
-│   └── Markdown instructions
-└── Bundled Resources (optional)
-    ├── scripts/    - Executable code for deterministic/repetitive tasks
-    ├── references/ - Docs loaded into context as needed
-    └── assets/     - Files used in output (templates, icons, fonts)
-```
+`description` is the primary triggering mechanism — Claude decides whether to load this
+skill based on description alone.
 
-## Progressive Disclosure
+**Make descriptions slightly pushy.** Claude tends to undertrigger skills. Instead of
+"How to build a dashboard", write "Use this skill whenever the user mentions dashboards,
+data visualization, or wants to display any kind of data, even if they don't explicitly
+ask for a 'dashboard'."
 
-Skills use a three-level loading system:
+**Front-load the use case.** The description has a ~250 character soft limit for trigger
+matching. Put the key trigger phrase first.
 
-1. **Metadata** (name + description) — Always in context (~100 words)
-2. **SKILL.md body** — In context whenever the skill triggers (<500 lines ideal)
-3. **Bundled resources** — Loaded as needed (unlimited; scripts can execute without loading)
+All "when to use" information belongs in the description, not the body.
 
-Key patterns:
-- Keep SKILL.md under 500 lines. If you're approaching this limit, add another layer of
-  hierarchy with clear pointers about where to go next.
-- Reference files clearly from SKILL.md with guidance on when to read them.
-- For large reference files (>300 lines), include a table of contents.
+---
+
+## Progressive Disclosure: Organization Patterns
+
+The three-level loading system is documented officially. This section covers how to
+organize within it.
+
+**Keep SKILL.md under 500 lines.** If approaching this limit, move detailed content to
+`references/` files with clear pointers about when to read them. For large reference files
+(>300 lines), include a table of contents.
 
 **Domain organization** — When a skill supports multiple domains or frameworks, organize
 by variant so Claude reads only what's relevant:
@@ -47,21 +55,11 @@ cloud-deploy/
     └── azure.md
 ```
 
-## Frontmatter
-
-- **name**: Skill identifier (must match the directory name — this is the slug for `/name` invocation)
-- **description**: The primary triggering mechanism. Cover both what the skill does AND
-  the specific contexts for when to use it. All "when to use" info belongs here, not in
-  the body. Make descriptions slightly "pushy" — Claude tends to undertrigger skills, so
-  instead of "How to build a dashboard", write "How to build a dashboard. Use this skill
-  whenever the user mentions dashboards, data visualization, or wants to display any kind
-  of data, even if they don't explicitly ask for a 'dashboard'."
+---
 
 ## Writing Patterns
 
 Use the imperative form for instructions.
-
-The pattern below shows a common form found in existing skills — note that the Writing Style section below cautions against overusing all-caps imperatives.
 
 **Defining output formats:**
 ```markdown
@@ -81,6 +79,8 @@ Input: Added user authentication with JWT tokens
 Output: feat(auth): implement JWT-based authentication
 ```
 
+---
+
 ## Writing Style
 
 - Explain *why* things are important rather than relying on heavy-handed MUSTs. Use theory
@@ -91,6 +91,8 @@ Output: feat(auth): implement JWT-based authentication
 - Keep the prompt lean. Remove things that aren't pulling their weight.
 - Draft first, then read with fresh eyes and improve.
 
+---
+
 ## Principle of Lack of Surprise
 
 Skills must not contain malware, exploit code, or any content that could compromise
@@ -98,12 +100,16 @@ system security. A skill's contents should not surprise the user given its descr
 intent. Do not create misleading skills or skills designed to facilitate unauthorized
 access, data exfiltration, or other malicious activities.
 
+---
+
 ## How Skill Triggering Works
 
 Skills appear in Claude's `available_skills` list with their name and description. Claude
-decides whether to consult a skill based on that description. Claude only consults skills
-for tasks it cannot easily handle on its own — simple, one-step queries may not trigger a
-skill even if the description matches, because Claude can handle them directly with basic
-tools. Complex, multi-step, or specialized queries reliably trigger skills when the
+consults skills for tasks it cannot easily handle on its own — simple, one-step queries
+may not trigger a skill even if the description matches, because Claude can handle them
+directly. Complex, multi-step, or specialized queries reliably trigger skills when the
 description matches.
 
+The implication: descriptions need to signal complexity, not just topic. "Build a
+dashboard" is weaker than "Build a dashboard — use this skill, which includes template
+selection, data binding patterns, and layout guidance."
