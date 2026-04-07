@@ -258,14 +258,20 @@ document, output this as a standalone line:
 
 `⚠ Exclude, modify, or discuss anything you do not want changed before confirming — The changes above are permanent once applied.`
 
+Rationale for placement: this warning appears after the review so it sits immediately above the user's prompt where it is hardest to miss. Emitting it before the review risks it scrolling off the terminal before the user acts.
+
 Do not apply any fixes until the user explicitly confirms.
 
 #### Step 6: Apply Fixes
 
 Apply all approved fixes in order using the Edit tool to make targeted changes to
 SKILL.md or the relevant referenced file. Prefer minimal diffs — change only what the
-fix requires. For questions that were answered, apply the agreed-upon change. Skip any
-issues the user excluded.
+fix requires. For questions that were answered, apply the agreed-upon change.
+
+For any issue the user excludes or only partially accepts: ask the user to briefly explain
+why they are keeping the existing approach. Use their explanation to write a short inline
+rationale into the affected section of the skill. This signals to future reviewers that
+the choice was intentional and prevents the same issue from being raised again.
 
 #### Step 7: Summary
 

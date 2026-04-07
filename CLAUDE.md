@@ -34,4 +34,29 @@ A skill is invoked as `/<skill-name>` in Claude Code. The `name` field in SKILL.
 
 ## Installing / Deploying
 
-Skills in this repo are intended to be installed into `~/.claude/skills/` so Claude Code can load them. Subagents spawned by Claude cannot write to `~/.claude/skills/` — that path is outside the sandbox write allowlist. The main Claude agent must perform those writes.
+This repo is distributed as a Claude Code marketplace plugin. Skills are installed and
+updated through the plugin system — **do not copy files directly into `~/.claude/skills/`**.
+
+To deploy a change:
+1. Edit skills in `./skills/`
+2. Bump the version in both `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
+3. Commit and push to GitHub
+4. Restart the Claude Code session — it will auto-update from the marketplace on startup
+
+## Useful Information and Gotchas
+
+- **This is a plugin repo.** Skills are loaded via the marketplace, not by direct file
+  installation. Changes only take effect after a push to GitHub followed by a session
+  restart that triggers a marketplace refresh.
+
+- **Subagents cannot write to `~/.claude/skills/`** — that path is outside the sandbox
+  write allowlist. Even if you wanted to deploy directly, the main Claude agent would have
+  to do the write. Don't bother: use the push-and-restart flow above.
+
+- **Version bump is required on every release.** Both `.claude-plugin/plugin.json` and
+  `.claude-plugin/marketplace.json` must have matching version strings or the marketplace
+  may not detect the update.
+
+- **This is a personal repo — no GUS work ID is needed in commit messages.** The standard
+  Salesforce commit subject format (`@{GUS_Work_ID} ...`) does not apply here. Write
+  plain commit messages.
