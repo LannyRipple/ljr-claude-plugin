@@ -10,13 +10,13 @@ This is a Claude Code plugin — a collection of skills (slash commands) that ex
 
 ```
 skills/
-  <skill-name>/
+  {SKILL_NAME}/
     SKILL.md          # Skill definition (frontmatter + instructions)
     references/       # Files that SKILL.md delegates to via @filename or explicit read instructions
     assets/           # Templates and static files used at runtime
 ```
 
-A skill is invoked as `/<skill-name>` in Claude Code. The `name` field in SKILL.md frontmatter must match the directory name exactly — a mismatch is a bug.
+A skill is invoked as `/{SKILL_NAME}` in Claude Code. The `name` field in SKILL.md frontmatter must match the directory name exactly — a mismatch is a bug.
 
 ## Skills in This Repo
 
@@ -26,6 +26,7 @@ A skill is invoked as `/<skill-name>` in Claude Code. The `name` field in SKILL.
 
 ## Skill Authoring Conventions
 
+- Use `{VARIABLE_NAME}` (curly braces, uppercase) for placeholder variables in skill instructions — not `<variable-name>` angle-bracket style.
 - `SKILL.md` frontmatter fields: `name` (matches dir), `description` (trigger conditions + what it does)
 - Instructions in `references/` files are read at runtime by Claude following the skill's routing logic — they are not loaded automatically
 - `assets/` holds templates and static content the skill copies or reads at runtime

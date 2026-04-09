@@ -22,7 +22,7 @@ startup. Use it to reliably reference the leader's pane even if the user switche
 
 **Agent teams** spawn full Claude instances via `send-keys -t paneId "command" Enter`.
 Leader-to-teammate communication uses a file-based mailbox, not tmux directly. The socket
-isolation (`-L <socket>`) lets swarm sessions run on a completely separate socket from the
+isolation (`-L {SOCKET}`) lets swarm sessions run on a completely separate socket from the
 user's session.
 
 **Useful format variables** (used with `-F` flag or `display-message -p`):
@@ -42,16 +42,16 @@ user's session.
 ```bash
 # Leader at 30%, teammates fill the remaining 70%
 tmux select-layout -t session:window main-vertical
-tmux resize-pane -t <leader-pane-id> -x 30%
+tmux resize-pane -t {LEADER_PANE_ID} -x 30%
 ```
 
 **Hide/show panes between sessions:**
 ```bash
 # Hide: move pane to a detached session
-tmux break-pane -d -s <pane-id> -t hidden-session:
+tmux break-pane -d -s {PANE_ID} -t hidden-session:
 
 # Show: bring it back
-tmux join-pane -h -s <pane-id> -t target-window
+tmux join-pane -h -s {PANE_ID} -t target-window
 ```
 
 ---

@@ -126,11 +126,11 @@ After collecting all issues, produce a review document in this format before mak
 changes. This gives the user a full picture and a chance to exclude anything before edits start.
 
 ```
-# Skill Review: <skill-name>
+# Skill Review: {SKILL_NAME}
 
 ## Issues Found (N total across M files)
 
-### <filename> (N issues)
+### {FILENAME} (N issues)
 
 **Issue N — Label | Section Name**
 <one-sentence description of the problem>
@@ -252,9 +252,22 @@ Do not apply fixes yet.
 
 #### Step 5: Produce Review Document
 
-Output the full review document using the format above. For any questions you recorded
-in Steps 1–4, ask them now and wait for answers before proceeding. After presenting the
-document, output this as a standalone line:
+**Long report handling — check before outputting:**
+
+1. Run `tput lines` (with `dangerouslyDisableSandbox: true`) to get terminal height. If the
+   command fails or returns an unusable value, skip the height check and use issue count alone.
+2. Estimate report height: roughly 6 lines per issue plus 5 lines for the summary.
+3. Write the report to a file if either condition holds:
+   - Issue count exceeds 4, OR
+   - Terminal height was obtained and estimated report height exceeds 80% of it.
+4. **When writing to file:** Write the full review document to
+   `$TMPDIR/skill-review-{SKILL_NAME}.md`, then tell the user the path. Output only the
+   Summary section inline, followed by the warning line below.
+5. **When printing inline:** Output the full review document, followed by the warning line.
+
+For any questions you recorded in Steps 1–4, ask them now and wait for answers before
+proceeding. After presenting the document (inline or as a path), output this as a
+standalone line:
 
 `⚠ Exclude, modify, or discuss anything you do not want changed before confirming — The changes above are permanent once applied.`
 
@@ -388,6 +401,9 @@ Compare the two issue lists. For each item:
 **5d. Produce unified review document**
 Output the merged issue list using the Review Document Format from Workflow 1. In the
 Summary paragraph, note how many issues were unique to each reviewer and how many were shared.
+
+Apply the same long report handling as Workflow 1 Step 5 (file vs. inline threshold, same
+`$TMPDIR/skill-review-{SKILL_NAME}.md` path).
 
 Then continue with Workflow 1 Steps 5 through 7 — present to user, await confirmation,
 apply fixes, summary.

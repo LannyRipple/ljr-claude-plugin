@@ -104,7 +104,7 @@ commands require `dangerouslyDisableSandbox: true`.
 **Displaying the agenda:**
 1. Write the agenda text to a temp file (use `$TMPDIR`):
 ```bash
-printf '\n=== Radar Agenda ===\n\n<content>\n' > "$TMPDIR/radar-agenda.txt"
+printf '\n=== Radar Agenda ===\n\n{CONTENT}\n' > "$TMPDIR/radar-agenda.txt"
 ```
 2. Open a show-and-go pane above Claude Code:
 ```bash

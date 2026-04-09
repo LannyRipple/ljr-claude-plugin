@@ -13,9 +13,9 @@ passing the current working directory as the first argument.
 
 Interpret the output:
 
-- **`ALREADY_EXISTS:<id>`** — Tell the user a shell pane already exists (pane `<id>`);
+- **`ALREADY_EXISTS:{ID}`** — Tell the user a shell pane already exists (pane `{ID}`);
   nothing was changed.
-- **`CREATED:<id>`** — Tell the user the dev layout is ready (shell pane `<id>` on the
+- **`CREATED:{ID}`** — Tell the user the dev layout is ready (shell pane `{ID}` on the
   left, Claude Code on the right).
 - **Non-zero exit (check stderr for the `ERROR:` message)** — Show the error message to the user
   and ask whether to investigate the cause or fall back to the general `using-tmux` skill
