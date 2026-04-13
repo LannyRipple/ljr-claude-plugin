@@ -67,6 +67,12 @@ follow the procedure in `references/date-check.md`.
 tracking", "what's in your memory", or anything clearly equivalent, read the memory file
 and produce a structured summary. Follow the procedure in `references/memory-report.md`.
 
+**Brag Book** — The Brag Book section in the memory file is a record of finished work items
+for quarterly focal review. Add entries for completed deliverables: shipped features, merged
+work items, launched services, released skills tied to a work context. Do NOT add personal
+side projects, internal tooling experiments, or work-in-progress. When in doubt, ask whether
+the item belongs — the bar is: would this show up on a quarterly accomplishment summary?
+
 ## Anticipatory Surfacing
 
 When something in the current conversation connects to an entry in radar-memory, surface it
