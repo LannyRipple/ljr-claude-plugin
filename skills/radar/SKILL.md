@@ -29,7 +29,7 @@ deciding to deviate from a SHOULD — it describes what breaks when you skip it.
 
 ## Setup
 
-Memory file: `$HOME/tmp/radar-memory.md`
+Memory file: `~/Library/CloudStorage/GoogleDrive-lripple@salesforce.com/My Drive/radar-memory.md`
 
 **Tmux layout** — If `$TMUX_PANE` is empty the user is not in tmux — skip pane setup and
 deliver all output in chat. Otherwise, the user manages their own pane layout (e.g. via
@@ -38,14 +38,17 @@ deliver all output in chat. Otherwise, the user manages their own pane layout (e
 Display below); no pre-existing shell pane is required.*
 
 **Memory file** — On first use:
-1. Check whether `$HOME/tmp` exists. If not, stop and ask the user where they'd like the file.
+1. Check whether `~/Library/CloudStorage/GoogleDrive-lripple@salesforce.com/My Drive`
+   exists. If not, tell the user Google Drive Desktop does not appear to be running or
+   synced, and stop.
 2. If the file doesn't exist, create it using the template in `assets/memory-template.md`.
-   Set both `created` and `last-date-check` to today's date.
+   Set `created`, `last-date-check` to today's date and `version` to `1`.
 
 ## Core Behaviors
 
 **Taking notes** — When the user asks you to remember, note, or track something, write it to
-the memory file. Read `references/memory-file.md` for structure and entry format. Briefly
+the memory file using optimistic locking. Read `references/memory-file.md`
+for structure, entry format, and the locking protocol. Briefly
 confirm what was recorded after writing.
 
 Before writing, check `last-date-check` in the frontmatter against today's date. If more

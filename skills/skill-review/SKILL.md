@@ -254,8 +254,12 @@ Do not apply fixes yet.
 
 **Long report handling — check before outputting:**
 
-1. Run `tput lines` (with `dangerouslyDisableSandbox: true`) to get terminal height. If the
-   command fails or returns an unusable value, skip the height check and use issue count alone.
+1. Get terminal height (requires `dangerouslyDisableSandbox: true` for both options):
+   - If `$TMUX` is set: run `tmux display-message -p '#{window_height}'` — reliable,
+     reflects actual pane geometry.
+   - Otherwise: run `tput lines`. If it returns exactly `24`, warn the user that this is
+     likely the VT100 default and may not reflect actual terminal height.
+   - If both fail or return unusable values, skip the height check and use issue count alone.
 2. Estimate report height: roughly 6 lines per issue plus 5 lines for the summary.
 3. Write the report to a file if either condition holds:
    - Issue count exceeds 4, OR

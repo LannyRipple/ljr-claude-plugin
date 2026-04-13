@@ -10,18 +10,28 @@ pane is `.0` and Claude Code shifts to `.1`.
 the user's tmux session. If you cannot set it, tell the user and stop — the workflow will
 not work without it.
 
-## Show-and-go (press Enter to close)
+## Show-and-go (q to close)
+
+Prefer `less` — it is scrollable, searchable with `/`, and `q` to dismiss is intuitive.
 
 ```bash
-# Show a file
-tmux split-window -bv 'cat ~/some-file.txt; echo; read -p "[Press Enter to close]"'
+# Show a file (preferred)
+tmux split-window -bv 'less ~/some-file.txt'
 
-# Show command output
+# Show command output (preferred)
+tmux split-window -bv 'some-command 2>&1 | less'
+```
+
+Use `cat + read` only for short, known-length output where `less` would feel like overkill
+(e.g., a 3-line status message):
+
+```bash
+# Short output fallback
 tmux split-window -bv 'some-command 2>&1; echo; read -p "[Press Enter to close]"'
 ```
 
 The `echo` before `read` adds a blank line so the prompt doesn't run up against the output.
-Omit `-d` so the new pane is active and ready to receive the Enter keypress.
+Omit `-d` so the new pane is active and ready to receive input.
 
 ## Show-and-shell (output then interactive shell)
 
@@ -46,4 +56,4 @@ current pane since the user will Ctrl-C from there when done.
 - The pane is NOT managed by Claude after creation — the user interacts with it directly
 - Omit `-d` for show-and-go and show-and-shell so the pane is immediately active
 - Use `-d` for show-and-watch so focus stays with the user's current pane
-- For large output, consider `less` instead of `cat`: `tmux split-window -bv 'less ~/file.txt'`
+- Prefer `less` over `cat + read` — see the show-and-go section above for the canonical patterns

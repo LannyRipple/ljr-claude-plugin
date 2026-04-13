@@ -2,7 +2,7 @@
 
 ## Location and format
 
-The memory file is `$HOME/tmp/radar-memory.md`. It has two parts:
+The memory file is `~/Library/CloudStorage/GoogleDrive-lripple@salesforce.com/My Drive/radar-memory.md`. It has two parts:
 1. **YAML frontmatter** at the top — metadata Radar reads and updates
 2. **Markdown sections** — one per category of entry
 
@@ -12,8 +12,11 @@ The memory file is `$HOME/tmp/radar-memory.md`. It has two parts:
 ---
 last-date-check: YYYY-MM-DD
 created: YYYY-MM-DD
+version: N
 ---
 ```
+
+- `version`: monotonically increasing integer; incremented on every write for optimistic locking
 
 Add new frontmatter fields as needed. If tracking some persistent context becomes useful
 (e.g., a recurring meeting cadence, a project milestone), a new field can go here. The
@@ -76,3 +79,15 @@ After writing, confirm briefly:
 If it's not clear what's meant — which section, or what exactly to note — ask one clarifying
 question before writing. Getting it right matters more than speed — a misrecorded note
 creates confusion later.
+
+## Writing (with optimistic locking)
+
+The memory file lives in Google Drive and could in principle be open in another
+session on another machine. Use optimistic locking on every write:
+
+1. Read the file; record the current `version: N`.
+2. Apply the desired change in memory.
+3. Re-read the file and confirm `version` is still `N`.
+4. If still `N`: write the full updated file with `version: N+1` using the Write tool.
+5. If version has changed: report a conflict — show the current file state and ask
+   the user whether to retry or abandon.
