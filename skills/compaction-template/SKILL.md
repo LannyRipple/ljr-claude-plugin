@@ -8,10 +8,6 @@ description: >-
 
 # Compaction Template
 
-Run the following command with `dangerouslyDisableSandbox: true` set on the Bash tool call:
-
-```bash
-echo -n "Retain: work intent, decisions made, what was accomplished, any open questions. Drop: file contents, resolved errors, build logs, tool call details." | pbcopy
-```
+Run `scripts/compaction-template`.
 
 Tell the user the template is on the clipboard, ready to paste after `/compact`.
