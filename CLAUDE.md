@@ -61,3 +61,26 @@ To deploy a change:
 - **This is a personal repo — no GUS work ID is needed in commit messages.** The standard
   Salesforce commit subject format (`@{GUS_Work_ID} ...`) does not apply here. Write
   plain commit messages.
+
+## Coordination — Twining Lifecycle Gates
+
+IMPORTANT: These gates are BLOCKING REQUIREMENTS for every task involving code exploration, modification, or architectural decisions.
+
+### Gate 1: Context Assembly (BEFORE any work)
+- MUST call `twining_assemble` with task description and narrowest scope BEFORE reading code or making changes
+- MUST call `twining_why` on files you intend to modify
+- NEVER start working without these calls — skipping creates blind decisions that conflict with existing work
+
+### Gate 2: Record (BEFORE committing or ending)
+- MUST call `twining_record` before every `git commit` or session end — hooks enforce this
+- Include what you did (summary) and any choices you made (decisions array)
+- Write decisions as natural sentences: "Chose X over Y — reason"
+- For findings/warnings during work, use `twining_post` directly
+
+### Housekeeping
+- Run `twining_housekeeping({})` at the start of long sessions to check for stale state — preview is safe, execute only if needed
+
+### Critical Rules
+- Use narrowest scope: `src/auth/` not `project`
+- NEVER skip Gate 1 — #1 cause of wasted work and conflicting decisions
+- NEVER skip Gate 2 — hooks will block your commit and session exit until you record

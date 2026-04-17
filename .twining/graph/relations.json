@@ -1,0 +1,12 @@
+[
+  {
+    "id": "01KPE16B7TE42PHGF1463ZQBDP",
+    "source": "01KPE16B7SN0N229AFKSVHTX7F",
+    "target": "01KPE16B7R0BSZ9M3TTHGBNVQ8",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Replaced tmux send-keys /exit + kill-pane sequence with a direct tmux kill-session call"
+    },
+    "created_at": "2026-04-17T15:33:15.643Z"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "01KPE16B773TCYYMCPM5ASFEVF",
+    "timestamp": "2026-04-17T15:33:15.623Z",
+    "domain": "implementation",
+    "scope": "skills/bye/",
+    "summary": "Replaced tmux send-keys /exit + kill-pane sequence with a direct tmux kill-session call",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/bye/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  }
+]

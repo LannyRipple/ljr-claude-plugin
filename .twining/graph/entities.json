@@ -1,0 +1,23 @@
+[
+  {
+    "id": "01KPE16B7R0BSZ9M3TTHGBNVQ8",
+    "name": "01KPE16B773TCYYMCPM5ASFEVF",
+    "type": "concept",
+    "properties": {
+      "summary": "Replaced tmux send-keys /exit + kill-pane sequence with a direct tmux kill-session call",
+      "scope": "skills/bye/"
+    },
+    "created_at": "2026-04-17T15:33:15.640Z",
+    "updated_at": "2026-04-17T15:33:15.640Z"
+  },
+  {
+    "id": "01KPE16B7SN0N229AFKSVHTX7F",
+    "name": "skills/bye/SKILL.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/bye/"
+    },
+    "created_at": "2026-04-17T15:33:15.641Z",
+    "updated_at": "2026-04-17T15:33:15.641Z"
+  }
+]

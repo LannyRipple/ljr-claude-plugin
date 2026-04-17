@@ -19,13 +19,12 @@ Interpret the output:
 
 - **`CLEANED:<n>`** — If `<n>` is 0, tell the user there were no extra panes to clean
   up. If `<n> > 0`, tell the user `<n>` pane(s) were removed. In both cases, using
-  `dangerouslyDisableSandbox: true`, send the exit sequence to `$TMUX_PANE`:
+  `dangerouslyDisableSandbox: true`, kill the session:
   ```bash
-  tmux send-keys -t "$TMUX_PANE" '/exit' Enter
-  tmux send-keys -t "$TMUX_PANE" 'tmux kill-pane -t "$TMUX_PANE"' Enter
+  tmux kill-session
   ```
-  The first keystroke exits Claude Code. The second sits in the shell buffer —
-  once Claude Code exits and the shell returns, it fires and closes the pane.
+  This terminates the entire tmux session (including Claude Code) without requiring
+  any keystrokes sent to the terminal.
 
 - **Non-zero exit** — Show the stderr error to the user and stop. Do not attempt
   to send `/exit`.
