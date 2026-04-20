@@ -40,7 +40,7 @@ updated through the plugin system — **do not copy files directly into `~/.clau
 
 To deploy a change:
 1. Edit skills in `./skills/`
-2. Bump the version in both `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
+2. Bump the version in `.claude-plugin/plugin.json`
 3. Commit and push to GitHub
 4. Restart the Claude Code session — it will auto-update from the marketplace on startup
 
@@ -54,9 +54,9 @@ To deploy a change:
   write allowlist. Even if you wanted to deploy directly, the main Claude agent would have
   to do the write. Don't bother: use the push-and-restart flow above.
 
-- **Version bump is required on every release.** Both `.claude-plugin/plugin.json` and
-  `.claude-plugin/marketplace.json` must have matching version strings or the marketplace
-  may not detect the update.
+- **Version bump is required on every release.** `.claude-plugin/plugin.json` is the
+  authoritative version source. Bump it before committing or the marketplace may not
+  detect the update.
 
 - **This is a personal repo — no GUS work ID is needed in commit messages.** The standard
   Salesforce commit subject format (`@{GUS_Work_ID} ...`) does not apply here. Write

@@ -7,23 +7,17 @@
     {
       "name": "ljr-claude-plugin",
       "description": "Claude artifacts useful for Lanny",
-      "version": "1.0.13",
-      "author": {
-        "name": "Lanny Ripple"
-      },
       "source": {
         "source": "github",
         "repo": "LannyRipple/ljr-claude-plugin"
       },
       "keywords": [
-        "Radar O'Reilly",
+        "compact",
         "dev-panes",
+        "Radar O'Reilly",
         "skill review",
         "tmux"
       ]
     }
-  ],
-  "metadata": {
-    "version": "1.0.13"
-  }
+  ]
 }
