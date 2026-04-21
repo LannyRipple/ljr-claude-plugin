@@ -72,5 +72,36 @@
     },
     "created_at": "2026-04-21T19:17:55.633Z",
     "updated_at": "2026-04-21T19:17:55.633Z"
+  },
+  {
+    "id": "01KPS58G1YQQ1SPHEGTV6ZWCQN",
+    "name": "01KPS58G1AX7QMZMJKAWNXTA9Y",
+    "type": "concept",
+    "properties": {
+      "summary": "Added paragraph to compaction-instructions/SKILL.md instructing it to enumerate active tmux panes (ID, content, workflow type) in the /compact message",
+      "scope": "skills/compaction-instructions/"
+    },
+    "created_at": "2026-04-21T23:15:59.166Z",
+    "updated_at": "2026-04-21T23:15:59.166Z"
+  },
+  {
+    "id": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "name": "skills/compaction-instructions/SKILL.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/compaction-instructions/"
+    },
+    "created_at": "2026-04-21T23:15:59.167Z",
+    "updated_at": "2026-04-21T23:15:59.167Z"
+  },
+  {
+    "id": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "name": ".claude-plugin/plugin.json",
+    "type": "file",
+    "properties": {
+      "scope": "skills/compaction-instructions/"
+    },
+    "created_at": "2026-04-21T23:15:59.169Z",
+    "updated_at": "2026-04-21T23:15:59.169Z"
   }
 ]

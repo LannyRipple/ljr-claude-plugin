@@ -54,5 +54,20 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KPS58G1AX7QMZMJKAWNXTA9Y",
+    "timestamp": "2026-04-21T23:15:59.146Z",
+    "domain": "implementation",
+    "scope": "skills/compaction-instructions/",
+    "summary": "Added paragraph to compaction-instructions/SKILL.md instructing it to enumerate active tmux panes (ID, content, workflow type) in the /compact message",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/compaction-instructions/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]

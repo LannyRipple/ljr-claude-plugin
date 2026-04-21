@@ -38,5 +38,25 @@
       "decision_summary": "Used disable-model-invocation: true frontmatter instead of expanding description for Issue 6"
     },
     "created_at": "2026-04-21T19:17:55.634Z"
+  },
+  {
+    "id": "01KPS58G20WSYXGS0DXPDWYV32",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KPS58G1YQQ1SPHEGTV6ZWCQN",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added paragraph to compaction-instructions/SKILL.md instructing it to enumerate active tmux panes (ID, content, workflow type) in the /compact message"
+    },
+    "created_at": "2026-04-21T23:15:59.168Z"
+  },
+  {
+    "id": "01KPS58G23RFKFMMAGYVQCMNWD",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KPS58G1YQQ1SPHEGTV6ZWCQN",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added paragraph to compaction-instructions/SKILL.md instructing it to enumerate active tmux panes (ID, content, workflow type) in the /compact message"
+    },
+    "created_at": "2026-04-21T23:15:59.171Z"
   }
 ]

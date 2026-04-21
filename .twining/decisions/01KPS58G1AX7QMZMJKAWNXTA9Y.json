@@ -1,0 +1,23 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/compaction-instructions/",
+  "summary": "Added paragraph to compaction-instructions/SKILL.md instructing it to enumerate active tmux panes (ID, content, workflow type) in the /compact message",
+  "context": "Added tmux pane state retention to compaction-instructions skill so post-compaction sessions know what display panes are open and what they contain.",
+  "rationale": "chosen",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/compaction-instructions/SKILL.md",
+    ".claude-plugin/plugin.json"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KPS58G1AX7QMZMJKAWNXTA9Y",
+  "timestamp": "2026-04-21T23:15:59.146Z",
+  "status": "active"
+}

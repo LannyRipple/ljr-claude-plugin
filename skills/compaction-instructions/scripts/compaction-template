@@ -1,2 +1,0 @@
-#!/bin/bash
-echo -n "Retain: work intent, decisions made, what was accomplished, any open questions. Drop: file contents, resolved errors, build logs, tool call details." | pbcopy
