@@ -8,5 +8,35 @@
       "decision_summary": "Replaced tmux send-keys /exit + kill-pane sequence with a direct tmux kill-session call"
     },
     "created_at": "2026-04-17T15:33:15.643Z"
+  },
+  {
+    "id": "01KPRPQXR4EZXH73GN56HB0DC2",
+    "source": "01KPRPQXR2GAA7M48TZS8VK1WC",
+    "target": "01KPRPQXR064GBN30NZNNCDFE9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added dev-panes setup-dev-panes.sh"
+    },
+    "created_at": "2026-04-21T19:02:16.068Z"
+  },
+  {
+    "id": "01KPRPQXRVNZ5682NWF37WHS8K",
+    "source": "01KPRPQXR2GAA7M48TZS8VK1WC",
+    "target": "01KPRPQXRSA49DNTT1NF1Y7390",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used $PWD"
+    },
+    "created_at": "2026-04-21T19:02:16.091Z"
+  },
+  {
+    "id": "01KPRQMK9J46JDG4YB1H7PE2R9",
+    "source": "01KPRQMK9HFN6RGWRA9EKG3C8S",
+    "target": "01KPRQMK9G8029K4EWE55MX7Z2",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used disable-model-invocation: true frontmatter instead of expanding description for Issue 6"
+    },
+    "created_at": "2026-04-21T19:17:55.634Z"
   }
 ]

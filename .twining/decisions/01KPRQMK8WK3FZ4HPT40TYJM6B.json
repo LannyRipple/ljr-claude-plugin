@@ -1,0 +1,29 @@
+{
+  "agent_id": "main",
+  "domain": "data-model",
+  "scope": "skills/search-sessions/",
+  "summary": "Used disable-model-invocation: true frontmatter instead of expanding description for Issue 6",
+  "context": "Applied all 6 skill-review fixes to skills/search-sessions/SKILL.md. Used disable-model-invocation: true frontmatter key for Issue 6 instead of expanding the description.",
+  "rationale": "user wants /slash-only invocation, this is cleaner than a verbose description that still allows auto-triggering",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "expanding description for Issue 6",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/search-sessions/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KPRQMK8WK3FZ4HPT40TYJM6B",
+  "timestamp": "2026-04-21T19:17:55.613Z",
+  "status": "active"
+}

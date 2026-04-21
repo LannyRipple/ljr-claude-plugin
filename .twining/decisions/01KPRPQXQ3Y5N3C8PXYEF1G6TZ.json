@@ -1,0 +1,29 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "~/.claude/",
+  "summary": "Added dev-panes setup-dev-panes.sh",
+  "context": "Added a SessionStart hook to ~/.claude/settings.json that runs setup-dev-panes.sh at session start, and configured the dev-panes tmux layout for the current session.",
+  "rationale": "an async SessionStart hook rather than a blocking one",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "a blocking one",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.claude/settings.json"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KPRPQXQ3Y5N3C8PXYEF1G6TZ",
+  "timestamp": "2026-04-21T19:02:16.036Z",
+  "status": "active"
+}

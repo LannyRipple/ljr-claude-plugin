@@ -1,0 +1,22 @@
+{
+  "agent_id": "main",
+  "domain": "architecture",
+  "scope": "~/.claude/",
+  "summary": "Used $PWD",
+  "context": "Added a SessionStart hook to ~/.claude/settings.json that runs setup-dev-panes.sh at session start, and configured the dev-panes tmux layout for the current session.",
+  "rationale": "the argument so the script receives the working directory at session start, matching the manual invocation pattern",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.claude/settings.json"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KPRPQXR56RM71Z2EX7BMJ79Y",
+  "timestamp": "2026-04-21T19:02:16.069Z",
+  "status": "active"
+}

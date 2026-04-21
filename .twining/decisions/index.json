@@ -12,5 +12,47 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KPRPQXQ3Y5N3C8PXYEF1G6TZ",
+    "timestamp": "2026-04-21T19:02:16.036Z",
+    "domain": "implementation",
+    "scope": "~/.claude/",
+    "summary": "Added dev-panes setup-dev-panes.sh",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/settings.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KPRPQXR56RM71Z2EX7BMJ79Y",
+    "timestamp": "2026-04-21T19:02:16.069Z",
+    "domain": "architecture",
+    "scope": "~/.claude/",
+    "summary": "Used $PWD",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/settings.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KPRQMK8WK3FZ4HPT40TYJM6B",
+    "timestamp": "2026-04-21T19:17:55.613Z",
+    "domain": "data-model",
+    "scope": "skills/search-sessions/",
+    "summary": "Used disable-model-invocation: true frontmatter instead of expanding description for Issue 6",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/search-sessions/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]
