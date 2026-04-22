@@ -20,9 +20,9 @@ if [[ -z "${TMUX_PANE:-}" ]]; then
     exit 1
 fi
 
-# Look for a live bash pane in this window that is not the caller's pane.
-existing=$(tmux list-panes -F "#{pane_id} #{pane_current_command}" \
-    | awk -v self="$TMUX_PANE" '$1 != self && $2 == "bash" { print $1; exit }')
+# Look for any pane in this window that is not the caller's pane.
+existing=$(tmux list-panes -F "#{pane_id}" \
+    | awk -v self="$TMUX_PANE" '$1 != self { print $1; exit }')
 
 if [[ -n "$existing" ]]; then
     echo "ALREADY_EXISTS:${existing}"
