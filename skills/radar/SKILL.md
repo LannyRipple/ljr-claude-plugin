@@ -103,6 +103,13 @@ most. `CronCreate` jobs auto-expire after 7 days (weekly jobs fire only once bef
 so they are a poor fit for open-ended monitoring or reminders that need to persist until
 explicitly resolved. When in doubt, put it in the memory file.
 
+## Gmail Check
+
+When building the agenda (date check or "what's on the agenda"), read
+`references/gmail-check.md` and run both searches described there. Add the results
+as a GMAIL section in the agenda content before displaying. If both categories are
+empty, omit the section.
+
 ## Agenda Display (tmux — Show-and-Go Pane)
 
 MUST present the date-check and reminder output in a show-and-go pane opened above Claude

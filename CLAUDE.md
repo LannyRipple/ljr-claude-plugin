@@ -40,7 +40,7 @@ updated through the plugin system — **do not copy files directly into `~/.clau
 
 To deploy a change:
 1. Edit skills in `./skills/`
-2. Bump the version in `.claude-plugin/plugin.json`
+2. Bump the version: `scripts/bump-version.sh` (default: patch). Do NOT edit `plugin.json` by hand — the script has a double-bump guard.
 3. Commit and push to GitHub
 4. Restart the Claude Code session — it will auto-update from the marketplace on startup
 
