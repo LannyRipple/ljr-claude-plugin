@@ -103,6 +103,12 @@ most. `CronCreate` jobs auto-expire after 7 days (weekly jobs fire only once bef
 so they are a poor fit for open-ended monitoring or reminders that need to persist until
 explicitly resolved. When in doubt, put it in the memory file.
 
+## Calendar Check
+
+When building the agenda, read `references/calendar-check.md` and fetch today's
+calendar events. Add the results as a CALENDAR section in the agenda content before
+displaying. If no events survive filtering, omit the section.
+
 ## Gmail Check
 
 When building the agenda (date check or "what's on the agenda"), read
