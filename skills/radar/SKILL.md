@@ -103,6 +103,12 @@ most. `CronCreate` jobs auto-expire after 7 days (weekly jobs fire only once bef
 so they are a poor fit for open-ended monitoring or reminders that need to persist until
 explicitly resolved. When in doubt, put it in the memory file.
 
+## GUS Tickets
+
+When building the agenda, read `references/gus-tickets.md`. If any monitored GUS
+tickets are due for a check today based on their cadence, query each one and add the
+results as a GUS TICKETS section in the agenda. If no tickets are due, omit the section.
+
 ## Calendar Check
 
 When building the agenda, read `references/calendar-check.md` and fetch today's
