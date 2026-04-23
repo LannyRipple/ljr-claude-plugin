@@ -17,7 +17,9 @@ Drop: file contents, resolved errors, build logs, tool call details.
 
 Add any additional instructions to carry on work that might be currently ongoing.
 The context can fill mid-process so compaction won't always be happening at a
-nice quiet point between tasks.
+nice quiet point between tasks. If work was in progress at compaction time, state
+the next concrete action explicitly — not just the open question, but the specific
+step that should happen first on resume.
 
 If any tmux display panes were opened during this session (via using-tmux or dev-panes),
 include a section in the instructions that enumerates each pane — its pane ID (`%N`), what
