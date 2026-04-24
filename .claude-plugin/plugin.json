@@ -1,7 +1,7 @@
 {
   "name": "ljr-claude-plugin",
   "description": "Claude artifacts useful for Lanny",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "author": {
     "name": "Lanny Ripple"
   }
