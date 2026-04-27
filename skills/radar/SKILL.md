@@ -124,6 +124,10 @@ empty, omit the section.
 
 ## Agenda Display (tmux — Show-and-Go Pane)
 
+MUST run `date` before building the agenda to get the current date. Do not rely on
+agent context or `last-date-check` — these can be stale across long sessions. Use the
+system date for the agenda header, reminder evaluation, and GUS cadence checks.
+
 MUST present the date-check and reminder output in a show-and-go pane opened above Claude
 Code. This is Workflow 3 (show-and-go) from the `using-tmux` skill — refer to
 `references/workflow-3-show-and-go.md` in that skill for the full pattern. All tmux
