@@ -58,5 +58,25 @@
       "decision_summary": "Added paragraph to compaction-instructions/SKILL.md instructing it to enumerate active tmux panes (ID, content, workflow type) in the /compact message"
     },
     "created_at": "2026-04-21T23:15:59.171Z"
+  },
+  {
+    "id": "01KQ7FV4YWH3GWZTE5DE6TAW1Y",
+    "source": "01KQ7FV4YV4JKYPTQM7XNHXSTG",
+    "target": "01KQ7FV4YSWD939FEM2S7KBBVA",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added new section 'Referencing Shared Plugin Resources' to skill-construction-guidance.md rather than SKILL.md"
+    },
+    "created_at": "2026-04-27T12:50:18.204Z"
+  },
+  {
+    "id": "01KQ7FV501MYQGD1FTCGYQ21XR",
+    "source": "01KQ7FV4YV4JKYPTQM7XNHXSTG",
+    "target": "01KQ7FV4ZZY8DY872YD2G59E6T",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Placed the new section immediately after the intro block and before 'Writing Effective Descriptions'"
+    },
+    "created_at": "2026-04-27T12:50:18.241Z"
   }
 ]

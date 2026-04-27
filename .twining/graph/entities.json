@@ -103,5 +103,37 @@
     },
     "created_at": "2026-04-21T23:15:59.169Z",
     "updated_at": "2026-04-21T23:15:59.169Z"
+  },
+  {
+    "id": "01KQ7FV4YSWD939FEM2S7KBBVA",
+    "name": "01KQ7FV4Y45SXB66A5YFYAXR4D",
+    "type": "concept",
+    "properties": {
+      "summary": "Added new section 'Referencing Shared Plugin Resources' to skill-construction-guidance.md rather than SKILL.md",
+      "scope": "skills/skill-review/"
+    },
+    "created_at": "2026-04-27T12:50:18.201Z",
+    "updated_at": "2026-04-27T12:50:18.201Z"
+  },
+  {
+    "id": "01KQ7FV4YV4JKYPTQM7XNHXSTG",
+    "name": "skills/skill-review/references/skill-construction-guidance.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/skill-review/"
+    },
+    "created_at": "2026-04-27T12:50:18.203Z",
+    "updated_at": "2026-04-27T12:50:18.240Z"
+  },
+  {
+    "id": "01KQ7FV4ZZY8DY872YD2G59E6T",
+    "name": "01KQ7FV4YX10G7MRJJCRH8EGDY",
+    "type": "concept",
+    "properties": {
+      "summary": "Placed the new section immediately after the intro block and before 'Writing Effective Descriptions'",
+      "scope": "skills/skill-review/"
+    },
+    "created_at": "2026-04-27T12:50:18.239Z",
+    "updated_at": "2026-04-27T12:50:18.239Z"
   }
 ]

@@ -69,5 +69,33 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KQ7FV4Y45SXB66A5YFYAXR4D",
+    "timestamp": "2026-04-27T12:50:18.181Z",
+    "domain": "architecture",
+    "scope": "skills/skill-review/",
+    "summary": "Added new section 'Referencing Shared Plugin Resources' to skill-construction-guidance.md rather than SKILL.md",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/skill-review/references/skill-construction-guidance.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQ7FV4YX10G7MRJJCRH8EGDY",
+    "timestamp": "2026-04-27T12:50:18.205Z",
+    "domain": "architecture",
+    "scope": "skills/skill-review/",
+    "summary": "Placed the new section immediately after the intro block and before 'Writing Effective Descriptions'",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/skill-review/references/skill-construction-guidance.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]

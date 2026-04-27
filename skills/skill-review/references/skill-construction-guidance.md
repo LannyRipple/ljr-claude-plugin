@@ -17,6 +17,35 @@ This document covers the opinionated patterns and decisions the official docs le
 
 ---
 
+## Referencing Shared Plugin Resources
+
+When a skill needs to reference a file that is shared across multiple skills — such as a
+top-level `references/` file or a `scripts/` utility — do not copy that file into each
+skill's directory. Instead, use the `${CLAUDE_PLUGIN_ROOT}` variable.
+
+`${CLAUDE_PLUGIN_ROOT}` expands to the plugin's installation directory at runtime and is
+substituted inline anywhere it appears in skill content. Because the plugin is copied to
+a cache directory on install, only paths within the plugin root are guaranteed to resolve.
+
+**When to use it:**
+- A shared reference document lives at the plugin root (e.g., `references/style-guide.md`)
+- A script or tool in the plugin's `scripts/` or `bin/` directory is called from multiple skills
+
+**Example — reading a shared reference file:**
+```
+Read the style guide at `${CLAUDE_PLUGIN_ROOT}/references/style-guide.md` before drafting output.
+```
+
+**Example — invoking a shared script:**
+```bash
+${CLAUDE_PLUGIN_ROOT}/scripts/validate.sh "$1"
+```
+
+Do not use `${CLAUDE_PLUGIN_ROOT}` for files that belong to only one skill — those should
+live in that skill's own directory and be referenced with a relative path or `@filename` syntax.
+
+---
+
 ## Writing Effective Descriptions
 
 `description` is the primary triggering mechanism — Claude decides whether to load this

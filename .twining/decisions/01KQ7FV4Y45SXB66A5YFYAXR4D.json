@@ -1,0 +1,29 @@
+{
+  "agent_id": "main",
+  "domain": "architecture",
+  "scope": "skills/skill-review/",
+  "summary": "Added new section 'Referencing Shared Plugin Resources' to skill-construction-guidance.md rather than SKILL.md",
+  "context": "Added CLAUDE_PLUGIN_ROOT documentation to skill-construction-guidance.md in the skill-review skill.",
+  "rationale": "it belongs in the construction guidance because that's the authoritative reference for skill authoring patterns, and SKILL.md delegates there for Workflow 2.",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "SKILL.md",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/skill-review/references/skill-construction-guidance.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQ7FV4Y45SXB66A5YFYAXR4D",
+  "timestamp": "2026-04-27T12:50:18.181Z",
+  "status": "active"
+}

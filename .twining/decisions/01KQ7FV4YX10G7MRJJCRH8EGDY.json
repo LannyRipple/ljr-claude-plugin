@@ -1,0 +1,22 @@
+{
+  "agent_id": "main",
+  "domain": "architecture",
+  "scope": "skills/skill-review/",
+  "summary": "Placed the new section immediately after the intro block and before 'Writing Effective Descriptions'",
+  "context": "Added CLAUDE_PLUGIN_ROOT documentation to skill-construction-guidance.md in the skill-review skill.",
+  "rationale": "shared resource patterns are structural/architectural knowledge that should be available before any other authoring guidance is read.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/skill-review/references/skill-construction-guidance.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQ7FV4YX10G7MRJJCRH8EGDY",
+  "timestamp": "2026-04-27T12:50:18.205Z",
+  "status": "active"
+}
