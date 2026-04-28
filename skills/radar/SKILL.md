@@ -109,12 +109,6 @@ When building the agenda, read `references/gus-tickets.md`. If any monitored GUS
 tickets are due for a check today based on their cadence, query each one and add the
 results as a GUS TICKETS section in the agenda. If no tickets are due, omit the section.
 
-## Calendar Check
-
-When building the agenda, read `references/calendar-check.md` and fetch today's
-calendar events. Add the results as a CALENDAR section in the agenda content before
-displaying. If no events survive filtering, omit the section.
-
 ## Gmail Check
 
 When building the agenda (date check or "what's on the agenda"), read
@@ -134,14 +128,17 @@ Code. This is Workflow 3 (show-and-go) from the `using-tmux` skill — refer to
 commands require `dangerouslyDisableSandbox: true`.
 
 **Displaying the agenda:**
-1. Write the agenda text to a temp file (use `$TMPDIR`):
+1. Write the agenda text to `~/tmp/radar-agenda.txt` using `dangerouslyDisableSandbox: true`.
+   Do NOT use `$TMPDIR` — `printf` writes to `$TMPDIR` are silently dropped by the sandbox
+   even when sandbox bypass is not set, leaving stale content. Use the explicit path:
 ```bash
-printf '\n=== Radar Agenda ===\n\n{CONTENT}\n' > "$TMPDIR/radar-agenda.txt"
+printf '\n=== Radar Agenda ===\n\n{CONTENT}\n' > /Users/lripple/tmp/radar-agenda.txt
 ```
-2. Open a show-and-go pane above Claude Code:
+2. Open a show-and-go pane above Claude Code using `cat + read` (not `less` — `less` exits
+   immediately in the new pane's shell due to PATH/env issues):
 ```bash
 tmux split-window -bv -t "$TMUX_PANE" \
-  'cat "$TMPDIR/radar-agenda.txt"; echo; read -p "[Press Enter to close]"'
+  'cat /Users/lripple/tmp/radar-agenda.txt; echo; read -p "[Press Enter to close]"'
 ```
 
 The pane closes when the user presses Enter, reclaiming screen space. No announce-and-confirm
