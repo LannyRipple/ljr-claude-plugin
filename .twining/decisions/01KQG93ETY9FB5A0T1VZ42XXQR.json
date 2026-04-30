@@ -1,0 +1,23 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/notify-me/",
+  "summary": "Dropped the sleep fallback entirely",
+  "context": "Rewrote notify-me skill Workflow 2 to use launchd instead of `at`/`sleep`. Added Workflow 3 (list pending notifications) and Workflow 4 (cancel a notification). Bumped plugin version 1.0.29 → 1.0.30.",
+  "rationale": "launchd is universally available on macOS and the fallback added complexity without meaningful benefit.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/notify-me/SKILL.md",
+    ".claude-plugin/plugin.json"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQG93ETY9FB5A0T1VZ42XXQR",
+  "timestamp": "2026-04-30T22:45:40.318Z",
+  "status": "active"
+}

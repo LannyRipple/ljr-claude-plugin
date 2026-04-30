@@ -1,0 +1,23 @@
+{
+  "agent_id": "main",
+  "domain": "data-model",
+  "scope": "skills/notify-me/",
+  "summary": "Named launchd jobs local.claude-notify.YYYYMMDDHHmm (fire time, zero-padded)",
+  "context": "Rewrote notify-me skill Workflow 2 to use launchd instead of `at`/`sleep`. Added Workflow 3 (list pending notifications) and Workflow 4 (cancel a notification). Bumped plugin version 1.0.29 → 1.0.30.",
+  "rationale": "self-describing, sortable, and consistent across Claude sessions so any instance can list or cancel jobs created by another.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/notify-me/SKILL.md",
+    ".claude-plugin/plugin.json"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQG93EPR368ETNMZMT08TBEH",
+  "timestamp": "2026-04-30T22:45:40.184Z",
+  "status": "active"
+}

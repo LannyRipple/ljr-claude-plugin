@@ -99,10 +99,10 @@
     "name": ".claude-plugin/plugin.json",
     "type": "file",
     "properties": {
-      "scope": "skills/compaction-instructions/"
+      "scope": "skills/notify-me/"
     },
     "created_at": "2026-04-21T23:15:59.169Z",
-    "updated_at": "2026-04-21T23:15:59.169Z"
+    "updated_at": "2026-04-30T22:45:40.368Z"
   },
   {
     "id": "01KQ7FV4YSWD939FEM2S7KBBVA",
@@ -135,5 +135,103 @@
     },
     "created_at": "2026-04-27T12:50:18.239Z",
     "updated_at": "2026-04-27T12:50:18.239Z"
+  },
+  {
+    "id": "01KQG93EPGZ7P9FKME3KVKY9PT",
+    "name": "01KQG93ENN137R2V4WYTBFVPNB",
+    "type": "concept",
+    "properties": {
+      "summary": "Chose launchd StartCalendarInterval over `at`",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T22:45:40.176Z",
+    "updated_at": "2026-04-30T22:45:40.176Z"
+  },
+  {
+    "id": "01KQG93EPJHPMD06N20S3YFDTM",
+    "name": "skills/notify-me/SKILL.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T22:45:40.178Z",
+    "updated_at": "2026-04-30T23:00:07.324Z"
+  },
+  {
+    "id": "01KQG93EQPN149KMEXTXS14R8V",
+    "name": "01KQG93EPR368ETNMZMT08TBEH",
+    "type": "concept",
+    "properties": {
+      "summary": "Named launchd jobs local.claude-notify.YYYYMMDDHHmm (fire time, zero-padded)",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T22:45:40.214Z",
+    "updated_at": "2026-04-30T22:45:40.214Z"
+  },
+  {
+    "id": "01KQG93ES3MCGC4E2CCXG7VV5M",
+    "name": "01KQG93EQX3X70MFQABBC571FW",
+    "type": "concept",
+    "properties": {
+      "summary": "Stored helper scripts in ~/.claude-notify/ alongside plists in ~/Library/LaunchAgents/",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T22:45:40.259Z",
+    "updated_at": "2026-04-30T22:45:40.259Z"
+  },
+  {
+    "id": "01KQG93ETRJ8FKFT2BGTY0HWYF",
+    "name": "01KQG93ESD4QZZX1CG7DB30DXH",
+    "type": "concept",
+    "properties": {
+      "summary": "Scripts self-clean on fire (unload plist + rm both files) to avoid stale LaunchAgents accumulating over time.",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T22:45:40.312Z",
+    "updated_at": "2026-04-30T22:45:40.312Z"
+  },
+  {
+    "id": "01KQG93EWC45CC1XZXK58HJ3SS",
+    "name": "01KQG93ETY9FB5A0T1VZ42XXQR",
+    "type": "concept",
+    "properties": {
+      "summary": "Dropped the sleep fallback entirely",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T22:45:40.364Z",
+    "updated_at": "2026-04-30T22:45:40.364Z"
+  },
+  {
+    "id": "01KQG9XXDMNNPVPEJNMQQAAK76",
+    "name": "01KQG9XXC8806XC3J91BY87FHT",
+    "type": "concept",
+    "properties": {
+      "summary": "Kept version at 1.0.30 rather than bumping again",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:00:07.220Z",
+    "updated_at": "2026-04-30T23:00:07.220Z"
+  },
+  {
+    "id": "01KQG9XXF3AKSAR75KQ0Y2ZVMY",
+    "name": "01KQG9XXDQV4GDARFZZRF4ZBP6",
+    "type": "concept",
+    "properties": {
+      "summary": "Consolidated dangerouslyDisableSandbox into a single top-level Sandbox Requirement section rather than repeating rationale four times.",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:00:07.267Z",
+    "updated_at": "2026-04-30T23:00:07.267Z"
+  },
+  {
+    "id": "01KQG9XXGVFTFVX3ECKJB5N8WZ",
+    "name": "01KQG9XXF7NG5CATRNG8P9TG9Z",
+    "type": "concept",
+    "properties": {
+      "summary": "Excluded two sub-agent false-positive findings about ${LABEL} being undefined at runtime",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:00:07.323Z",
+    "updated_at": "2026-04-30T23:00:07.323Z"
   }
 ]

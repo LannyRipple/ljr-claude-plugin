@@ -97,5 +97,122 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KQG93ENN137R2V4WYTBFVPNB",
+    "timestamp": "2026-04-30T22:45:40.149Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Chose launchd StartCalendarInterval over `at`",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQG93EPR368ETNMZMT08TBEH",
+    "timestamp": "2026-04-30T22:45:40.184Z",
+    "domain": "data-model",
+    "scope": "skills/notify-me/",
+    "summary": "Named launchd jobs local.claude-notify.YYYYMMDDHHmm (fire time, zero-padded)",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQG93EQX3X70MFQABBC571FW",
+    "timestamp": "2026-04-30T22:45:40.221Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Stored helper scripts in ~/.claude-notify/ alongside plists in ~/Library/LaunchAgents/",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQG93ESD4QZZX1CG7DB30DXH",
+    "timestamp": "2026-04-30T22:45:40.269Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Scripts self-clean on fire (unload plist + rm both files) to avoid stale LaunchAgents accumulating over time.",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQG93ETY9FB5A0T1VZ42XXQR",
+    "timestamp": "2026-04-30T22:45:40.318Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Dropped the sleep fallback entirely",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQG9XXC8806XC3J91BY87FHT",
+    "timestamp": "2026-04-30T23:00:07.177Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Kept version at 1.0.30 rather than bumping again",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQG9XXDQV4GDARFZZRF4ZBP6",
+    "timestamp": "2026-04-30T23:00:07.223Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Consolidated dangerouslyDisableSandbox into a single top-level Sandbox Requirement section rather than repeating rationale four times.",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQG9XXF7NG5CATRNG8P9TG9Z",
+    "timestamp": "2026-04-30T23:00:07.271Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Excluded two sub-agent false-positive findings about ${LABEL} being undefined at runtime",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]

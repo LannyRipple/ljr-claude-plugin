@@ -1,0 +1,22 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/notify-me/",
+  "summary": "Excluded two sub-agent false-positive findings about ${LABEL} being undefined at runtime",
+  "context": "Applied 12-issue review to notify-me skill: bug fixes, Requirement Levels preamble, zero-padded variables, consolidated sandbox rationale, heredoc comments, escaping reminders.",
+  "rationale": "both misread unquoted heredoc expansion behavior.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/notify-me/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQG9XXF7NG5CATRNG8P9TG9Z",
+  "timestamp": "2026-04-30T23:00:07.271Z",
+  "status": "active"
+}

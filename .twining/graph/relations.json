@@ -78,5 +78,135 @@
       "decision_summary": "Placed the new section immediately after the intro block and before 'Writing Effective Descriptions'"
     },
     "created_at": "2026-04-27T12:50:18.241Z"
+  },
+  {
+    "id": "01KQG93EPMWP0JNTNSEG3FSJP7",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQG93EPGZ7P9FKME3KVKY9PT",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Chose launchd StartCalendarInterval over `at`"
+    },
+    "created_at": "2026-04-30T22:45:40.180Z"
+  },
+  {
+    "id": "01KQG93EPQT0JA6SYBSC5A3TP6",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQG93EPGZ7P9FKME3KVKY9PT",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Chose launchd StartCalendarInterval over `at`"
+    },
+    "created_at": "2026-04-30T22:45:40.183Z"
+  },
+  {
+    "id": "01KQG93EQS16JPBJ92DH81KGX2",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQG93EQPN149KMEXTXS14R8V",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Named launchd jobs local.claude-notify.YYYYMMDDHHmm (fire time, zero-padded)"
+    },
+    "created_at": "2026-04-30T22:45:40.217Z"
+  },
+  {
+    "id": "01KQG93EQW6E45R0GFN5CME49E",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQG93EQPN149KMEXTXS14R8V",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Named launchd jobs local.claude-notify.YYYYMMDDHHmm (fire time, zero-padded)"
+    },
+    "created_at": "2026-04-30T22:45:40.220Z"
+  },
+  {
+    "id": "01KQG93ES6R7YFXJ7QP77KN7BR",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQG93ES3MCGC4E2CCXG7VV5M",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Stored helper scripts in ~/.claude-notify/ alongside plists in ~/Library/LaunchAgents/"
+    },
+    "created_at": "2026-04-30T22:45:40.262Z"
+  },
+  {
+    "id": "01KQG93ESB9QR9HFK5KZHFPC0H",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQG93ES3MCGC4E2CCXG7VV5M",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Stored helper scripts in ~/.claude-notify/ alongside plists in ~/Library/LaunchAgents/"
+    },
+    "created_at": "2026-04-30T22:45:40.268Z"
+  },
+  {
+    "id": "01KQG93ETV1E1G8GG58FJ0YDFH",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQG93ETRJ8FKFT2BGTY0HWYF",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Scripts self-clean on fire (unload plist + rm both files) to avoid stale LaunchAgents accumulating over time."
+    },
+    "created_at": "2026-04-30T22:45:40.315Z"
+  },
+  {
+    "id": "01KQG93ETXMJN9RTF8SBTG9RHV",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQG93ETRJ8FKFT2BGTY0HWYF",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Scripts self-clean on fire (unload plist + rm both files) to avoid stale LaunchAgents accumulating over time."
+    },
+    "created_at": "2026-04-30T22:45:40.317Z"
+  },
+  {
+    "id": "01KQG93EWFD2CXB73NVDHYNSAX",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQG93EWC45CC1XZXK58HJ3SS",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Dropped the sleep fallback entirely"
+    },
+    "created_at": "2026-04-30T22:45:40.367Z"
+  },
+  {
+    "id": "01KQG93EWH32T7K6RS1CCS0NHA",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQG93EWC45CC1XZXK58HJ3SS",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Dropped the sleep fallback entirely"
+    },
+    "created_at": "2026-04-30T22:45:40.369Z"
+  },
+  {
+    "id": "01KQG9XXDP673FCCTZP09MXHJA",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQG9XXDMNNPVPEJNMQQAAK76",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Kept version at 1.0.30 rather than bumping again"
+    },
+    "created_at": "2026-04-30T23:00:07.222Z"
+  },
+  {
+    "id": "01KQG9XXF6XMWD09TA025XG5PG",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQG9XXF3AKSAR75KQ0Y2ZVMY",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Consolidated dangerouslyDisableSandbox into a single top-level Sandbox Requirement section rather than repeating rationale four times."
+    },
+    "created_at": "2026-04-30T23:00:07.270Z"
+  },
+  {
+    "id": "01KQG9XXGXX3BRYWDDHF9DNG1P",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQG9XXGVFTFVX3ECKJB5N8WZ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Excluded two sub-agent false-positive findings about ${LABEL} being undefined at runtime"
+    },
+    "created_at": "2026-04-30T23:00:07.326Z"
   }
 ]
