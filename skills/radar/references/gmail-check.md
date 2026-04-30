@@ -36,6 +36,20 @@ a human's name? Discard if:
 Keep if: a real person appears to be writing something specific to Lanny — a question,
 a request, a heads-up, something that warrants a reply.
 
+### Stage 4 — Memory relevance rescue
+
+After Stage 3, make one pass back over messages discarded by Stage 2 (calendar
+invitations only — `Invitation:` / `Updated invitation:`). Re-admit any whose subject
+matter connects to a project, person, technology, or topic currently active in the
+radar memory file.
+
+Rationale: most calendar invitations are noise, but an occasional invite lands on
+something Lanny is actively working on and would want flagged. This is a low-hit
+pass — when in doubt, leave it discarded. Only rescue it if the connection is clear
+and specific.
+
+Present rescued invitations under a separate **Notable Invites** subsection in GMAIL.
+
 ## Search 1 — Promotion / Focal Requests
 
 Query: `is:unread (promotion OR "focal review" OR calibration OR "provide input" OR "360 feedback") from:@salesforce.com newer_than:7d`
@@ -63,4 +77,6 @@ GMAIL
     [Apr 19] From: Jordan Sarkodie — Re: Promo input for Smriti
   Direct Mail
     [Apr 20] From: Richard Chang — Error arch question
+  Notable Invites
+    [Apr 28] From: Ben Siggers — Monorepo for claude skills/plugins
 ```
