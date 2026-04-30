@@ -1,0 +1,31 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/radar/",
+  "summary": "Show-and-go built after user claims meetings, not waited on",
+  "context": "Re-enabled calendar in radar skill. Added meeting-notifiers.md: post calendar in chat, user claims meetings, schedule 5-min notifications, build show-and-go with claimed/team/personal only.",
+  "rationale": "Radar posts calendar in chat, schedules notifiers, then opens pane without waiting for it to close.",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "waited on",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/radar/SKILL.md",
+    "skills/radar/references/calendar-check.md",
+    "skills/radar/references/meeting-notifiers.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQGCEHM7KKNAWKVKFX9X0KK1",
+  "timestamp": "2026-04-30T23:44:09.351Z",
+  "status": "active"
+}

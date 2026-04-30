@@ -300,5 +300,69 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KQGCEHKCB8M0H7S8SP5N84YP",
+    "timestamp": "2026-04-30T23:44:09.324Z",
+    "domain": "deployment",
+    "scope": "skills/radar/",
+    "summary": "Calendar re-enabled despite RSVP visibility gap",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/radar/SKILL.md",
+      "skills/radar/references/calendar-check.md",
+      "skills/radar/references/meeting-notifiers.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQGCEHM7KKNAWKVKFX9X0KK1",
+    "timestamp": "2026-04-30T23:44:09.351Z",
+    "domain": "implementation",
+    "scope": "skills/radar/",
+    "summary": "Show-and-go built after user claims meetings, not waited on",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/radar/SKILL.md",
+      "skills/radar/references/calendar-check.md",
+      "skills/radar/references/meeting-notifiers.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQGCEHN7EZ3SG54ATDQ2W02D",
+    "timestamp": "2026-04-30T23:44:09.383Z",
+    "domain": "implementation",
+    "scope": "skills/radar/",
+    "summary": "Unclaimed new/maybe events treated as declined and omitted from show-and-go",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/radar/SKILL.md",
+      "skills/radar/references/calendar-check.md",
+      "skills/radar/references/meeting-notifiers.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQGCEHPH1N7K68D876BR78B1",
+    "timestamp": "2026-04-30T23:44:09.425Z",
+    "domain": "implementation",
+    "scope": "skills/radar/",
+    "summary": "Notification message format: Starting in 5: {name}, truncated to 60 chars total with ... if needed.",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/radar/SKILL.md",
+      "skills/radar/references/calendar-check.md",
+      "skills/radar/references/meeting-notifiers.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]

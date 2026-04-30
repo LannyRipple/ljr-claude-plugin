@@ -288,5 +288,125 @@
       "decision_summary": "Message embedded directly in plist ProgramArguments"
     },
     "created_at": "2026-04-30T23:24:39.248Z"
+  },
+  {
+    "id": "01KQGCEHM3ZYGX6AZJHCW0YC7F",
+    "source": "01KQGCEHM2RG3NDXM91763ANQR",
+    "target": "01KQGCEHM1BNGF43EWH6MW26EZ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Calendar re-enabled despite RSVP visibility gap"
+    },
+    "created_at": "2026-04-30T23:44:09.347Z"
+  },
+  {
+    "id": "01KQGCEHM5QGDAQNB8YQYEKQ2K",
+    "source": "01KQGCEHM4568H63DHB7S5M0N0",
+    "target": "01KQGCEHM1BNGF43EWH6MW26EZ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Calendar re-enabled despite RSVP visibility gap"
+    },
+    "created_at": "2026-04-30T23:44:09.349Z"
+  },
+  {
+    "id": "01KQGCEHM7KKNAWKVKFX9X0KK0",
+    "source": "01KQGCEHM6TWQNQZ6N60C63H9P",
+    "target": "01KQGCEHM1BNGF43EWH6MW26EZ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Calendar re-enabled despite RSVP visibility gap"
+    },
+    "created_at": "2026-04-30T23:44:09.351Z"
+  },
+  {
+    "id": "01KQGCEHN24KPTWF0K83FZPVV4",
+    "source": "01KQGCEHM2RG3NDXM91763ANQR",
+    "target": "01KQGCEHN0B3XPKNTJGJQ9ZP3J",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Show-and-go built after user claims meetings, not waited on"
+    },
+    "created_at": "2026-04-30T23:44:09.378Z"
+  },
+  {
+    "id": "01KQGCEHN4EBFBKXVHTJ7C24CA",
+    "source": "01KQGCEHM4568H63DHB7S5M0N0",
+    "target": "01KQGCEHN0B3XPKNTJGJQ9ZP3J",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Show-and-go built after user claims meetings, not waited on"
+    },
+    "created_at": "2026-04-30T23:44:09.380Z"
+  },
+  {
+    "id": "01KQGCEHN6E8M69GEJ0SZ6N530",
+    "source": "01KQGCEHM6TWQNQZ6N60C63H9P",
+    "target": "01KQGCEHN0B3XPKNTJGJQ9ZP3J",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Show-and-go built after user claims meetings, not waited on"
+    },
+    "created_at": "2026-04-30T23:44:09.382Z"
+  },
+  {
+    "id": "01KQGCEHPCRXQ2AMBC632BVWDY",
+    "source": "01KQGCEHM2RG3NDXM91763ANQR",
+    "target": "01KQGCEHPA3S1GHPQJCPZSV5DE",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Unclaimed new/maybe events treated as declined and omitted from show-and-go"
+    },
+    "created_at": "2026-04-30T23:44:09.420Z"
+  },
+  {
+    "id": "01KQGCEHPE226JXR6HGAH94BQW",
+    "source": "01KQGCEHM4568H63DHB7S5M0N0",
+    "target": "01KQGCEHPA3S1GHPQJCPZSV5DE",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Unclaimed new/maybe events treated as declined and omitted from show-and-go"
+    },
+    "created_at": "2026-04-30T23:44:09.422Z"
+  },
+  {
+    "id": "01KQGCEHPH1N7K68D876BR78B0",
+    "source": "01KQGCEHM6TWQNQZ6N60C63H9P",
+    "target": "01KQGCEHPA3S1GHPQJCPZSV5DE",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Unclaimed new/maybe events treated as declined and omitted from show-and-go"
+    },
+    "created_at": "2026-04-30T23:44:09.425Z"
+  },
+  {
+    "id": "01KQGCEHQY6V1BTG798AJKPP6P",
+    "source": "01KQGCEHM2RG3NDXM91763ANQR",
+    "target": "01KQGCEHQWYPYKCFJK3ZQJK491",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Notification message format: Starting in 5: {name}, truncated to 60 chars total with ... if needed."
+    },
+    "created_at": "2026-04-30T23:44:09.470Z"
+  },
+  {
+    "id": "01KQGCEHR0SQRMFXC3ZY9YFVE3",
+    "source": "01KQGCEHM4568H63DHB7S5M0N0",
+    "target": "01KQGCEHQWYPYKCFJK3ZQJK491",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Notification message format: Starting in 5: {name}, truncated to 60 chars total with ... if needed."
+    },
+    "created_at": "2026-04-30T23:44:09.472Z"
+  },
+  {
+    "id": "01KQGCEHR3RGGNB02PM22JQ4B6",
+    "source": "01KQGCEHM6TWQNQZ6N60C63H9P",
+    "target": "01KQGCEHQWYPYKCFJK3ZQJK491",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Notification message format: Starting in 5: {name}, truncated to 60 chars total with ... if needed."
+    },
+    "created_at": "2026-04-30T23:44:09.475Z"
   }
 ]

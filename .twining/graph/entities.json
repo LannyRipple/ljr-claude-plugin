@@ -299,5 +299,79 @@
     },
     "created_at": "2026-04-30T23:24:39.245Z",
     "updated_at": "2026-04-30T23:24:39.245Z"
+  },
+  {
+    "id": "01KQGCEHM1BNGF43EWH6MW26EZ",
+    "name": "01KQGCEHKCB8M0H7S8SP5N84YP",
+    "type": "concept",
+    "properties": {
+      "summary": "Calendar re-enabled despite RSVP visibility gap",
+      "scope": "skills/radar/"
+    },
+    "created_at": "2026-04-30T23:44:09.345Z",
+    "updated_at": "2026-04-30T23:44:09.345Z"
+  },
+  {
+    "id": "01KQGCEHM2RG3NDXM91763ANQR",
+    "name": "skills/radar/SKILL.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/radar/"
+    },
+    "created_at": "2026-04-30T23:44:09.346Z",
+    "updated_at": "2026-04-30T23:44:09.469Z"
+  },
+  {
+    "id": "01KQGCEHM4568H63DHB7S5M0N0",
+    "name": "skills/radar/references/calendar-check.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/radar/"
+    },
+    "created_at": "2026-04-30T23:44:09.348Z",
+    "updated_at": "2026-04-30T23:44:09.471Z"
+  },
+  {
+    "id": "01KQGCEHM6TWQNQZ6N60C63H9P",
+    "name": "skills/radar/references/meeting-notifiers.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/radar/"
+    },
+    "created_at": "2026-04-30T23:44:09.350Z",
+    "updated_at": "2026-04-30T23:44:09.474Z"
+  },
+  {
+    "id": "01KQGCEHN0B3XPKNTJGJQ9ZP3J",
+    "name": "01KQGCEHM7KKNAWKVKFX9X0KK1",
+    "type": "concept",
+    "properties": {
+      "summary": "Show-and-go built after user claims meetings, not waited on",
+      "scope": "skills/radar/"
+    },
+    "created_at": "2026-04-30T23:44:09.376Z",
+    "updated_at": "2026-04-30T23:44:09.376Z"
+  },
+  {
+    "id": "01KQGCEHPA3S1GHPQJCPZSV5DE",
+    "name": "01KQGCEHN7EZ3SG54ATDQ2W02D",
+    "type": "concept",
+    "properties": {
+      "summary": "Unclaimed new/maybe events treated as declined and omitted from show-and-go",
+      "scope": "skills/radar/"
+    },
+    "created_at": "2026-04-30T23:44:09.418Z",
+    "updated_at": "2026-04-30T23:44:09.418Z"
+  },
+  {
+    "id": "01KQGCEHQWYPYKCFJK3ZQJK491",
+    "name": "01KQGCEHPH1N7K68D876BR78B1",
+    "type": "concept",
+    "properties": {
+      "summary": "Notification message format: Starting in 5: {name}, truncated to 60 chars total with ... if needed.",
+      "scope": "skills/radar/"
+    },
+    "created_at": "2026-04-30T23:44:09.468Z",
+    "updated_at": "2026-04-30T23:44:09.468Z"
   }
 ]

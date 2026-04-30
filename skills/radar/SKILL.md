@@ -103,6 +103,13 @@ most. `CronCreate` jobs auto-expire after 7 days (weekly jobs fire only once bef
 so they are a poor fit for open-ended monitoring or reminders that need to persist until
 explicitly resolved. When in doubt, put it in the memory file.
 
+## Calendar and Meeting Notifiers
+
+When building the agenda, read `references/calendar-check.md` and
+`references/meeting-notifiers.md`. Follow the meeting-notifiers procedure in full —
+it controls when the calendar is posted, how meeting notifications are scheduled, and
+what gets included in the show-and-go.
+
 ## GUS Tickets
 
 When building the agenda, read `references/gus-tickets.md`. If any monitored GUS

@@ -1,12 +1,5 @@
 # Calendar Check Procedure
 
-<!-- NOT LINKED: Removed from SKILL.md pending better calendar tooling. The blocking
-     gap is per-attendee RSVP visibility — without knowing whether Lanny specifically
-     accepted/declined/tentatively accepted, status defaults to "new" for everything,
-     which isn't worth the tokens. Re-link when the calendar API exposes the invite
-     list with individual yes/no/maybe status. -->
-
-
 Run this during agenda building. Use `mcp__plugin_google_google__calendar_events` to
 fetch today's events across all calendars.
 

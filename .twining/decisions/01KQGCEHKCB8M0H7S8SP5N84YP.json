@@ -1,0 +1,24 @@
+{
+  "agent_id": "main",
+  "domain": "deployment",
+  "scope": "skills/radar/",
+  "summary": "Calendar re-enabled despite RSVP visibility gap",
+  "context": "Re-enabled calendar in radar skill. Added meeting-notifiers.md: post calendar in chat, user claims meetings, schedule 5-min notifications, build show-and-go with claimed/team/personal only.",
+  "rationale": "user accepts imperfect status values; the meeting-notifiers claim step compensates by letting user declare attendance explicitly.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/radar/SKILL.md",
+    "skills/radar/references/calendar-check.md",
+    "skills/radar/references/meeting-notifiers.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQGCEHKCB8M0H7S8SP5N84YP",
+  "timestamp": "2026-04-30T23:44:09.324Z",
+  "status": "active"
+}

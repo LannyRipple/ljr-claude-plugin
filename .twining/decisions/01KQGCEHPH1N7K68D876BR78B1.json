@@ -1,0 +1,24 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/radar/",
+  "summary": "Notification message format: Starting in 5: {name}, truncated to 60 chars total with ... if needed.",
+  "context": "Re-enabled calendar in radar skill. Added meeting-notifiers.md: post calendar in chat, user claims meetings, schedule 5-min notifications, build show-and-go with claimed/team/personal only.",
+  "rationale": "Notification message format: Starting in 5: {name}, truncated to 60 chars total with ... if needed.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/radar/SKILL.md",
+    "skills/radar/references/calendar-check.md",
+    "skills/radar/references/meeting-notifiers.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQGCEHPH1N7K68D876BR78B1",
+  "timestamp": "2026-04-30T23:44:09.425Z",
+  "status": "active"
+}
