@@ -1,0 +1,29 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/notify-me/",
+  "summary": "Message embedded directly in plist ProgramArguments",
+  "context": "Dropped bash wrapper from notification plists (osascript direct). Added Workflow 5 watchdog (weekly cleanup). Updated Workflows 3/4 for no companion script file.",
+  "rationale": "Workflow 3 extracts from plist via grep rather than companion .sh file.",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "companion .sh file",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/notify-me/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQGBATVJ9C819ZQM93V28SMG",
+  "timestamp": "2026-04-30T23:24:39.154Z",
+  "status": "active"
+}

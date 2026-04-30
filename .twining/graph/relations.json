@@ -208,5 +208,85 @@
       "decision_summary": "Excluded two sub-agent false-positive findings about ${LABEL} being undefined at runtime"
     },
     "created_at": "2026-04-30T23:00:07.326Z"
+  },
+  {
+    "id": "01KQGARMAGBKCXKDXN8NCB5EDK",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQGARMAEZJD70G5E780BXTZS",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added 2-minute buffer when requested fire time is less than 3 minutes away"
+    },
+    "created_at": "2026-04-30T23:14:42.640Z"
+  },
+  {
+    "id": "01KQGARMAJPQDKKGV89QS5HN3Y",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQGARMAEZJD70G5E780BXTZS",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added 2-minute buffer when requested fire time is less than 3 minutes away"
+    },
+    "created_at": "2026-04-30T23:14:42.642Z"
+  },
+  {
+    "id": "01KQGARMCEVYZ3C2V54JAN7401",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQGARMCC6WMXZ2P0548QZTTC",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Kept bash wrapper for self-cleanup despite macOS background activity prompt"
+    },
+    "created_at": "2026-04-30T23:14:42.702Z"
+  },
+  {
+    "id": "01KQGARMCGAJHNZS1YGANKDTQA",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQGARMCC6WMXZ2P0548QZTTC",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Kept bash wrapper for self-cleanup despite macOS background activity prompt"
+    },
+    "created_at": "2026-04-30T23:14:42.704Z"
+  },
+  {
+    "id": "01KQGBATPTPJ4FW5QZSX4TZZZQ",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQGBATPRAHA23DGCT7FD69GB",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Dropped bash wrapper from notification plists"
+    },
+    "created_at": "2026-04-30T23:24:39.002Z"
+  },
+  {
+    "id": "01KQGBATRY07H6WZDWDQE04CFV",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQGBATRWMGSGHNCMWCSQRERT",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Moved cleanup to a weekly watchdog (Workflow 5)"
+    },
+    "created_at": "2026-04-30T23:24:39.070Z"
+  },
+  {
+    "id": "01KQGBATVHJNGYMJH909X16FP0",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQGBATVE9CWSZWNPDZG01BXT",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Watchdog fires every Sunday at 3AM with RunAtLoad:true"
+    },
+    "created_at": "2026-04-30T23:24:39.153Z"
+  },
+  {
+    "id": "01KQGBATYG9TGPHP33XZ627NE7",
+    "source": "01KQG93EPJHPMD06N20S3YFDTM",
+    "target": "01KQGBATYD0MVT0CV2G7A8DN4S",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Message embedded directly in plist ProgramArguments"
+    },
+    "created_at": "2026-04-30T23:24:39.248Z"
   }
 ]

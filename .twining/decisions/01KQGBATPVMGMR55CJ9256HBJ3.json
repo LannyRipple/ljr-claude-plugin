@@ -1,0 +1,22 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/notify-me/",
+  "summary": "Moved cleanup to a weekly watchdog (Workflow 5)",
+  "context": "Dropped bash wrapper from notification plists (osascript direct). Added Workflow 5 watchdog (weekly cleanup). Updated Workflows 3/4 for no companion script file.",
+  "rationale": "bash registers once at login, prompting only on first install.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/notify-me/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQGBATPVMGMR55CJ9256HBJ3",
+  "timestamp": "2026-04-30T23:24:39.003Z",
+  "status": "active"
+}

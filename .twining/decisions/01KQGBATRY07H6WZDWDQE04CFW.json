@@ -1,0 +1,22 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/notify-me/",
+  "summary": "Watchdog fires every Sunday at 3AM with RunAtLoad:true",
+  "context": "Dropped bash wrapper from notification plists (osascript direct). Added Workflow 5 watchdog (weekly cleanup). Updated Workflows 3/4 for no companion script file.",
+  "rationale": "cleans stale plists on first install immediately.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/notify-me/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQGBATRY07H6WZDWDQE04CFW",
+  "timestamp": "2026-04-30T23:24:39.071Z",
+  "status": "active"
+}

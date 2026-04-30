@@ -102,7 +102,7 @@
       "scope": "skills/notify-me/"
     },
     "created_at": "2026-04-21T23:15:59.169Z",
-    "updated_at": "2026-04-30T22:45:40.368Z"
+    "updated_at": "2026-04-30T23:14:42.703Z"
   },
   {
     "id": "01KQ7FV4YSWD939FEM2S7KBBVA",
@@ -155,7 +155,7 @@
       "scope": "skills/notify-me/"
     },
     "created_at": "2026-04-30T22:45:40.178Z",
-    "updated_at": "2026-04-30T23:00:07.324Z"
+    "updated_at": "2026-04-30T23:24:39.247Z"
   },
   {
     "id": "01KQG93EQPN149KMEXTXS14R8V",
@@ -233,5 +233,71 @@
     },
     "created_at": "2026-04-30T23:00:07.323Z",
     "updated_at": "2026-04-30T23:00:07.323Z"
+  },
+  {
+    "id": "01KQGARMAEZJD70G5E780BXTZS",
+    "name": "01KQGARM8QRP6BQNZKZ2PSFXYE",
+    "type": "concept",
+    "properties": {
+      "summary": "Added 2-minute buffer when requested fire time is less than 3 minutes away",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:14:42.638Z",
+    "updated_at": "2026-04-30T23:14:42.638Z"
+  },
+  {
+    "id": "01KQGARMCC6WMXZ2P0548QZTTC",
+    "name": "01KQGARMAKDXBA2R2P1S0KXZ1T",
+    "type": "concept",
+    "properties": {
+      "summary": "Kept bash wrapper for self-cleanup despite macOS background activity prompt",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:14:42.700Z",
+    "updated_at": "2026-04-30T23:14:42.700Z"
+  },
+  {
+    "id": "01KQGBATPRAHA23DGCT7FD69GB",
+    "name": "01KQGBATMPKCMBSRQV0196D0ME",
+    "type": "concept",
+    "properties": {
+      "summary": "Dropped bash wrapper from notification plists",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:24:39.000Z",
+    "updated_at": "2026-04-30T23:24:39.000Z"
+  },
+  {
+    "id": "01KQGBATRWMGSGHNCMWCSQRERT",
+    "name": "01KQGBATPVMGMR55CJ9256HBJ3",
+    "type": "concept",
+    "properties": {
+      "summary": "Moved cleanup to a weekly watchdog (Workflow 5)",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:24:39.068Z",
+    "updated_at": "2026-04-30T23:24:39.068Z"
+  },
+  {
+    "id": "01KQGBATVE9CWSZWNPDZG01BXT",
+    "name": "01KQGBATRY07H6WZDWDQE04CFW",
+    "type": "concept",
+    "properties": {
+      "summary": "Watchdog fires every Sunday at 3AM with RunAtLoad:true",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:24:39.150Z",
+    "updated_at": "2026-04-30T23:24:39.150Z"
+  },
+  {
+    "id": "01KQGBATYD0MVT0CV2G7A8DN4S",
+    "name": "01KQGBATVJ9C819ZQM93V28SMG",
+    "type": "concept",
+    "properties": {
+      "summary": "Message embedded directly in plist ProgramArguments",
+      "scope": "skills/notify-me/"
+    },
+    "created_at": "2026-04-30T23:24:39.245Z",
+    "updated_at": "2026-04-30T23:24:39.245Z"
   }
 ]

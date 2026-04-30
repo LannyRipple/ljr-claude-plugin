@@ -5,9 +5,10 @@ description: >-
   "notify me when done", "notify me when that's done", "let me know when
   finished", "remind me at [time]", "notify me at [time]", "list my
   notifications", "what reminders do I have scheduled", "cancel notification",
-  "remove reminder", or any variant asking to be alerted after a task completes
-  or at a specific time. Four workflows: immediate (fires after current work),
-  scheduled (fires at a clock time), list (shows pending), cancel (removes one).
+  "remove reminder", "install notify watchdog", or any variant asking to be
+  alerted after a task completes or at a specific time. Five workflows:
+  immediate (fires after current work), scheduled (fires at a clock time),
+  list (shows pending), cancel (removes one), install watchdog (one-time setup).
 ---
 
 # Notify Me
@@ -17,9 +18,14 @@ or at a specific time. Scheduled notifications use launchd user agents — no su
 required, survive terminal session closes, and fire on the next wake if the machine
 was asleep or off at the scheduled time.
 
-You MUST escape `{MESSAGE}` before shell interpolation — strip or replace any double
-quotes, single quotes, and backslashes in the message text. Rationale: failing to do
-so breaks `osascript` silently or produces unexpected output.
+Notification plists call `/usr/bin/osascript` directly — no bash wrapper — to avoid
+macOS background activity prompts per notification. A separate watchdog job (Workflow
+5) runs weekly via bash to clean up stale plists; bash registers once at login,
+prompting only on first install.
+
+You MUST escape `{MESSAGE}` before use — strip or replace `"`, `'`, `\`, `&`, `<`,
+and `>` in the message text. Rationale: double quotes break the AppleScript string;
+`&`, `<`, `>` are XML special characters that corrupt the plist.
 
 ## Requirement Levels
 
@@ -34,7 +40,7 @@ Every MUST and SHOULD is paired with a rationale. Read it before deciding to dev
 ## Sandbox Requirement
 
 All workflows require `dangerouslyDisableSandbox: true` — `osascript` needs
-notification system access, and Workflows 2–4 write to `~/Library/LaunchAgents/`
+notification system access, and Workflows 2–5 write to `~/Library/LaunchAgents/`
 and call `launchctl`, both outside the sandbox.
 
 ## Workflow Routing
@@ -45,6 +51,7 @@ and call `launchctl`, both outside the sandbox.
 | "notify me at 2pm", "remind me at [time]", scheduled alert | Workflow 2 — Scheduled |
 | "list my notifications", "what reminders do I have" | Workflow 3 — List |
 | "cancel that notification", "remove my 2pm reminder" | Workflow 4 — Cancel |
+| "install notify watchdog", first-time setup | Workflow 5 — Install Watchdog |
 
 ---
 
@@ -54,7 +61,7 @@ The user wants a notification after the current task finishes. Do the requested 
 first, then fire the notification.
 
 ```bash
-MSG="{MESSAGE}"  # substitute — strip ", ', \ first
+MSG="{MESSAGE}"  # substitute — strip ", ', \, &, <, > first
 osascript -e "display notification \"$MSG\" with title \"Claude Code\" sound name \"Ping\""
 # "Claude Code" — signals task completion initiated by Claude
 ```
@@ -72,8 +79,13 @@ The user wants a notification at a specific clock time.
 
 ### Step 1: Resolve the time and date
 
-Parse the user's time expression (e.g., "1:55pm", "2pm", "14:00") into 24-hour
-integer components:
+If the user specifies a relative time (e.g., "in 1 minute", "in 2 minutes") and the
+resolved fire time is less than 3 minutes from now, add 2 minutes to the fire time
+and tell the user the adjusted time. Rationale: launchd setup takes ~30 seconds and
+a tight window risks missing the scheduled minute entirely.
+
+Parse the user's time expression (e.g., "1:55pm", "2pm", "14:00", "in 5 minutes")
+into 24-hour integer components:
 
 - `{FIRE_HOUR}` — 0–23, no leading zero (used in plist `<integer>`)
 - `{FIRE_MINUTE}` — 0–59, no leading zero (used in plist `<integer>`)
@@ -89,8 +101,11 @@ Also compute zero-padded two-digit forms for use in the label (Step 2):
 - `{FIRE_MINUTE_PAD}` — `{FIRE_MINUTE}` zero-padded to 2 digits
 
 Determine the fire date:
-- If the time today has not yet passed, use today's date.
-- If the time today has already passed, use tomorrow's date and tell the user.
+- Relative day expressions ("in 3 days", "next Thursday", "this Friday"): compute
+  the target calendar date from today's date, then apply the specified time.
+- If no day is specified and the time today has not yet passed, use today's date.
+- If no day is specified and the time today has already passed, use tomorrow's date
+  and tell the user.
 
 If the time is ambiguous (no am/pm, not inferable from context), ask before
 proceeding.
@@ -104,35 +119,21 @@ The label format is:
 Example: `local.claude-notify.202604301430` — 2:30 PM on April 30, 2026.
 
 `{LABEL}` is the full string above with all components substituted. This becomes
-both the launchd label and the plist/script filename.
+both the launchd label and the plist filename.
 
 ### Step 3: Create and load the job
 
-Before executing this bash block, substitute all `{PLACEHOLDER}` values in the block
-text: `{LABEL}` → computed label, `{MESSAGE}` → escaped message text, `{FIRE_MONTH}`
-/ `{FIRE_DAY}` / `{FIRE_HOUR}` / `{FIRE_MINUTE}` → resolved integer components (no
-leading zeros). These are skill placeholders — the shell will not expand them.
+Before executing this bash block, substitute all `{PLACEHOLDER}` values: `{LABEL}`
+→ computed label, `{MESSAGE}` → escaped message text (strip `"`, `'`, `\`, `&`,
+`<`, `>`), `{FIRE_MONTH}` / `{FIRE_DAY}` / `{FIRE_HOUR}` / `{FIRE_MINUTE}` →
+resolved integer components (no leading zeros). These are skill placeholders — the
+shell will not expand them.
 
 ```bash
 LABEL="{LABEL}"
 PLIST="$HOME/Library/LaunchAgents/${LABEL}.plist"
-SCRIPT="$HOME/.claude-notify/${LABEL}.sh"
 
-mkdir -p "$HOME/.claude-notify"
-
-# unquoted heredoc: ${LABEL} expands now (write-time); \$HOME and \$0 are escaped to expand at runtime
-cat > "$SCRIPT" << SCRIPT_EOF
-#!/bin/bash
-MSG="{MESSAGE}"  # substitute — strip ", ', \ first
-osascript -e "display notification \"\$MSG\" with title \"Reminder\" sound name \"Ping\""
-# "Reminder" — signals a user-scheduled alert
-launchctl unload "\$HOME/Library/LaunchAgents/${LABEL}.plist"
-rm -f "\$HOME/Library/LaunchAgents/${LABEL}.plist" "\$0"
-SCRIPT_EOF
-
-chmod +x "$SCRIPT"
-
-# unquoted heredoc: ${LABEL} and ${SCRIPT} expand now (write-time)
+# unquoted heredoc: ${LABEL} expands now (write-time)
 cat > "$PLIST" << PLIST_EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -142,8 +143,9 @@ cat > "$PLIST" << PLIST_EOF
     <string>${LABEL}</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/bin/bash</string>
-        <string>${SCRIPT}</string>
+        <string>/usr/bin/osascript</string>
+        <string>-e</string>
+        <string>display notification "{MESSAGE}" with title "Reminder" sound name "Ping"</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
@@ -163,9 +165,9 @@ PLIST_EOF
 launchctl load "$PLIST"
 ```
 
-`${SCRIPT}` and `${LABEL}` are shell variables defined at the top of this bash
-block; they expand when each heredoc is processed. The `{FIRE_*}` placeholders must
-be substituted manually before executing — they are skill placeholders, not shell
+`${LABEL}` is a shell variable defined at the top of this bash block; it expands
+when the heredoc is processed. The `{FIRE_*}` and `{MESSAGE}` placeholders must be
+substituted manually before executing — they are skill placeholders, not shell
 variables.
 
 Requires sandbox bypass (see above).
@@ -190,8 +192,7 @@ else
   for f in "${files[@]}"; do
     base=$(basename "$f" .plist | sed 's/local\.claude-notify\.//')
     y=${base:0:4} mo=${base:4:2} d=${base:6:2} h=${base:8:2} m=${base:10:2}
-    # MSG extraction assumes no embedded " — guaranteed by Workflow 2 escaping rule
-    msg=$(grep '^MSG=' "$HOME/.claude-notify/$(basename "$f" .plist).sh" 2>/dev/null | head -1 | cut -d'"' -f2)
+    msg=$(grep 'display notification' "$f" | sed 's/.*display notification "\([^"]*\)".*/\1/')
     printf "%s-%s-%s %s:%s — %s\n" "$y" "$mo" "$d" "$h" "$m" "${msg:-[message unknown]}"
   done
 fi
@@ -216,10 +217,9 @@ confirm which one.
 ```bash
 LABEL="{LABEL}"
 PLIST="$HOME/Library/LaunchAgents/${LABEL}.plist"
-SCRIPT="$HOME/.claude-notify/${LABEL}.sh"
 
 launchctl unload "$PLIST" 2>/dev/null
-rm -f "$PLIST" "$SCRIPT"
+rm -f "$PLIST"
 echo "Cancelled: ${LABEL}"
 ```
 
@@ -229,3 +229,91 @@ prefix), not just the timestamp component.
 Requires sandbox bypass (see above).
 
 Confirm to the user which notification was cancelled and at what time it was scheduled.
+
+---
+
+## Workflow 5 — Install Watchdog
+
+Install a weekly cleanup job that removes stale notification plists (those whose
+scheduled time has passed). This is a one-time setup. The watchdog uses bash and
+registers it as a background process once — future weekly runs fire silently without
+prompting.
+
+### Step 1: Check if already installed
+
+```bash
+launchctl list | grep claude-notify-watchdog && echo "Already installed."
+```
+
+If already installed, tell the user and stop. Do not reinstall unless the user
+explicitly asks to update it.
+
+### Step 2: Create the watchdog script
+
+```bash
+mkdir -p "$HOME/.claude-notify"
+
+cat > "$HOME/.claude-notify/watchdog.sh" << 'WATCHDOG_EOF'
+#!/bin/bash
+NOW=$(date +%s)
+shopt -s nullglob
+for plist in "$HOME/Library/LaunchAgents"/local.claude-notify.*.plist; do
+    base=$(basename "$plist" .plist | sed 's/local\.claude-notify\.//')
+    fire=$(date -j -f "%Y%m%d%H%M" "${base}" +%s 2>/dev/null) || continue
+    if [ "$fire" -lt "$NOW" ]; then
+        launchctl unload "$plist" 2>/dev/null
+        rm -f "$plist"
+    fi
+done
+WATCHDOG_EOF
+
+chmod +x "$HOME/.claude-notify/watchdog.sh"
+```
+
+### Step 3: Create and load the watchdog plist
+
+The plist path must contain the user's actual home directory — use the expanded value
+of `$HOME` when writing the plist, not the literal string `$HOME`.
+
+```bash
+WATCHDOG_PLIST="$HOME/Library/LaunchAgents/local.claude-notify-watchdog.plist"
+
+cat > "$WATCHDOG_PLIST" << WPLIST_EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>local.claude-notify-watchdog</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>$HOME/.claude-notify/watchdog.sh</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>0</integer>
+        <key>Hour</key>
+        <integer>3</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+WPLIST_EOF
+
+launchctl load "$WATCHDOG_PLIST"
+```
+
+`$HOME` in the heredoc expands to the actual home directory path at write time
+(unquoted delimiter `WPLIST_EOF`). The watchdog fires every Sunday at 3:00 AM and
+once immediately on first load to clean up any already-stale plists.
+
+Requires sandbox bypass (see above).
+
+### Step 4: Confirm
+
+Tell the user the watchdog is installed and will run weekly (Sundays at 3 AM).

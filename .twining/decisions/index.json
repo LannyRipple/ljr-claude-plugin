@@ -214,5 +214,91 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KQGARM8QRP6BQNZKZ2PSFXYE",
+    "timestamp": "2026-04-30T23:14:42.583Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Added 2-minute buffer when requested fire time is less than 3 minutes away",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQGARMAKDXBA2R2P1S0KXZ1T",
+    "timestamp": "2026-04-30T23:14:42.643Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Kept bash wrapper for self-cleanup despite macOS background activity prompt",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQGBATMPKCMBSRQV0196D0ME",
+    "timestamp": "2026-04-30T23:24:38.934Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Dropped bash wrapper from notification plists",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQGBATPVMGMR55CJ9256HBJ3",
+    "timestamp": "2026-04-30T23:24:39.003Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Moved cleanup to a weekly watchdog (Workflow 5)",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQGBATRY07H6WZDWDQE04CFW",
+    "timestamp": "2026-04-30T23:24:39.071Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Watchdog fires every Sunday at 3AM with RunAtLoad:true",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQGBATVJ9C819ZQM93V28SMG",
+    "timestamp": "2026-04-30T23:24:39.154Z",
+    "domain": "implementation",
+    "scope": "skills/notify-me/",
+    "summary": "Message embedded directly in plist ProgramArguments",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/notify-me/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]
