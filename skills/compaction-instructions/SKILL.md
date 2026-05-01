@@ -26,8 +26,8 @@ nice quiet point between tasks. If work was in progress at compaction time, stat
 the next concrete action explicitly — not just the open question, but the specific
 step that should happen first on resume.
 
-Show the instructions and also write them to /tmp/claude-502/compaction-instructions.md
-overwriting or deleting the file if it already exists.
+Write the instructions to /tmp/claude-502/compaction-instructions.md and then
+copy them to the clipboard with `cat /tmp/claude-502/compaction-instructions.md | pbcopy`.
 
 ---
 
@@ -77,5 +77,5 @@ Using the sub-agent's summary, build the compaction instructions following the
 same format as the Standard Workflow above (retain/drop header, context
 narrative, next concrete action).
 
-Show the instructions and also write them to /tmp/claude-502/compaction-instructions.md
-overwriting or deleting the file if it already exists.
+Write the instructions to /tmp/claude-502/compaction-instructions.md and then
+copy them to the clipboard with `cat /tmp/claude-502/compaction-instructions.md | pbcopy`.
