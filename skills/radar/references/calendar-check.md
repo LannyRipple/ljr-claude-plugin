@@ -5,9 +5,15 @@ fetch today's events across all calendars.
 
 ## Fetch
 
+Make two parallel calls:
+
 ```
 calendar_events(start_date=TODAY, end_date=TODAY, calendars="all")
+calendar_events(start_date=TODAY, end_date=TODAY, calendars=["6ev1ls93pcav2vsjlmcur1fpd8@group.calendar.google.com"])
 ```
+
+The second call is the Ripple family calendar, which is not returned by `calendars="all"`.
+Merge the results before filtering. Events from the family calendar use `-Y/R-` status.
 
 ## Filtering
 
