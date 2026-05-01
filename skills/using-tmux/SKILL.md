@@ -21,8 +21,8 @@ tmux session from within Claude Code Bash tool calls.
 
 ## Reference Material
 
-The primary reference is `references/tmux-quick-reference.md`. Read it at invocation before
-issuing any tmux commands — do not skip this. The full man page is at `references/tmux.1.md`
+The primary reference is `${CLAUDE_SKILL_DIR}/references/tmux-quick-reference.md`. Read it at invocation before
+issuing any tmux commands — do not skip this. The full man page is at `${CLAUDE_SKILL_DIR}/references/tmux.1.md`
 if deeper detail is needed.
 
 ## Critical: Claude Code tmux Isolation
@@ -43,11 +43,11 @@ Determine the workflow from the request, then read the corresponding reference f
 
 | Workflow | Use for | Reference |
 |----------|---------|-----------|
-| 1 — Billboard | Append-only display, no backing file. Default for Claude-only output within a session. | `references/workflow-1-billboard.md` |
-| 2 — Persistent Billboard | File-backed display, survives session end, any process can write | `references/workflow-2-persistent-billboard.md` |
-| 3 — Show-and-go | One-shot: show output, user presses Enter, pane closes | `references/workflow-3-show-and-go.md` |
-| 3 — Show-and-shell | One-shot: show output, then drop into interactive shell. Also used for "two-pane layout" / "double pane view" — horizontal split, shell in repo dir, no output preamble | `references/workflow-3-show-and-go.md` |
-| 3 — Show-and-watch | Live-updating watch pane, user Ctrl-C to dismiss | `references/workflow-3-show-and-go.md` |
+| 1 — Billboard | Append-only display, no backing file. Default for Claude-only output within a session. | `${CLAUDE_SKILL_DIR}/references/workflow-1-billboard.md` |
+| 2 — Persistent Billboard | File-backed display, survives session end, any process can write | `${CLAUDE_SKILL_DIR}/references/workflow-2-persistent-billboard.md` |
+| 3 — Show-and-go | One-shot: show output, user presses Enter, pane closes | `${CLAUDE_SKILL_DIR}/references/workflow-3-show-and-go.md` |
+| 3 — Show-and-shell | One-shot: show output, then drop into interactive shell. Also used for "two-pane layout" / "double pane view" — horizontal split, shell in repo dir, no output preamble | `${CLAUDE_SKILL_DIR}/references/workflow-3-show-and-go.md` |
+| 3 — Show-and-watch | Live-updating watch pane, user Ctrl-C to dismiss | `${CLAUDE_SKILL_DIR}/references/workflow-3-show-and-go.md` |
 
 **Tiebreaker — Workflow 1 vs 2:** If the display only needs to exist during this Claude
 session, use Workflow 1. If it must survive session end or be written by another process,

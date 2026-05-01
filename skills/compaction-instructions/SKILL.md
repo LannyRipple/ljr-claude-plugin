@@ -61,7 +61,7 @@ small file would not have hit the Claude Code context limit.
 ### Step 2 — Parse the session
 
 Spawn an Explore sub-agent with the prompt template in
-`references/summarize-session.md`, substituting the actual JSONL path for
+`${CLAUDE_SKILL_DIR}/references/summarize-session.md`, substituting the actual JSONL path for
 `{JSONL_PATH}`. The agent reads the messages and returns a structured summary
 covering:
 

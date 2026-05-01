@@ -41,18 +41,18 @@ Display below); no pre-existing shell pane is required.*
 1. Check whether `~/Library/CloudStorage/GoogleDrive-lripple@salesforce.com/My Drive`
    exists. If not, tell the user Google Drive Desktop does not appear to be running or
    synced, and stop.
-2. If the file doesn't exist, create it using the template in `assets/memory-template.md`.
+2. If the file doesn't exist, create it using the template in `${CLAUDE_SKILL_DIR}/assets/memory-template.md`.
    Set `created`, `last-date-check` to today's date and `version` to `1`.
 
 ## Core Behaviors
 
 **Taking notes** — When the user asks you to remember, note, or track something, write it to
-the memory file using optimistic locking. Read `references/memory-file.md`
+the memory file using optimistic locking. Read `${CLAUDE_SKILL_DIR}/references/memory-file.md`
 for structure, entry format, and the locking protocol. Briefly
 confirm what was recorded after writing.
 
 Before writing, check `last-date-check` in the frontmatter against today's date. If more
-than one day has passed, run the same staleness review described in `references/date-check.md`
+than one day has passed, run the same staleness review described in `${CLAUDE_SKILL_DIR}/references/date-check.md`
 — flag old items, ask what to do with them, then proceed with writing the new entry. This
 keeps the file from silently accumulating noise. Update `last-date-check` afterward.
 
@@ -61,11 +61,11 @@ in the current context window. Sessions can be long and memory drifts. Report wh
 (or didn't find). Don't guess or interpolate from context alone.
 
 **Date check** — When the user asks to "check the date" or anything clearly equivalent,
-follow the procedure in `references/date-check.md`.
+follow the procedure in `${CLAUDE_SKILL_DIR}/references/date-check.md`.
 
 **Memory report** — When the user asks for a "memory report", "overview of what you're
 tracking", "what's in your memory", or anything clearly equivalent, read the memory file
-and produce a structured summary. Follow the procedure in `references/memory-report.md`.
+and produce a structured summary. Follow the procedure in `${CLAUDE_SKILL_DIR}/references/memory-report.md`.
 
 **Brag Book** — The Brag Book section in the memory file is a record of finished work items
 for quarterly focal review. Add entries for completed deliverables: shipped features, merged
@@ -105,21 +105,21 @@ explicitly resolved. When in doubt, put it in the memory file.
 
 ## Calendar and Meeting Notifiers
 
-When building the agenda, read `references/calendar-check.md` and
-`references/meeting-notifiers.md`. Follow the meeting-notifiers procedure in full —
+When building the agenda, read `${CLAUDE_SKILL_DIR}/references/calendar-check.md` and
+`${CLAUDE_SKILL_DIR}/references/meeting-notifiers.md`. Follow the meeting-notifiers procedure in full —
 it controls when the calendar is posted, how meeting notifications are scheduled, and
 what gets included in the show-and-go.
 
 ## GUS Tickets
 
-When building the agenda, read `references/gus-tickets.md`. If any monitored GUS
+When building the agenda, read `${CLAUDE_SKILL_DIR}/references/gus-tickets.md`. If any monitored GUS
 tickets are due for a check today based on their cadence, query each one and add the
 results as a GUS TICKETS section in the agenda. If no tickets are due, omit the section.
 
 ## Gmail Check
 
 When building the agenda (date check or "what's on the agenda"), read
-`references/gmail-check.md` and run both searches described there. Add the results
+`${CLAUDE_SKILL_DIR}/references/gmail-check.md` and run both searches described there. Add the results
 as a GMAIL section in the agenda content before displaying. If both categories are
 empty, omit the section.
 
@@ -130,9 +130,8 @@ agent context or `last-date-check` — these can be stale across long sessions. 
 system date for the agenda header, reminder evaluation, and GUS cadence checks.
 
 MUST present the date-check and reminder output in a show-and-go pane opened above Claude
-Code. This is Workflow 3 (show-and-go) from the `using-tmux` skill — refer to
-`references/workflow-3-show-and-go.md` in that skill for the full pattern. All tmux
-commands require `dangerouslyDisableSandbox: true`.
+Code. All tmux commands require `dangerouslyDisableSandbox: true`. If problems occur with
+tmux, load the `using-tmux` skill to troubleshoot.
 
 **Displaying the agenda:**
 1. Write the agenda text to `~/tmp/radar-agenda.txt` using `dangerouslyDisableSandbox: true`.

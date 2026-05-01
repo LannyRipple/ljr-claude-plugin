@@ -1,0 +1,35 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/",
+  "summary": "Left radar line 134 cross-skill reference bare",
+  "context": "Updated 7 SKILL.md files to replace hardcoded paths and bare relative refs with ${CLAUDE_SKILL_DIR}/... — 23 total references across all skills in ljr-claude-plugin.",
+  "rationale": "it describes where to look in using-tmux, and CLAUDE_SKILL_DIR would expand to radar's dir, not using-tmux's.",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "using-tmux's",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/bye/SKILL.md",
+    "skills/dev-panes/SKILL.md",
+    "skills/compaction-instructions/SKILL.md",
+    "skills/google-workspace-access/SKILL.md",
+    "skills/using-tmux/SKILL.md",
+    "skills/radar/SKILL.md",
+    "skills/skill-review/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQJ8810BJZ6JXYX1SMRDV1AM",
+  "timestamp": "2026-05-01T17:09:10.283Z",
+  "status": "active"
+}

@@ -408,5 +408,265 @@
       "decision_summary": "Notification message format: Starting in 5: {name}, truncated to 60 chars total with ... if needed."
     },
     "created_at": "2026-04-30T23:44:09.475Z"
+  },
+  {
+    "id": "01KQJ880ZN8N6TS23KT2B8HPEP",
+    "source": "01KPE16B7SN0N229AFKSVHTX7F",
+    "target": "01KQJ880ZG25B5FB74CMWC7BYD",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used ${CLAUDE_SKILL_DIR}/... for all same-skill file references"
+    },
+    "created_at": "2026-05-01T17:09:10.261Z"
+  },
+  {
+    "id": "01KQJ880ZRQRZE0JGJ48FY067R",
+    "source": "01KQJ880ZQDD84G5XNCJ17SNMW",
+    "target": "01KQJ880ZG25B5FB74CMWC7BYD",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used ${CLAUDE_SKILL_DIR}/... for all same-skill file references"
+    },
+    "created_at": "2026-05-01T17:09:10.265Z"
+  },
+  {
+    "id": "01KQJ880ZZ296383KH63AZKAY3",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQJ880ZG25B5FB74CMWC7BYD",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used ${CLAUDE_SKILL_DIR}/... for all same-skill file references"
+    },
+    "created_at": "2026-05-01T17:09:10.271Z"
+  },
+  {
+    "id": "01KQJ88102Q32M2X9KCMJF3P78",
+    "source": "01KQJ88101XRDNN7BW6V20Y82R",
+    "target": "01KQJ880ZG25B5FB74CMWC7BYD",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used ${CLAUDE_SKILL_DIR}/... for all same-skill file references"
+    },
+    "created_at": "2026-05-01T17:09:10.274Z"
+  },
+  {
+    "id": "01KQJ88105XY9HPV2MBV2MA55Q",
+    "source": "01KQJ88104JY5D9ETHRXVAP9KS",
+    "target": "01KQJ880ZG25B5FB74CMWC7BYD",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used ${CLAUDE_SKILL_DIR}/... for all same-skill file references"
+    },
+    "created_at": "2026-05-01T17:09:10.277Z"
+  },
+  {
+    "id": "01KQJ88107CVW23AHMJWA6YSRK",
+    "source": "01KQGCEHM2RG3NDXM91763ANQR",
+    "target": "01KQJ880ZG25B5FB74CMWC7BYD",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used ${CLAUDE_SKILL_DIR}/... for all same-skill file references"
+    },
+    "created_at": "2026-05-01T17:09:10.279Z"
+  },
+  {
+    "id": "01KQJ8810AGFDFGJHSKZE7JDYE",
+    "source": "01KQJ88108C9DK7NXXSGJVYG02",
+    "target": "01KQJ880ZG25B5FB74CMWC7BYD",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used ${CLAUDE_SKILL_DIR}/... for all same-skill file references"
+    },
+    "created_at": "2026-05-01T17:09:10.282Z"
+  },
+  {
+    "id": "01KQJ8813GKSV9V63KJV6DRPMF",
+    "source": "01KPE16B7SN0N229AFKSVHTX7F",
+    "target": "01KQJ8813EH6BEFNXY9H3W2QM8",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left radar line 134 cross-skill reference bare"
+    },
+    "created_at": "2026-05-01T17:09:10.385Z"
+  },
+  {
+    "id": "01KQJ8813KF6YMW9S62Q3DCYKM",
+    "source": "01KQJ880ZQDD84G5XNCJ17SNMW",
+    "target": "01KQJ8813EH6BEFNXY9H3W2QM8",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left radar line 134 cross-skill reference bare"
+    },
+    "created_at": "2026-05-01T17:09:10.387Z"
+  },
+  {
+    "id": "01KQJ8813P99Y25CGPKC7869A6",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQJ8813EH6BEFNXY9H3W2QM8",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left radar line 134 cross-skill reference bare"
+    },
+    "created_at": "2026-05-01T17:09:10.390Z"
+  },
+  {
+    "id": "01KQJ8813S42ADV9KCH7JRQNCE",
+    "source": "01KQJ88101XRDNN7BW6V20Y82R",
+    "target": "01KQJ8813EH6BEFNXY9H3W2QM8",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left radar line 134 cross-skill reference bare"
+    },
+    "created_at": "2026-05-01T17:09:10.393Z"
+  },
+  {
+    "id": "01KQJ8813VKH0VVXPPM02WV284",
+    "source": "01KQJ88104JY5D9ETHRXVAP9KS",
+    "target": "01KQJ8813EH6BEFNXY9H3W2QM8",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left radar line 134 cross-skill reference bare"
+    },
+    "created_at": "2026-05-01T17:09:10.395Z"
+  },
+  {
+    "id": "01KQJ8813YBH6VX4C56V4P0T3Q",
+    "source": "01KQGCEHM2RG3NDXM91763ANQR",
+    "target": "01KQJ8813EH6BEFNXY9H3W2QM8",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left radar line 134 cross-skill reference bare"
+    },
+    "created_at": "2026-05-01T17:09:10.398Z"
+  },
+  {
+    "id": "01KQJ88143DSR6WK3FB1K28ETD",
+    "source": "01KQJ88108C9DK7NXXSGJVYG02",
+    "target": "01KQJ8813EH6BEFNXY9H3W2QM8",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left radar line 134 cross-skill reference bare"
+    },
+    "created_at": "2026-05-01T17:09:10.403Z"
+  },
+  {
+    "id": "01KQJ8817J50D92XPFMKM4ES6S",
+    "source": "01KPE16B7SN0N229AFKSVHTX7F",
+    "target": "01KQJ8817FMSWPJ92B1171XB32",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Skipped skill-review descriptive prose mentions of references/"
+    },
+    "created_at": "2026-05-01T17:09:10.514Z"
+  },
+  {
+    "id": "01KQJ8817M4SZZVGPQ6VD5GABV",
+    "source": "01KQJ880ZQDD84G5XNCJ17SNMW",
+    "target": "01KQJ8817FMSWPJ92B1171XB32",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Skipped skill-review descriptive prose mentions of references/"
+    },
+    "created_at": "2026-05-01T17:09:10.516Z"
+  },
+  {
+    "id": "01KQJ8817QGBE6J1Y8QX0C5V7V",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQJ8817FMSWPJ92B1171XB32",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Skipped skill-review descriptive prose mentions of references/"
+    },
+    "created_at": "2026-05-01T17:09:10.519Z"
+  },
+  {
+    "id": "01KQJ8817T345SABZP9SFPGFTV",
+    "source": "01KQJ88101XRDNN7BW6V20Y82R",
+    "target": "01KQJ8817FMSWPJ92B1171XB32",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Skipped skill-review descriptive prose mentions of references/"
+    },
+    "created_at": "2026-05-01T17:09:10.522Z"
+  },
+  {
+    "id": "01KQJ8817XRR2QCT725CQGEJ11",
+    "source": "01KQJ88104JY5D9ETHRXVAP9KS",
+    "target": "01KQJ8817FMSWPJ92B1171XB32",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Skipped skill-review descriptive prose mentions of references/"
+    },
+    "created_at": "2026-05-01T17:09:10.525Z"
+  },
+  {
+    "id": "01KQJ88181FGWZN4MPFNZ4TZSK",
+    "source": "01KQGCEHM2RG3NDXM91763ANQR",
+    "target": "01KQJ8817FMSWPJ92B1171XB32",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Skipped skill-review descriptive prose mentions of references/"
+    },
+    "created_at": "2026-05-01T17:09:10.529Z"
+  },
+  {
+    "id": "01KQJ88186J8M5Y1QK4SZ3Z3VQ",
+    "source": "01KQJ88108C9DK7NXXSGJVYG02",
+    "target": "01KQJ8817FMSWPJ92B1171XB32",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Skipped skill-review descriptive prose mentions of references/"
+    },
+    "created_at": "2026-05-01T17:09:10.534Z"
+  },
+  {
+    "id": "01KQJ89V357C8BY6F2YAXG9415",
+    "source": "01KQGCEHM2RG3NDXM91763ANQR",
+    "target": "01KQJ89V338KQKEMR76777MTMM",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Cross-skill file references use ${CLAUDE_PLUGIN_ROOT}/skills/{skill-name}/..."
+    },
+    "created_at": "2026-05-01T17:10:09.765Z"
+  },
+  {
+    "id": "01KQJ996QHVDR9K504EB8M70G1",
+    "source": "01KQJ88108C9DK7NXXSGJVYG02",
+    "target": "01KQJ996QFRNH668QQX8YVFQRE",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Plugin detection: git rev-parse --show-toplevel errors → not a plugin; success but no .claude/plugin.json → not a plugin; json present → plugin."
+    },
+    "created_at": "2026-05-01T17:27:17.489Z"
+  },
+  {
+    "id": "01KQJ996RX0S8J45Y7Q6HR72TW",
+    "source": "01KQJ88108C9DK7NXXSGJVYG02",
+    "target": "01KQJ996RT40Z3PVHKAGJ894RP",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Check placed in both Bug lens definition and Step 2 so it runs in section-by-section and whole-skill passes."
+    },
+    "created_at": "2026-05-01T17:27:17.533Z"
+  },
+  {
+    "id": "01KQJ9CPV4X5QNYBFX13GVMDEA",
+    "source": "01KQJ88108C9DK7NXXSGJVYG02",
+    "target": "01KQJ9CPV1BGPP8QKY2SEA3S2K",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Plugin root is the first ancestor dir containing .claude-plugin/, not necessarily git root"
+    },
+    "created_at": "2026-05-01T17:29:12.292Z"
+  },
+  {
+    "id": "01KQJBD4YB41AHA73KP21Z4YVR",
+    "source": "01KQJBD4Y98WFNKXTJG7WAR913",
+    "target": "01KQJBD4Y8Y1E43CG8F86W014R",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "pinentry-mac is at /usr/local/bin/pinentry-mac, not /opt/homebrew/bin"
+    },
+    "created_at": "2026-05-01T18:04:23.883Z"
   }
 ]

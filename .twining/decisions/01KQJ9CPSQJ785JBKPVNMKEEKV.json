@@ -1,0 +1,29 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/skill-review/",
+  "summary": "Plugin root is the first ancestor dir containing .claude-plugin/, not necessarily git root",
+  "context": "Corrected plugin detection: walk up from SKILL.md dir looking for .claude-plugin/ at each level up to git root, instead of checking for .claude/plugin.json at repo root only.",
+  "rationale": "handles marketplace repos where plugin is a subdirectory.",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "necessarily git root",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/skill-review/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQJ9CPSQJ785JBKPVNMKEEKV",
+  "timestamp": "2026-05-01T17:29:12.247Z",
+  "status": "active"
+}

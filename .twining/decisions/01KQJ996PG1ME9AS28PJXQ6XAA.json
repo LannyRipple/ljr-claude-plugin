@@ -1,0 +1,29 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/skill-review/",
+  "summary": "Plugin detection: git rev-parse --show-toplevel errors → not a plugin; success but no .claude/plugin.json → not a plugin; json present → plugin.",
+  "context": "Added File Reference Conventions as Bug lens #5 in skill-review: CLAUDE_SKILL_DIR for intra-skill, CLAUDE_PLUGIN_ROOT for inter-skill (with plugin detection). Added Step 2 reminder.",
+  "rationale": "Plugin detection: git rev-parse --show-toplevel errors → not a plugin; success but no .claude/plugin.json → not a plugin; json present → plugin.",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "a plugin; success but no .claude/plugin.json → not a plugin; json present → plugin",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/skill-review/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQJ996PG1ME9AS28PJXQ6XAA",
+  "timestamp": "2026-05-01T17:27:17.456Z",
+  "status": "active"
+}

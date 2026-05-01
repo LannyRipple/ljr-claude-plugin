@@ -8,7 +8,7 @@ description: >-
 
 # Dev Panes
 
-Run `~/.claude/plugins/marketplaces/ljr-marketplace/skills/dev-panes/scripts/setup-dev-panes.sh` with `dangerouslyDisableSandbox: true`,
+Run `${CLAUDE_SKILL_DIR}/scripts/setup-dev-panes.sh` with `dangerouslyDisableSandbox: true`,
 passing the current working directory as the first argument.
 
 Interpret the output:

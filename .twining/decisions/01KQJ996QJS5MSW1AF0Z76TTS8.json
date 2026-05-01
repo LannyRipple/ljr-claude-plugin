@@ -1,0 +1,22 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/skill-review/",
+  "summary": "Check placed in both Bug lens definition and Step 2 so it runs in section-by-section and whole-skill passes.",
+  "context": "Added File Reference Conventions as Bug lens #5 in skill-review: CLAUDE_SKILL_DIR for intra-skill, CLAUDE_PLUGIN_ROOT for inter-skill (with plugin detection). Added Step 2 reminder.",
+  "rationale": "Check placed in both Bug lens definition and Step 2 so it runs in section-by-section and whole-skill passes.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/skill-review/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQJ996QJS5MSW1AF0Z76TTS8",
+  "timestamp": "2026-05-01T17:27:17.490Z",
+  "status": "active"
+}

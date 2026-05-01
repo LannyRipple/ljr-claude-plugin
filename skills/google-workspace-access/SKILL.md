@@ -61,7 +61,7 @@ gcloud auth login --enable-gdrive-access --force --brief
 gcloud auth application-default revoke --quiet
 ```
 
-If `gcloud` is not installed yet, follow the install and first-time setup steps in `references/api-reference.md`.
+If `gcloud` is not installed yet, follow the install and first-time setup steps in `${CLAUDE_SKILL_DIR}/references/api-reference.md`.
 
 ## File IDs
 
@@ -152,7 +152,7 @@ For Google Sheets, use this sequence:
 5. Commit by moving focus away from the cell, usually by clicking the Name Box.
 6. Repeat one cell at a time. Do not depend on Enter, Tab, or arrow-key navigation.
 
-Detailed browser automation steps are in `references/api-reference.md`.
+Detailed browser automation steps are in `${CLAUDE_SKILL_DIR}/references/api-reference.md`.
 
 ## Assistant Rules
 
@@ -166,4 +166,4 @@ Detailed browser automation steps are in `references/api-reference.md`.
 
 ## Additional Resources
 
-Before making any API call, read `references/api-reference.md` for endpoint examples, field names, and request body patterns. Also consult it for troubleshooting auth errors and for the browser automation sequence.
+Before making any API call, read `${CLAUDE_SKILL_DIR}/references/api-reference.md` for endpoint examples, field names, and request body patterns. Also consult it for troubleshooting auth errors and for the browser automation sequence.

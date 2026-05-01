@@ -1,0 +1,22 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/radar/",
+  "summary": "Cross-skill file references use ${CLAUDE_PLUGIN_ROOT}/skills/{skill-name}/...",
+  "context": "Fixed radar cross-skill reference using ${CLAUDE_PLUGIN_ROOT}/skills/using-tmux/... after learning CLAUDE_PLUGIN_ROOT is the correct var for cross-skill refs.",
+  "rationale": "CLAUDE_PLUGIN_ROOT resolves the plugin root regardless of install path.",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/radar/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQJ89V1RASXYXS7QDW19EVF7",
+  "timestamp": "2026-05-01T17:10:09.720Z",
+  "status": "active"
+}

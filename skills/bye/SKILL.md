@@ -9,7 +9,7 @@ description: >-
 
 # Bye
 
-Run `~/.claude/plugins/marketplaces/ljr-marketplace/skills/bye/scripts/bye.sh`
+Run `${CLAUDE_SKILL_DIR}/scripts/bye.sh`
 with `dangerouslyDisableSandbox: true`.
 
 Interpret the output:

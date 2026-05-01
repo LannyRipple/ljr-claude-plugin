@@ -10,6 +10,7 @@ For the canonical reference on file structure, frontmatter field schema, bundled
 directories, the three-level loading system, and `@filename` import syntax, see the
 official Claude Code documentation:
 
+- [The Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf)
 - [Skills guide](https://docs.anthropic.com/en/docs/claude-code/skills)
 - [Plugins reference](https://docs.anthropic.com/en/docs/claude-code/plugins-reference)
 
@@ -72,7 +73,7 @@ organize within it.
 `references/` files with clear pointers about when to read them. For large reference files
 (>300 lines), include a table of contents.
 
-**Domain organization** — When a skill supports multiple domains or frameworks, organize
+**Domain organization** — When a skill supports multiple domains, frameworks, and/or workflows organize
 by variant so Claude reads only what's relevant:
 
 ```

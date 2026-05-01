@@ -37,6 +37,20 @@ document is the safety gate regardless of version control status.
 
 ---
 
+## Claude Code Documentation
+
+Consult if needed.
+
+| Domain | Url |
+|---|---|
+| Skill Guide | https://code.claude.com/docs/en/skills.md |
+| Skill Guide | https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf |
+| Plugin Guide | https://code.claude.com/docs/en/plugins.md |
+| Plugin Reference | https://code.claude.com/docs/en/plugins-reference.md |
+| Marketplace Guide & Reference | https://code.claude.com/docs/en/plugin-marketplaces.md |
+
+---
+
 ## Requirement Levels
 
 Terms in this skill use these levels:
@@ -119,6 +133,39 @@ Is the skill technically correct? Watch for:
 
 Bugs are distinct from clarity problems — a buggy instruction can be perfectly clear and
 still wrong. Label these separately so the skill author knows to verify, not just reword.
+
+#### 5. File Reference Conventions
+
+File references in skills must use the correct environment variable so they resolve
+regardless of install location. Check every path that references a file within the skill
+or in another skill.
+
+**Intra-skill references** — files inside this skill's own directory tree (`references/`,
+`assets/`, `scripts/`, etc.):
+- MUST use `${CLAUDE_SKILL_DIR}/` as the prefix (e.g., `${CLAUDE_SKILL_DIR}/references/foo.md`)
+- Flag bare relative paths (`references/foo.md`) and hardcoded absolute paths as `bug`
+
+**Inter-skill references** — files in a different skill within the same plugin:
+- MUST use `${CLAUDE_PLUGIN_ROOT}/skills/{skill-name}/` as the prefix
+- But first confirm the skill is part of a plugin:
+  1. Run `git rev-parse --show-toplevel` from the skill's directory. If it errors, the
+     skill is not in a git repo — not a plugin, and `${CLAUDE_PLUGIN_ROOT}` is unavailable.
+  2. If git succeeds, walk up from the directory containing SKILL.md, checking each
+     directory for a `.claude-plugin/plugin.json` file, stopping at (and including) the
+     repo root. The first directory where `.claude-plugin/plugin.json` is found is the
+     plugin root and `${CLAUDE_PLUGIN_ROOT}` is valid. If no `.claude-plugin/plugin.json`
+     is found anywhere in that range, the skill is not part of a plugin.
+- If the skill is not a plugin, flag any `${CLAUDE_PLUGIN_ROOT}` usage as a `bug`
+  (the variable will not be set at runtime).
+- If the skill is a plugin, flag inter-skill paths that don't use `${CLAUDE_PLUGIN_ROOT}`
+  as a `bug`.
+
+**Cross-plugin references** — files in a skill belonging to a different plugin (e.g., in a
+marketplace repo containing multiple plugins):
+- No environment variable covers this case. Reference the skill by its full Claude Code
+  identifier `{plugin-name}:{skill-name}` and describe the dependency in prose — do not
+  attempt to construct a file path. Flag any hardcoded path crossing plugin boundaries as
+  a `bug`.
 
 ### Review Document Format
 
@@ -230,6 +277,18 @@ so and the preamble is not already present, add a `direction` issue to your coll
 absent." If the skill already uses MUST or SHOULD without the preamble, flag that too —
 the vocabulary is undefined without it.
 
+Also scan every MUST, MUST NOT, SHOULD, and SHOULD NOT in the skill. Each one must be
+paired with a rationale — a brief explanation of what breaks or degrades if the requirement
+is skipped. If any instance lacks a rationale, record a `direction` issue for each one:
+"MUST/SHOULD without rationale — state what breaks if this is skipped." The preamble
+promises that every instance carries a rationale; instances that don't undermine the whole
+vocabulary.
+
+Also apply the File Reference Conventions check from the Bug lens: scan all file paths
+referenced in the skill and verify they use the correct environment variable prefix
+(`${CLAUDE_SKILL_DIR}` for intra-skill, `${CLAUDE_PLUGIN_ROOT}/skills/{name}/` for
+inter-skill). Run the plugin detection steps before flagging inter-skill paths.
+
 Do not apply fixes yet.
 
 #### Step 3: Verify Referenced Files
@@ -332,7 +391,7 @@ using Workflow 1 when the skill is in good shape.
 
 ### Step 1: Load Construction Guidance
 
-Read `references/skill-construction-guidance.md` before doing anything else. It covers
+Read `${CLAUDE_SKILL_DIR}/references/skill-construction-guidance.md` before doing anything else. It covers
 description-writing patterns, progressive disclosure organization, writing style, and skill
 triggering — and links to the official docs for file anatomy and frontmatter schema.
 Keep it in mind throughout this workflow.

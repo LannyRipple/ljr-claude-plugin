@@ -1,0 +1,29 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "~/.gnupg/",
+  "summary": "pinentry-mac is at /usr/local/bin/pinentry-mac, not /opt/homebrew/bin",
+  "context": "Fixed gpg-agent.conf: corrected pinentry-mac path from /opt/homebrew to /usr/local/bin. Set personal GPG key on 5 repos: 4 in ~/ip/ plus ~/ljr.",
+  "rationale": "this machine uses Intel Homebrew prefix.",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "/opt/homebrew/bin",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.gnupg/gpg-agent.conf"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "id": "01KQJBD4XB8CFFHV6EFB528CMY",
+  "timestamp": "2026-05-01T18:04:23.851Z",
+  "status": "active"
+}

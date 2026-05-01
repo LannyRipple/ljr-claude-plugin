@@ -364,5 +364,135 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KQJ880WF4F8K3D8YDA96QQQK",
+    "timestamp": "2026-05-01T17:09:10.159Z",
+    "domain": "implementation",
+    "scope": "skills/",
+    "summary": "Used ${CLAUDE_SKILL_DIR}/... for all same-skill file references",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/bye/SKILL.md",
+      "skills/dev-panes/SKILL.md",
+      "skills/compaction-instructions/SKILL.md",
+      "skills/google-workspace-access/SKILL.md",
+      "skills/using-tmux/SKILL.md",
+      "skills/radar/SKILL.md",
+      "skills/skill-review/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQJ8810BJZ6JXYX1SMRDV1AM",
+    "timestamp": "2026-05-01T17:09:10.283Z",
+    "domain": "implementation",
+    "scope": "skills/",
+    "summary": "Left radar line 134 cross-skill reference bare",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/bye/SKILL.md",
+      "skills/dev-panes/SKILL.md",
+      "skills/compaction-instructions/SKILL.md",
+      "skills/google-workspace-access/SKILL.md",
+      "skills/using-tmux/SKILL.md",
+      "skills/radar/SKILL.md",
+      "skills/skill-review/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQJ88145E07F5BBJG6P8D4XY",
+    "timestamp": "2026-05-01T17:09:10.405Z",
+    "domain": "implementation",
+    "scope": "skills/",
+    "summary": "Skipped skill-review descriptive prose mentions of references/",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/bye/SKILL.md",
+      "skills/dev-panes/SKILL.md",
+      "skills/compaction-instructions/SKILL.md",
+      "skills/google-workspace-access/SKILL.md",
+      "skills/using-tmux/SKILL.md",
+      "skills/radar/SKILL.md",
+      "skills/skill-review/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQJ89V1RASXYXS7QDW19EVF7",
+    "timestamp": "2026-05-01T17:10:09.720Z",
+    "domain": "implementation",
+    "scope": "skills/radar/",
+    "summary": "Cross-skill file references use ${CLAUDE_PLUGIN_ROOT}/skills/{skill-name}/...",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/radar/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQJ996PG1ME9AS28PJXQ6XAA",
+    "timestamp": "2026-05-01T17:27:17.456Z",
+    "domain": "implementation",
+    "scope": "skills/skill-review/",
+    "summary": "Plugin detection: git rev-parse --show-toplevel errors → not a plugin; success but no .claude/plugin.json → not a plugin; json present → plugin.",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/skill-review/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQJ996QJS5MSW1AF0Z76TTS8",
+    "timestamp": "2026-05-01T17:27:17.490Z",
+    "domain": "implementation",
+    "scope": "skills/skill-review/",
+    "summary": "Check placed in both Bug lens definition and Step 2 so it runs in section-by-section and whole-skill passes.",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/skill-review/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQJ9CPSQJ785JBKPVNMKEEKV",
+    "timestamp": "2026-05-01T17:29:12.247Z",
+    "domain": "implementation",
+    "scope": "skills/skill-review/",
+    "summary": "Plugin root is the first ancestor dir containing .claude-plugin/, not necessarily git root",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/skill-review/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQJBD4XB8CFFHV6EFB528CMY",
+    "timestamp": "2026-05-01T18:04:23.851Z",
+    "domain": "implementation",
+    "scope": "~/.gnupg/",
+    "summary": "pinentry-mac is at /usr/local/bin/pinentry-mac, not /opt/homebrew/bin",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.gnupg/gpg-agent.conf"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]
