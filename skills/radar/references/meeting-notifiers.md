@@ -47,15 +47,13 @@ After scheduling, briefly confirm:
 Construct the agenda content for the show-and-go pane. The CALENDAR section MUST
 include only:
 
-- `-team-` events
-- `-Y/R-` events
-- `-` (catch-all) events
-- Events the user claimed → show with status `yes` or `maybe` per their language
-- `new` or `maybe` events the user did NOT claim → omit entirely
+- All-day events (any status: `-team-`, `-Y/R-`, `-`) → always include
+- Timed `-Y/R-` events (non-work personal/family calendar) → always include
+- Timed work events the user claimed for a notifier → show as `yes` or `maybe`
+- Timed work events the user did NOT claim → omit entirely
 
-This means the show-and-go reflects the day as committed: team context, personal
-calendar, and the meetings Lanny is actually attending. Unresponded invites are
-treated as declined and do not appear.
+This means the show-and-go reflects the day as committed: team/family context and
+the work meetings Lanny is actually attending. Unclaimed work meetings do not appear.
 
 Proceed to open the show-and-go pane (see Agenda Display in SKILL.md). Do not wait
 for the user to close it.
