@@ -1,0 +1,30 @@
+{
+  "agent_id": "main",
+  "domain": "architecture",
+  "scope": "skills/setup-long-task, skills/resume-long-task",
+  "summary": "Added raw data cache as element 10 (threads/ subdirectory pattern) after user pointed out it was missing",
+  "context": "Implemented setup-long-task and resume-long-task skills. Created 3 files, bumped version to 1.0.40. Added raw data cache element (10) based on user feedback mid-implementation.",
+  "rationale": "decouples expensive fetch phase from repeatable analysis phase",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/setup-long-task/SKILL.md",
+    "skills/setup-long-task/references/protocol-elements.md",
+    "skills/resume-long-task/SKILL.md",
+    ".claude-plugin/plugin.json"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": true,
+  "provenance": {
+    "recorded_at": "2026-05-05T22:09:00.013Z",
+    "branch": "main",
+    "commit_sha": "bc1706379c18b48ba3015993746cc1350a03ae12"
+  },
+  "id": "01KQX2ZX4BPMVPD26A3BVSQX02",
+  "timestamp": "2026-05-05T22:09:00.044Z",
+  "status": "active"
+}

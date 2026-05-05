@@ -858,5 +858,175 @@
       "decision_summary": "Used @ include in global-memory.md rather than inlining the table"
     },
     "created_at": "2026-05-05T18:52:31.636Z"
+  },
+  {
+    "id": "01KQX2P58S5MH5B56AFVXM67E1",
+    "source": "01KQX2P58QZNC6QWH6HTT0DNR4",
+    "target": "01KQX2P58N1YHWN8DMY5455W1B",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Chose two skills (setup-long-task, resume-long-task) over one with modes"
+    },
+    "created_at": "2026-05-05T22:03:40.697Z"
+  },
+  {
+    "id": "01KQX2P5BYW2BDG21CAS6X916Q",
+    "source": "01KQX2P58QZNC6QWH6HTT0DNR4",
+    "target": "01KQX2P5BVQ97VR9J30AHKF4KG",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Chose resume-long-task to delegate to setup-long-task's protocol-elements.md"
+    },
+    "created_at": "2026-05-05T22:03:40.798Z"
+  },
+  {
+    "id": "01KQX2P5GREN0XNM1E6FD75PB7",
+    "source": "01KQX2P58QZNC6QWH6HTT0DNR4",
+    "target": "01KQX2P5GHPG63BJRSHRZWC9ZW",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Chose to embed the Slack case study inside protocol-elements.md"
+    },
+    "created_at": "2026-05-05T22:03:40.952Z"
+  },
+  {
+    "id": "01KQX2P5KQM7MSZPZCWJGDAK5G",
+    "source": "01KQX2P58QZNC6QWH6HTT0DNR4",
+    "target": "01KQX2P5KMVHHTNQAS7D070F6W",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Chose 'what external APIs/services will this involve?' over asking about rate limits directly"
+    },
+    "created_at": "2026-05-05T22:03:41.047Z"
+  },
+  {
+    "id": "01KQX2P5RF7F7MC8C4MBVCT4XC",
+    "source": "01KQX2P58QZNC6QWH6HTT0DNR4",
+    "target": "01KQX2P5RC9V1C3T3KB88R79GV",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Chose append-only reconciliation pattern over mutating inventory"
+    },
+    "created_at": "2026-05-05T22:03:41.199Z"
+  },
+  {
+    "id": "01KQX2P5XDQTN4YFCRW9CV0TM5",
+    "source": "01KQX2P58QZNC6QWH6HTT0DNR4",
+    "target": "01KQX2P5XBKKP682NKW4S81NTW",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Chose CronCreate over Claude sleep-and-retry for rate-limited APIs"
+    },
+    "created_at": "2026-05-05T22:03:41.357Z"
+  },
+  {
+    "id": "01KQX2ZX7XKMJYW1J5K31CKHZW",
+    "source": "01KQX2ZX7VQ6FT0NARPF46NCSQ",
+    "target": "01KQX2ZX7TTJC9CDJZS7MBQZS7",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added raw data cache as element 10 (threads/ subdirectory pattern) after user pointed out it was missing"
+    },
+    "created_at": "2026-05-05T22:09:00.157Z"
+  },
+  {
+    "id": "01KQX2ZX80D0D7RERFBQZ5C09T",
+    "source": "01KQX2ZX7YFZFEVD7PSQE1BXGY",
+    "target": "01KQX2ZX7TTJC9CDJZS7MBQZS7",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added raw data cache as element 10 (threads/ subdirectory pattern) after user pointed out it was missing"
+    },
+    "created_at": "2026-05-05T22:09:00.160Z"
+  },
+  {
+    "id": "01KQX2ZX83BGYC1KA8KECSDGZE",
+    "source": "01KQX2ZX82KET9NWYY08MGAXSR",
+    "target": "01KQX2ZX7TTJC9CDJZS7MBQZS7",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added raw data cache as element 10 (threads/ subdirectory pattern) after user pointed out it was missing"
+    },
+    "created_at": "2026-05-05T22:09:00.163Z"
+  },
+  {
+    "id": "01KQX2ZX8648T7MEYZ8VNKWK7C",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQX2ZX7TTJC9CDJZS7MBQZS7",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added raw data cache as element 10 (threads/ subdirectory pattern) after user pointed out it was missing"
+    },
+    "created_at": "2026-05-05T22:09:00.166Z"
+  },
+  {
+    "id": "01KQX2ZXD50KFMJAMHE7F0GS9N",
+    "source": "01KQX2ZX7VQ6FT0NARPF46NCSQ",
+    "target": "01KQX2ZXD2Y71HC19A1WWGS8ZJ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Wizard question 8 asks about multiple analysis passes rather than asking about caching directly"
+    },
+    "created_at": "2026-05-05T22:09:00.325Z"
+  },
+  {
+    "id": "01KQX2ZXD8DHSCJXSPH7KB18N2",
+    "source": "01KQX2ZX7YFZFEVD7PSQE1BXGY",
+    "target": "01KQX2ZXD2Y71HC19A1WWGS8ZJ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Wizard question 8 asks about multiple analysis passes rather than asking about caching directly"
+    },
+    "created_at": "2026-05-05T22:09:00.328Z"
+  },
+  {
+    "id": "01KQX2ZXDA8DYGQC7X9PEG5Y3K",
+    "source": "01KQX2ZX82KET9NWYY08MGAXSR",
+    "target": "01KQX2ZXD2Y71HC19A1WWGS8ZJ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Wizard question 8 asks about multiple analysis passes rather than asking about caching directly"
+    },
+    "created_at": "2026-05-05T22:09:00.330Z"
+  },
+  {
+    "id": "01KQX2ZXDDV3B64QSZC1VX0FTK",
+    "source": "01KPS58G21D3CZ96DQ50F0NCKZ",
+    "target": "01KQX2ZXD2Y71HC19A1WWGS8ZJ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Wizard question 8 asks about multiple analysis passes rather than asking about caching directly"
+    },
+    "created_at": "2026-05-05T22:09:00.333Z"
+  },
+  {
+    "id": "01KQX48CWYQ6HHYC2W2Z86M2GN",
+    "source": "01KQX2ZX7VQ6FT0NARPF46NCSQ",
+    "target": "01KQX48CWTEWRFA07NJYQFDEPK",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Applied all 12 review issues as proposed"
+    },
+    "created_at": "2026-05-05T22:31:06.910Z"
+  },
+  {
+    "id": "01KQX48CX1K1HKM4JRRMKREV7N",
+    "source": "01KQX2ZX7YFZFEVD7PSQE1BXGY",
+    "target": "01KQX48CWTEWRFA07NJYQFDEPK",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Applied all 12 review issues as proposed"
+    },
+    "created_at": "2026-05-05T22:31:06.913Z"
+  },
+  {
+    "id": "01KQX4R8PKAXGWHG4R9KFG5YP1",
+    "source": "01KQX2ZX82KET9NWYY08MGAXSR",
+    "target": "01KQX4R8PGM4940BA5CK6R52TG",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added CronCreate-already-scheduled check to Step 3"
+    },
+    "created_at": "2026-05-05T22:39:46.899Z"
   }
 ]

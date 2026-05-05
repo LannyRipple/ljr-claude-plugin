@@ -20,9 +20,72 @@ A skill is invoked as `/{SKILL_NAME}` in Claude Code. The `name` field in SKILL.
 
 ## Skills in This Repo
 
+- **bye** — Cleans up tmux panes created by this plugin and kills the tmux session to exit Claude Code.
+- **compaction-instructions** — Builds tailored `/compact` instructions for the current session and copies them to the clipboard.
+- **dev-panes** — Sets up a two-pane tmux layout: shell on the left, Claude Code on the right.
+- **google-workspace-access** — Read and edit Google Docs, Sheets, Slides, and Drive files via Google Workspace MCP tools with browser automation fallback.
+- **notify-me** — Sends a macOS notification with sound when a task completes or at a scheduled time. Five workflows: immediate, scheduled, list, cancel, install watchdog.
 - **radar** — Personal assistant named after Radar O'Reilly. Maintains a persistent memory file at `~/tmp/radar-memory.md`. Triggered by addressing "Radar" by name or by note/todo requests directed at it.
-- **skill-review** — Reviews and improves SKILL.md files using four lenses: clarity, flow, direction, bug. Produces a review document before applying any edits.
-- **using-tmux** — Provides patterns for writing output to tmux display panes. Contains workflows for billboard (append-only), persistent billboard (file-backed), and show-and-go (one-shot) display modes.
+- **resume-long-task** — Resumes a task previously set up with `/setup-long-task`. Reads RESUME.md, verifies referenced files, checks rate-limit state, and picks up at the exact next action.
+- **search-sessions** — Searches old Claude Code session transcripts by keyword and returns matching sessions with resume commands.
+- **setup-long-task** — Collaborative wizard for designing a resumable protocol directory for a long-running task (one that spans multiple sessions, compaction boundaries, or rate-limited APIs). Creates GOAL.md, RESUME.md, and conditionally: item inventory, results accumulator, cursor, rate-limit state, error log, session log, reconciliation script, and raw data cache.
+- **skill-review** — Reviews and improves SKILL.md files using four lenses: clarity, flow, direction, bug. Produces a review document before applying any edits. Also handles skill creation with dual-agent review.
+- **using-tmux** — Provides patterns for writing output to tmux display panes. Contains workflows for billboard, persistent billboard, show-and-go, show-and-shell, and show-and-watch display modes.
+
+## Hooks in This Repo
+
+- **precompact-auto** — Fires on automatic compaction. Calls the Claude API to generate tailored compaction instructions, copies to clipboard, then halts auto-compaction so the user can run `/compact` manually with the generated instructions.
+
+## Adding a Skill or Hook
+
+When adding a new skill, complete all of the following:
+
+1. Create `skills/<skill-name>/SKILL.md` with YAML frontmatter (`name`, `description`)
+2. Add an entry to the `## Skills in This Repo` section of this file (one sentence)
+3. Create `docs/<skill-name>.md` — see **Docs** section below for format guidance
+
+When adding a new hook, add an entry to `## Hooks in This Repo` and create `docs/hooks.md`
+entry (or a separate `docs/<hook-name>.md` if the hook is substantial).
+
+## Docs
+
+`docs/` contains one file per skill (and one for hooks). The goal is **somewhere between
+a README entry and reading the full SKILL.md** — enough to understand what the skill does,
+when to use it, and what to watch out for, without reproducing the implementation details
+that live in SKILL.md.
+
+**Format for each doc:**
+
+```markdown
+# skill-name
+
+One-line description.
+
+For a full understanding of this skill, read its files in
+[ljr-claude-plugin/skills/<name>](<github url>)
+
+---
+
+## The Core Idea / What This Skill Does
+2–4 sentences on the purpose and the problem it solves. Skip if the one-liner covers it.
+
+---
+
+## Workflows / Operations
+Named sections or a list. Include example prompts in code blocks.
+
+---
+
+## Things Worth Knowing
+Gotchas, constraints, non-obvious behavior, interactions with other skills.
+```
+
+**Depth guidance:**
+- CLAUDE.md entry: one sentence — what it does
+- `docs/` file: core idea + operations with example prompts + things worth knowing
+- SKILL.md: full implementation — steps, conditions, file paths, edge cases
+
+Keep docs files under ~100 lines. If you're reproducing SKILL.md content, you've gone too deep.
 
 ## Skill Authoring Conventions
 

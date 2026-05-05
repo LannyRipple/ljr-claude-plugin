@@ -643,5 +643,152 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KQX2P56VRMW6DN17G0XQNNBP",
+    "timestamp": "2026-05-05T22:03:40.635Z",
+    "domain": "implementation",
+    "scope": "skills/setup-long-task, skills/resume-long-task",
+    "summary": "Chose two skills (setup-long-task, resume-long-task) over one with modes",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/plans/setup-resume-long-task-skills.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX2P59VE3BWNGAWZ370S4H7",
+    "timestamp": "2026-05-05T22:03:40.731Z",
+    "domain": "architecture",
+    "scope": "skills/setup-long-task, skills/resume-long-task",
+    "summary": "Chose resume-long-task to delegate to setup-long-task's protocol-elements.md",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/plans/setup-resume-long-task-skills.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX2P5D02JQ177ZH29DXBA2Q",
+    "timestamp": "2026-05-05T22:03:40.832Z",
+    "domain": "implementation",
+    "scope": "skills/setup-long-task, skills/resume-long-task",
+    "summary": "Chose to embed the Slack case study inside protocol-elements.md",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/plans/setup-resume-long-task-skills.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX2P5HRYV6SSQHBK6EMAQ8W",
+    "timestamp": "2026-05-05T22:03:40.984Z",
+    "domain": "api-design",
+    "scope": "skills/setup-long-task, skills/resume-long-task",
+    "summary": "Chose 'what external APIs/services will this involve?' over asking about rate limits directly",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/plans/setup-resume-long-task-skills.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX2P5MQZT43DVDX44ZVSFKY",
+    "timestamp": "2026-05-05T22:03:41.079Z",
+    "domain": "architecture",
+    "scope": "skills/setup-long-task, skills/resume-long-task",
+    "summary": "Chose append-only reconciliation pattern over mutating inventory",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/plans/setup-resume-long-task-skills.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX2P5SJ53516TJP5VSF9KNF",
+    "timestamp": "2026-05-05T22:03:41.234Z",
+    "domain": "api-design",
+    "scope": "skills/setup-long-task, skills/resume-long-task",
+    "summary": "Chose CronCreate over Claude sleep-and-retry for rate-limited APIs",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/plans/setup-resume-long-task-skills.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX2ZX4BPMVPD26A3BVSQX02",
+    "timestamp": "2026-05-05T22:09:00.044Z",
+    "domain": "architecture",
+    "scope": "skills/setup-long-task, skills/resume-long-task",
+    "summary": "Added raw data cache as element 10 (threads/ subdirectory pattern) after user pointed out it was missing",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/setup-long-task/SKILL.md",
+      "skills/setup-long-task/references/protocol-elements.md",
+      "skills/resume-long-task/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX2ZX9968MJ0ZQER1J1SGR8",
+    "timestamp": "2026-05-05T22:09:00.202Z",
+    "domain": "architecture",
+    "scope": "skills/setup-long-task, skills/resume-long-task",
+    "summary": "Wizard question 8 asks about multiple analysis passes rather than asking about caching directly",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/setup-long-task/SKILL.md",
+      "skills/setup-long-task/references/protocol-elements.md",
+      "skills/resume-long-task/SKILL.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX48CS372BCT9AEJDTSVF2Z",
+    "timestamp": "2026-05-05T22:31:06.788Z",
+    "domain": "implementation",
+    "scope": "skills/setup-long-task",
+    "summary": "Applied all 12 review issues as proposed",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/setup-long-task/SKILL.md",
+      "skills/setup-long-task/references/protocol-elements.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQX4R8MQAQR96YNRN7BNKJHQ",
+    "timestamp": "2026-05-05T22:39:46.839Z",
+    "domain": "implementation",
+    "scope": "skills/resume-long-task",
+    "summary": "Added CronCreate-already-scheduled check to Step 3",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/resume-long-task/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]

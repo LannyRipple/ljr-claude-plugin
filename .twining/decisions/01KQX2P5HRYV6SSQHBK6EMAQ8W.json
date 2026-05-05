@@ -1,0 +1,40 @@
+{
+  "agent_id": "main",
+  "domain": "api-design",
+  "scope": "skills/setup-long-task, skills/resume-long-task",
+  "summary": "Chose 'what external APIs/services will this involve?' over asking about rate limits directly",
+  "context": "Design session for setup-long-task and resume-long-task skills. Plan written, no code changes yet.",
+  "rationale": "users may not know the vocabulary; wizard applies its own service knowledge",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "asking about rate limits directly",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    },
+    {
+      "option": "know the vocabulary; wizard applies its own service knowledge",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.claude/plans/setup-resume-long-task-skills.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "provenance": {
+    "recorded_at": "2026-05-05T22:03:40.953Z",
+    "branch": "main",
+    "commit_sha": "bc1706379c18b48ba3015993746cc1350a03ae12"
+  },
+  "id": "01KQX2P5HRYV6SSQHBK6EMAQ8W",
+  "timestamp": "2026-05-05T22:03:40.984Z",
+  "status": "active"
+}

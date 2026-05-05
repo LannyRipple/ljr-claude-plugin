@@ -1,0 +1,27 @@
+{
+  "agent_id": "main",
+  "domain": "architecture",
+  "scope": "skills/setup-long-task, skills/resume-long-task",
+  "summary": "Chose resume-long-task to delegate to setup-long-task's protocol-elements.md",
+  "context": "Design session for setup-long-task and resume-long-task skills. Plan written, no code changes yet.",
+  "rationale": "same pattern as bye/dev-panes referencing using-tmux",
+  "constraints": [],
+  "alternatives": [],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.claude/plans/setup-resume-long-task-skills.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": false,
+  "provenance": {
+    "recorded_at": "2026-05-05T22:03:40.699Z",
+    "branch": "main",
+    "commit_sha": "bc1706379c18b48ba3015993746cc1350a03ae12"
+  },
+  "id": "01KQX2P59VE3BWNGAWZ370S4H7",
+  "timestamp": "2026-05-05T22:03:40.731Z",
+  "status": "active"
+}

@@ -99,10 +99,10 @@
     "name": ".claude-plugin/plugin.json",
     "type": "file",
     "properties": {
-      "scope": "skills/notify-me/"
+      "scope": "skills/setup-long-task, skills/resume-long-task"
     },
     "created_at": "2026-04-21T23:15:59.169Z",
-    "updated_at": "2026-04-30T23:14:42.703Z"
+    "updated_at": "2026-05-05T22:09:00.332Z"
   },
   {
     "id": "01KQ7FV4YSWD939FEM2S7KBBVA",
@@ -671,5 +671,155 @@
     },
     "created_at": "2026-05-05T18:52:31.628Z",
     "updated_at": "2026-05-05T18:52:31.628Z"
+  },
+  {
+    "id": "01KQX2P58N1YHWN8DMY5455W1B",
+    "name": "01KQX2P56VRMW6DN17G0XQNNBP",
+    "type": "concept",
+    "properties": {
+      "summary": "Chose two skills (setup-long-task, resume-long-task) over one with modes",
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:03:40.693Z",
+    "updated_at": "2026-05-05T22:03:40.693Z"
+  },
+  {
+    "id": "01KQX2P58QZNC6QWH6HTT0DNR4",
+    "name": "~/.claude/plans/setup-resume-long-task-skills.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:03:40.695Z",
+    "updated_at": "2026-05-05T22:03:41.356Z"
+  },
+  {
+    "id": "01KQX2P5BVQ97VR9J30AHKF4KG",
+    "name": "01KQX2P59VE3BWNGAWZ370S4H7",
+    "type": "concept",
+    "properties": {
+      "summary": "Chose resume-long-task to delegate to setup-long-task's protocol-elements.md",
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:03:40.795Z",
+    "updated_at": "2026-05-05T22:03:40.795Z"
+  },
+  {
+    "id": "01KQX2P5GHPG63BJRSHRZWC9ZW",
+    "name": "01KQX2P5D02JQ177ZH29DXBA2Q",
+    "type": "concept",
+    "properties": {
+      "summary": "Chose to embed the Slack case study inside protocol-elements.md",
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:03:40.945Z",
+    "updated_at": "2026-05-05T22:03:40.945Z"
+  },
+  {
+    "id": "01KQX2P5KMVHHTNQAS7D070F6W",
+    "name": "01KQX2P5HRYV6SSQHBK6EMAQ8W",
+    "type": "concept",
+    "properties": {
+      "summary": "Chose 'what external APIs/services will this involve?' over asking about rate limits directly",
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:03:41.044Z",
+    "updated_at": "2026-05-05T22:03:41.044Z"
+  },
+  {
+    "id": "01KQX2P5RC9V1C3T3KB88R79GV",
+    "name": "01KQX2P5MQZT43DVDX44ZVSFKY",
+    "type": "concept",
+    "properties": {
+      "summary": "Chose append-only reconciliation pattern over mutating inventory",
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:03:41.196Z",
+    "updated_at": "2026-05-05T22:03:41.196Z"
+  },
+  {
+    "id": "01KQX2P5XBKKP682NKW4S81NTW",
+    "name": "01KQX2P5SJ53516TJP5VSF9KNF",
+    "type": "concept",
+    "properties": {
+      "summary": "Chose CronCreate over Claude sleep-and-retry for rate-limited APIs",
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:03:41.355Z",
+    "updated_at": "2026-05-05T22:03:41.355Z"
+  },
+  {
+    "id": "01KQX2ZX7TTJC9CDJZS7MBQZS7",
+    "name": "01KQX2ZX4BPMVPD26A3BVSQX02",
+    "type": "concept",
+    "properties": {
+      "summary": "Added raw data cache as element 10 (threads/ subdirectory pattern) after user pointed out it was missing",
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:09:00.154Z",
+    "updated_at": "2026-05-05T22:09:00.154Z"
+  },
+  {
+    "id": "01KQX2ZX7VQ6FT0NARPF46NCSQ",
+    "name": "skills/setup-long-task/SKILL.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task"
+    },
+    "created_at": "2026-05-05T22:09:00.155Z",
+    "updated_at": "2026-05-05T22:31:06.908Z"
+  },
+  {
+    "id": "01KQX2ZX7YFZFEVD7PSQE1BXGY",
+    "name": "skills/setup-long-task/references/protocol-elements.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task"
+    },
+    "created_at": "2026-05-05T22:09:00.158Z",
+    "updated_at": "2026-05-05T22:31:06.911Z"
+  },
+  {
+    "id": "01KQX2ZX82KET9NWYY08MGAXSR",
+    "name": "skills/resume-long-task/SKILL.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:09:00.162Z",
+    "updated_at": "2026-05-05T22:39:46.897Z"
+  },
+  {
+    "id": "01KQX2ZXD2Y71HC19A1WWGS8ZJ",
+    "name": "01KQX2ZX9968MJ0ZQER1J1SGR8",
+    "type": "concept",
+    "properties": {
+      "summary": "Wizard question 8 asks about multiple analysis passes rather than asking about caching directly",
+      "scope": "skills/setup-long-task, skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:09:00.322Z",
+    "updated_at": "2026-05-05T22:09:00.322Z"
+  },
+  {
+    "id": "01KQX48CWTEWRFA07NJYQFDEPK",
+    "name": "01KQX48CS372BCT9AEJDTSVF2Z",
+    "type": "concept",
+    "properties": {
+      "summary": "Applied all 12 review issues as proposed",
+      "scope": "skills/setup-long-task"
+    },
+    "created_at": "2026-05-05T22:31:06.906Z",
+    "updated_at": "2026-05-05T22:31:06.906Z"
+  },
+  {
+    "id": "01KQX4R8PGM4940BA5CK6R52TG",
+    "name": "01KQX4R8MQAQR96YNRN7BNKJHQ",
+    "type": "concept",
+    "properties": {
+      "summary": "Added CronCreate-already-scheduled check to Step 3",
+      "scope": "skills/resume-long-task"
+    },
+    "created_at": "2026-05-05T22:39:46.896Z",
+    "updated_at": "2026-05-05T22:39:46.896Z"
   }
 ]
