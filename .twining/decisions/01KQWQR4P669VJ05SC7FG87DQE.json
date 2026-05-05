@@ -1,0 +1,36 @@
+{
+  "agent_id": "main",
+  "domain": "security",
+  "scope": "~/.claude/references/",
+  "summary": "Put priority gotchas in a table in TOOL-REFERENCES.md rather than restructuring each reference file",
+  "context": "Created TOOL-REFERENCES.md priority index; updated global-memory.md to @ include it; updated gh.md with MCP preference note from CLAUDE.md.",
+  "rationale": "less churn, individual files stay authoritative for detail",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "restructuring each reference file",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.claude/references/TOOL-REFERENCES.md",
+    "~/.claude/references/global-memory.md",
+    "~/.claude/references/gh.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": true,
+  "provenance": {
+    "recorded_at": "2026-05-05T18:52:31.269Z",
+    "branch": "main",
+    "commit_sha": "3f9d6b9376a73c56de23883784158b21ff2b9c42"
+  },
+  "id": "01KQWQR4P669VJ05SC7FG87DQE",
+  "timestamp": "2026-05-05T18:52:31.302Z",
+  "status": "active"
+}

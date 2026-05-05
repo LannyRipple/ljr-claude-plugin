@@ -1,12 +1,12 @@
 {
   "hooks": {
-    "PreToolUse": [
+    "PreCompact": [
       {
-        "matcher": "Bash|Read",
+        "matcher": "auto",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/auto-approve.py\""
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/precompact-auto.py\""
           }
         ]
       }

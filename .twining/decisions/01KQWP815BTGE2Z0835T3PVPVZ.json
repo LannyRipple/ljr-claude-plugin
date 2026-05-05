@@ -1,0 +1,34 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/compaction-instructions/SKILL.md",
+  "summary": "Check uses section header presence (grep for '# Auto-Compact Instructions') not full content match",
+  "context": "Added CLAUDE.md bootstrap check to compaction-instructions skill so it self-installs the Auto-Compact Instructions section on any machine missing it.",
+  "rationale": "avoids false negatives from minor wording drift while still catching missing sections",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "full content match",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/compaction-instructions/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": true,
+  "provenance": {
+    "recorded_at": "2026-05-05T18:26:14.794Z",
+    "branch": "main",
+    "commit_sha": "d828f30aab564fa9cf0d6aa9cce39a602159f6bf"
+  },
+  "id": "01KQWP815BTGE2Z0835T3PVPVZ",
+  "timestamp": "2026-05-05T18:26:14.827Z",
+  "status": "active"
+}

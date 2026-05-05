@@ -89,10 +89,10 @@
     "name": "skills/compaction-instructions/SKILL.md",
     "type": "file",
     "properties": {
-      "scope": "skills/"
+      "scope": "skills/compaction-instructions/SKILL.md"
     },
     "created_at": "2026-04-21T23:15:59.167Z",
-    "updated_at": "2026-05-01T17:09:10.518Z"
+    "updated_at": "2026-05-05T18:26:15.084Z"
   },
   {
     "id": "01KPS58G21D3CZ96DQ50F0NCKZ",
@@ -511,5 +511,165 @@
     },
     "created_at": "2026-05-01T18:04:23.881Z",
     "updated_at": "2026-05-01T18:04:23.881Z"
+  },
+  {
+    "id": "01KQWP00QCWM09TE9C33G5Y7W9",
+    "name": "01KQWP00NC3ER8SSP3Z7TARR87",
+    "type": "concept",
+    "properties": {
+      "summary": "Added structured output sections (User Intent, Completed Work, Errors & Corrections, Active Work, Pending Tasks, Key References) to SYSTEM_PROMPT",
+      "scope": "hooks/precompact-auto.py"
+    },
+    "created_at": "2026-05-05T18:21:52.236Z",
+    "updated_at": "2026-05-05T18:21:52.236Z"
+  },
+  {
+    "id": "01KQWP00QES130J1V76HG0XF4Y",
+    "name": "hooks/precompact-auto.py",
+    "type": "file",
+    "properties": {
+      "scope": "hooks/precompact-auto.py"
+    },
+    "created_at": "2026-05-05T18:21:52.237Z",
+    "updated_at": "2026-05-05T18:21:52.550Z"
+  },
+  {
+    "id": "01KQWP00W46YCV56CD78FA9PS1",
+    "name": "01KQWP00RQJTH1P1ZKZME9A853",
+    "type": "concept",
+    "properties": {
+      "summary": "Removed text[:2000] truncation from assistant turns",
+      "scope": "hooks/precompact-auto.py"
+    },
+    "created_at": "2026-05-05T18:21:52.388Z",
+    "updated_at": "2026-05-05T18:21:52.388Z"
+  },
+  {
+    "id": "01KQWP0115VYVNVS2J7M2C00Q7",
+    "name": "01KQWP00XF0F25ETW08W6Y59VP",
+    "type": "concept",
+    "properties": {
+      "summary": "Applied same section structure to compaction-instructions/SKILL.md and ~/.claude/CLAUDE.md so all three compaction paths produce equivalent output",
+      "scope": "hooks/precompact-auto.py"
+    },
+    "created_at": "2026-05-05T18:21:52.548Z",
+    "updated_at": "2026-05-05T18:21:52.548Z"
+  },
+  {
+    "id": "01KQWP814610APGA9ZAREEY3CZ",
+    "name": "01KQWP812DYNY13XT81BRNK34R",
+    "type": "concept",
+    "properties": {
+      "summary": "Added CLAUDE.md check as a step within the skill rather than a separate skill or hook",
+      "scope": "skills/compaction-instructions/SKILL.md"
+    },
+    "created_at": "2026-05-05T18:26:14.790Z",
+    "updated_at": "2026-05-05T18:26:14.790Z"
+  },
+  {
+    "id": "01KQWP818SDW32QMVBQQPXGNAX",
+    "name": "01KQWP815BTGE2Z0835T3PVPVZ",
+    "type": "concept",
+    "properties": {
+      "summary": "Check uses section header presence (grep for '# Auto-Compact Instructions') not full content match",
+      "scope": "skills/compaction-instructions/SKILL.md"
+    },
+    "created_at": "2026-05-05T18:26:14.937Z",
+    "updated_at": "2026-05-05T18:26:14.937Z"
+  },
+  {
+    "id": "01KQWP81DBBSXVKA868DRV21CJ",
+    "name": "01KQWP819Z5ZCBQ0F30ZQS2PMR",
+    "type": "concept",
+    "properties": {
+      "summary": "If section exists, prompt user before updating rather than auto-overwriting",
+      "scope": "skills/compaction-instructions/SKILL.md"
+    },
+    "created_at": "2026-05-05T18:26:15.083Z",
+    "updated_at": "2026-05-05T18:26:15.083Z"
+  },
+  {
+    "id": "01KQWPEWGTEY5RE52WBAANWT9C",
+    "name": "01KQWPEWF2V64SVX7X0FAT1QG5",
+    "type": "concept",
+    "properties": {
+      "summary": "Updated existing GPG Signing section rather than appending",
+      "scope": "~/.claude/references/"
+    },
+    "created_at": "2026-05-05T18:29:59.450Z",
+    "updated_at": "2026-05-05T18:29:59.450Z"
+  },
+  {
+    "id": "01KQWPEWGWSTQBGBS81577XBX6",
+    "name": "~/.claude/references/git.md",
+    "type": "file",
+    "properties": {
+      "scope": "~/.claude/references/"
+    },
+    "created_at": "2026-05-05T18:29:59.451Z",
+    "updated_at": "2026-05-05T18:29:59.451Z"
+  },
+  {
+    "id": "01KQWQR4R0928WS9RF82SCW0R9",
+    "name": "01KQWQR4P669VJ05SC7FG87DQE",
+    "type": "concept",
+    "properties": {
+      "summary": "Put priority gotchas in a table in TOOL-REFERENCES.md rather than restructuring each reference file",
+      "scope": "~/.claude/references/"
+    },
+    "created_at": "2026-05-05T18:52:31.360Z",
+    "updated_at": "2026-05-05T18:52:31.360Z"
+  },
+  {
+    "id": "01KQWQR4R22777V9BV7WZJB0WT",
+    "name": "~/.claude/references/TOOL-REFERENCES.md",
+    "type": "file",
+    "properties": {
+      "scope": "~/.claude/references/"
+    },
+    "created_at": "2026-05-05T18:52:31.362Z",
+    "updated_at": "2026-05-05T18:52:31.629Z"
+  },
+  {
+    "id": "01KQWQR4R4NVQKW1R1CRH5SJDH",
+    "name": "~/.claude/references/global-memory.md",
+    "type": "file",
+    "properties": {
+      "scope": "~/.claude/references/"
+    },
+    "created_at": "2026-05-05T18:52:31.364Z",
+    "updated_at": "2026-05-05T18:52:31.632Z"
+  },
+  {
+    "id": "01KQWQR4R7CNQ0JB3YDEBHFTB2",
+    "name": "~/.claude/references/gh.md",
+    "type": "file",
+    "properties": {
+      "scope": "~/.claude/references/"
+    },
+    "created_at": "2026-05-05T18:52:31.367Z",
+    "updated_at": "2026-05-05T18:52:31.635Z"
+  },
+  {
+    "id": "01KQWQR4X7ZGHF2RF8HH9HYTYP",
+    "name": "01KQWQR4SDX0258HXPC1EHRM5D",
+    "type": "concept",
+    "properties": {
+      "summary": "Left git.soma MCP preference line in CLAUDE.md rather than removing it",
+      "scope": "~/.claude/references/"
+    },
+    "created_at": "2026-05-05T18:52:31.527Z",
+    "updated_at": "2026-05-05T18:52:31.527Z"
+  },
+  {
+    "id": "01KQWQR50CW5QPHZ9CHVQVF1M9",
+    "name": "01KQWQR4YGGJ53YTPADXRPG2WG",
+    "type": "concept",
+    "properties": {
+      "summary": "Used @ include in global-memory.md rather than inlining the table",
+      "scope": "~/.claude/references/"
+    },
+    "created_at": "2026-05-05T18:52:31.628Z",
+    "updated_at": "2026-05-05T18:52:31.628Z"
   }
 ]

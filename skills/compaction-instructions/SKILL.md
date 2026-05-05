@@ -20,14 +20,105 @@ Retain: work intent, decisions made, what was accomplished, any open questions.
 Drop: file contents, resolved errors, build logs, tool call details.
 ```
 
-Add any additional instructions to carry on work that might be currently ongoing.
-The context can fill mid-process so compaction won't always be happening at a
-nice quiet point between tasks. If work was in progress at compaction time, state
-the next concrete action explicitly — not just the open question, but the specific
-step that should happen first on resume.
+Then write a structured summary using these sections (### headers, omit sections with nothing to say):
+
+```
+### User Intent
+What the user was trying to accomplish overall.
+
+### Completed Work
+What was finished. Include exact file paths, symbol names, and identifiers.
+
+### Errors & Corrections
+Mistakes made and how resolved. User corrections verbatim.
+
+### Active Work
+What was in progress when compaction triggered.
+
+### Pending Tasks
+Outstanding items not yet started.
+
+### Key References
+File paths, config values, identifiers, and constraints a resumed session needs.
+```
+
+Preserve always: exact file paths, symbol names, error messages verbatim, user corrections,
+specific config values, technical constraints.
+
+Compression rules: weight recent messages more heavily; omit pleasantries, exploratory dead
+ends, and resolved errors already captured above; keep each section under 500 words; cut
+filler before cutting facts.
+
+The context can fill mid-process so compaction won't always be happening at a nice quiet
+point between tasks. If work was in progress at compaction time, end with a `Next action:`
+line stating the specific next step — not a vague goal, but the concrete first action on resume.
 
 Write the instructions to /tmp/claude-502/compaction-instructions.md and then
 copy them to the clipboard with `cat /tmp/claude-502/compaction-instructions.md | pbcopy`.
+
+---
+
+## Ensure Auto-Compact Instructions in User CLAUDE.md
+
+After writing the compaction instructions, check whether `~/.claude/CLAUDE.md` contains
+an `# Auto-Compact Instructions` section.
+
+```bash
+grep -q "^# Auto-Compact Instructions" ~/.claude/CLAUDE.md && echo "EXISTS" || echo "MISSING"
+```
+
+**If MISSING:** Append the following block to `~/.claude/CLAUDE.md`:
+
+```
+# Auto-Compact Instructions
+
+You are to build the instructions to follow for auto-compaction.  Start with:
+
+\`\`\`
+Retain: work intent, decisions made, what was accomplished, any open questions.
+Drop: file contents, resolved errors, build logs, tool call details.
+\`\`\`
+
+Then write a structured summary using these sections (### headers, omit sections with nothing to say):
+
+\`\`\`
+### User Intent
+What the user was trying to accomplish overall.
+
+### Completed Work
+What was finished. Include exact file paths, symbol names, and identifiers.
+
+### Errors & Corrections
+Mistakes made and how resolved. User corrections verbatim.
+
+### Active Work
+What was in progress when compaction triggered.
+
+### Pending Tasks
+Outstanding items not yet started.
+
+### Key References
+File paths, config values, identifiers, and constraints a resumed session needs.
+\`\`\`
+
+Preserve always: exact file paths, symbol names, error messages verbatim, user corrections,
+specific config values, technical constraints.
+
+Compression rules: weight recent messages more heavily; omit pleasantries, exploratory dead
+ends, and resolved errors already captured above; keep each section under 500 words; cut
+filler before cutting facts.
+
+Add any additional instructions to carry on work that might be currently ongoing.
+State the next concrete action explicitly — not just the open question, but the specific
+step that should happen first on resume.
+
+Once you have these instructions constructed use them for the Auto-Compaction.
+```
+
+Tell the user the section was added.
+
+**If EXISTS:** Tell the user the section already exists and ask if it should be updated
+to match the current structured format. Do not update it unless the user says yes.
 
 ---
 

@@ -1,0 +1,34 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "~/.claude/references/",
+  "summary": "Updated existing GPG Signing section rather than appending",
+  "context": "Updated ~/.claude/references/git.md GPG section: sandbox bypass required for signing; removed --no-gpg-sign from fixup/amend examples.",
+  "rationale": "the old content was actively wrong and would have conflicted with the new guidance",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "appending",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.claude/references/git.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": true,
+  "provenance": {
+    "recorded_at": "2026-05-05T18:29:59.362Z",
+    "branch": "main",
+    "commit_sha": "3f9d6b9376a73c56de23883784158b21ff2b9c42"
+  },
+  "id": "01KQWPEWF2V64SVX7X0FAT1QG5",
+  "timestamp": "2026-05-05T18:29:59.395Z",
+  "status": "active"
+}

@@ -1,0 +1,34 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "skills/compaction-instructions/SKILL.md",
+  "summary": "Added CLAUDE.md check as a step within the skill rather than a separate skill or hook",
+  "context": "Added CLAUDE.md bootstrap check to compaction-instructions skill so it self-installs the Auto-Compact Instructions section on any machine missing it.",
+  "rationale": "keeps the bootstrap logic co-located with the compaction workflow that depends on it",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "a separate skill or hook",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "skills/compaction-instructions/SKILL.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": true,
+  "provenance": {
+    "recorded_at": "2026-05-05T18:26:14.700Z",
+    "branch": "main",
+    "commit_sha": "d828f30aab564fa9cf0d6aa9cce39a602159f6bf"
+  },
+  "id": "01KQWP812DYNY13XT81BRNK34R",
+  "timestamp": "2026-05-05T18:26:14.733Z",
+  "status": "active"
+}

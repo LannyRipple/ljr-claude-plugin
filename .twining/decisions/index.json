@@ -494,5 +494,154 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KQWP00NC3ER8SSP3Z7TARR87",
+    "timestamp": "2026-05-05T18:21:52.172Z",
+    "domain": "implementation",
+    "scope": "hooks/precompact-auto.py",
+    "summary": "Added structured output sections (User Intent, Completed Work, Errors & Corrections, Active Work, Pending Tasks, Key References) to SYSTEM_PROMPT",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "hooks/precompact-auto.py",
+      "skills/compaction-instructions/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWP00RQJTH1P1ZKZME9A853",
+    "timestamp": "2026-05-05T18:21:52.279Z",
+    "domain": "implementation",
+    "scope": "hooks/precompact-auto.py",
+    "summary": "Removed text[:2000] truncation from assistant turns",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "hooks/precompact-auto.py",
+      "skills/compaction-instructions/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWP00XF0F25ETW08W6Y59VP",
+    "timestamp": "2026-05-05T18:21:52.431Z",
+    "domain": "implementation",
+    "scope": "hooks/precompact-auto.py",
+    "summary": "Applied same section structure to compaction-instructions/SKILL.md and ~/.claude/CLAUDE.md so all three compaction paths produce equivalent output",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "hooks/precompact-auto.py",
+      "skills/compaction-instructions/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWP812DYNY13XT81BRNK34R",
+    "timestamp": "2026-05-05T18:26:14.733Z",
+    "domain": "implementation",
+    "scope": "skills/compaction-instructions/SKILL.md",
+    "summary": "Added CLAUDE.md check as a step within the skill rather than a separate skill or hook",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/compaction-instructions/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWP815BTGE2Z0835T3PVPVZ",
+    "timestamp": "2026-05-05T18:26:14.827Z",
+    "domain": "implementation",
+    "scope": "skills/compaction-instructions/SKILL.md",
+    "summary": "Check uses section header presence (grep for '# Auto-Compact Instructions') not full content match",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/compaction-instructions/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWP819Z5ZCBQ0F30ZQS2PMR",
+    "timestamp": "2026-05-05T18:26:14.975Z",
+    "domain": "implementation",
+    "scope": "skills/compaction-instructions/SKILL.md",
+    "summary": "If section exists, prompt user before updating rather than auto-overwriting",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/compaction-instructions/SKILL.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWPEWF2V64SVX7X0FAT1QG5",
+    "timestamp": "2026-05-05T18:29:59.395Z",
+    "domain": "implementation",
+    "scope": "~/.claude/references/",
+    "summary": "Updated existing GPG Signing section rather than appending",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/references/git.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWQR4P669VJ05SC7FG87DQE",
+    "timestamp": "2026-05-05T18:52:31.302Z",
+    "domain": "security",
+    "scope": "~/.claude/references/",
+    "summary": "Put priority gotchas in a table in TOOL-REFERENCES.md rather than restructuring each reference file",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/references/TOOL-REFERENCES.md",
+      "~/.claude/references/global-memory.md",
+      "~/.claude/references/gh.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWQR4SDX0258HXPC1EHRM5D",
+    "timestamp": "2026-05-05T18:52:31.405Z",
+    "domain": "implementation",
+    "scope": "~/.claude/references/",
+    "summary": "Left git.soma MCP preference line in CLAUDE.md rather than removing it",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/references/TOOL-REFERENCES.md",
+      "~/.claude/references/global-memory.md",
+      "~/.claude/references/gh.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
+  },
+  {
+    "id": "01KQWQR4YGGJ53YTPADXRPG2WG",
+    "timestamp": "2026-05-05T18:52:31.568Z",
+    "domain": "data-model",
+    "scope": "~/.claude/references/",
+    "summary": "Used @ include in global-memory.md rather than inlining the table",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "~/.claude/references/TOOL-REFERENCES.md",
+      "~/.claude/references/global-memory.md",
+      "~/.claude/references/gh.md"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]

@@ -1,0 +1,42 @@
+{
+  "agent_id": "main",
+  "domain": "implementation",
+  "scope": "~/.claude/references/",
+  "summary": "Left git.soma MCP preference line in CLAUDE.md rather than removing it",
+  "context": "Created TOOL-REFERENCES.md priority index; updated global-memory.md to @ include it; updated gh.md with MCP preference note from CLAUDE.md.",
+  "rationale": "that rule is MUST-level and TOOL-REFERENCES.md is only loaded via global-memory, not guaranteed in all contexts",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "removing it",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    },
+    {
+      "option": "guaranteed in all contexts",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.claude/references/TOOL-REFERENCES.md",
+    "~/.claude/references/global-memory.md",
+    "~/.claude/references/gh.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": true,
+  "provenance": {
+    "recorded_at": "2026-05-05T18:52:31.370Z",
+    "branch": "main",
+    "commit_sha": "3f9d6b9376a73c56de23883784158b21ff2b9c42"
+  },
+  "id": "01KQWQR4SDX0258HXPC1EHRM5D",
+  "timestamp": "2026-05-05T18:52:31.405Z",
+  "status": "active"
+}

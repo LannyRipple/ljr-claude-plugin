@@ -1,0 +1,36 @@
+{
+  "agent_id": "main",
+  "domain": "data-model",
+  "scope": "~/.claude/references/",
+  "summary": "Used @ include in global-memory.md rather than inlining the table",
+  "context": "Created TOOL-REFERENCES.md priority index; updated global-memory.md to @ include it; updated gh.md with MCP preference note from CLAUDE.md.",
+  "rationale": "keeps global-memory.md short and lets TOOL-REFERENCES.md be updated independently",
+  "constraints": [],
+  "alternatives": [
+    {
+      "option": "inlining the table",
+      "pros": [],
+      "cons": [],
+      "reason_rejected": "Not chosen"
+    }
+  ],
+  "depends_on": [],
+  "confidence": "medium",
+  "reversible": true,
+  "affected_files": [
+    "~/.claude/references/TOOL-REFERENCES.md",
+    "~/.claude/references/global-memory.md",
+    "~/.claude/references/gh.md"
+  ],
+  "affected_symbols": [],
+  "commit_hashes": [],
+  "assembled_before": true,
+  "provenance": {
+    "recorded_at": "2026-05-05T18:52:31.536Z",
+    "branch": "main",
+    "commit_sha": "3f9d6b9376a73c56de23883784158b21ff2b9c42"
+  },
+  "id": "01KQWQR4YGGJ53YTPADXRPG2WG",
+  "timestamp": "2026-05-05T18:52:31.568Z",
+  "status": "active"
+}

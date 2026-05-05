@@ -668,5 +668,195 @@
       "decision_summary": "pinentry-mac is at /usr/local/bin/pinentry-mac, not /opt/homebrew/bin"
     },
     "created_at": "2026-05-01T18:04:23.883Z"
+  },
+  {
+    "id": "01KQWP00QGDJ44KWWCF42VMPDZ",
+    "source": "01KQWP00QES130J1V76HG0XF4Y",
+    "target": "01KQWP00QCWM09TE9C33G5Y7W9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added structured output sections (User Intent, Completed Work, Errors & Corrections, Active Work, Pending Tasks, Key References) to SYSTEM_PROMPT"
+    },
+    "created_at": "2026-05-05T18:21:52.240Z"
+  },
+  {
+    "id": "01KQWP00QMHMFKNTH9CWYTTFD7",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQWP00QCWM09TE9C33G5Y7W9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added structured output sections (User Intent, Completed Work, Errors & Corrections, Active Work, Pending Tasks, Key References) to SYSTEM_PROMPT"
+    },
+    "created_at": "2026-05-05T18:21:52.244Z"
+  },
+  {
+    "id": "01KQWP00W7R9W5ST435XZD2GDJ",
+    "source": "01KQWP00QES130J1V76HG0XF4Y",
+    "target": "01KQWP00W46YCV56CD78FA9PS1",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Removed text[:2000] truncation from assistant turns"
+    },
+    "created_at": "2026-05-05T18:21:52.391Z"
+  },
+  {
+    "id": "01KQWP00WA9PE323K1H474345N",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQWP00W46YCV56CD78FA9PS1",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Removed text[:2000] truncation from assistant turns"
+    },
+    "created_at": "2026-05-05T18:21:52.394Z"
+  },
+  {
+    "id": "01KQWP011763WNMQ535FRDZWKR",
+    "source": "01KQWP00QES130J1V76HG0XF4Y",
+    "target": "01KQWP0115VYVNVS2J7M2C00Q7",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Applied same section structure to compaction-instructions/SKILL.md and ~/.claude/CLAUDE.md so all three compaction paths produce equivalent output"
+    },
+    "created_at": "2026-05-05T18:21:52.551Z"
+  },
+  {
+    "id": "01KQWP011A86HQ6361TS9R99AZ",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQWP0115VYVNVS2J7M2C00Q7",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Applied same section structure to compaction-instructions/SKILL.md and ~/.claude/CLAUDE.md so all three compaction paths produce equivalent output"
+    },
+    "created_at": "2026-05-05T18:21:52.554Z"
+  },
+  {
+    "id": "01KQWP8148RZ7V841G2HSN99P3",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQWP814610APGA9ZAREEY3CZ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Added CLAUDE.md check as a step within the skill rather than a separate skill or hook"
+    },
+    "created_at": "2026-05-05T18:26:14.792Z"
+  },
+  {
+    "id": "01KQWP818W5ARQQRQ2WYE6GMW4",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQWP818SDW32QMVBQQPXGNAX",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Check uses section header presence (grep for '# Auto-Compact Instructions') not full content match"
+    },
+    "created_at": "2026-05-05T18:26:14.940Z"
+  },
+  {
+    "id": "01KQWP81DEW6TPBZBVQSJJKSYK",
+    "source": "01KPS58G1Z5GPPAKF1WJDG3GHV",
+    "target": "01KQWP81DBBSXVKA868DRV21CJ",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "If section exists, prompt user before updating rather than auto-overwriting"
+    },
+    "created_at": "2026-05-05T18:26:15.086Z"
+  },
+  {
+    "id": "01KQWPEWGXXJY94K2X20R5PEJY",
+    "source": "01KQWPEWGWSTQBGBS81577XBX6",
+    "target": "01KQWPEWGTEY5RE52WBAANWT9C",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Updated existing GPG Signing section rather than appending"
+    },
+    "created_at": "2026-05-05T18:29:59.453Z"
+  },
+  {
+    "id": "01KQWQR4R3CAT5W1DJXQJMKBY1",
+    "source": "01KQWQR4R22777V9BV7WZJB0WT",
+    "target": "01KQWQR4R0928WS9RF82SCW0R9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Put priority gotchas in a table in TOOL-REFERENCES.md rather than restructuring each reference file"
+    },
+    "created_at": "2026-05-05T18:52:31.363Z"
+  },
+  {
+    "id": "01KQWQR4R6FNY5A4FGYRMTTK5R",
+    "source": "01KQWQR4R4NVQKW1R1CRH5SJDH",
+    "target": "01KQWQR4R0928WS9RF82SCW0R9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Put priority gotchas in a table in TOOL-REFERENCES.md rather than restructuring each reference file"
+    },
+    "created_at": "2026-05-05T18:52:31.366Z"
+  },
+  {
+    "id": "01KQWQR4R9T1XPVGA0D3JQJ4RP",
+    "source": "01KQWQR4R7CNQ0JB3YDEBHFTB2",
+    "target": "01KQWQR4R0928WS9RF82SCW0R9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Put priority gotchas in a table in TOOL-REFERENCES.md rather than restructuring each reference file"
+    },
+    "created_at": "2026-05-05T18:52:31.369Z"
+  },
+  {
+    "id": "01KQWQR4XAGD81ZX2R6YPJ5HX9",
+    "source": "01KQWQR4R22777V9BV7WZJB0WT",
+    "target": "01KQWQR4X7ZGHF2RF8HH9HYTYP",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left git.soma MCP preference line in CLAUDE.md rather than removing it"
+    },
+    "created_at": "2026-05-05T18:52:31.530Z"
+  },
+  {
+    "id": "01KQWQR4XDP15QQGK5NX888VB5",
+    "source": "01KQWQR4R4NVQKW1R1CRH5SJDH",
+    "target": "01KQWQR4X7ZGHF2RF8HH9HYTYP",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left git.soma MCP preference line in CLAUDE.md rather than removing it"
+    },
+    "created_at": "2026-05-05T18:52:31.533Z"
+  },
+  {
+    "id": "01KQWQR4XF5NDV4ST8QXY31XTE",
+    "source": "01KQWQR4R7CNQ0JB3YDEBHFTB2",
+    "target": "01KQWQR4X7ZGHF2RF8HH9HYTYP",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Left git.soma MCP preference line in CLAUDE.md rather than removing it"
+    },
+    "created_at": "2026-05-05T18:52:31.535Z"
+  },
+  {
+    "id": "01KQWQR50FG0ENN8NZ2BCCR90E",
+    "source": "01KQWQR4R22777V9BV7WZJB0WT",
+    "target": "01KQWQR50CW5QPHZ9CHVQVF1M9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used @ include in global-memory.md rather than inlining the table"
+    },
+    "created_at": "2026-05-05T18:52:31.631Z"
+  },
+  {
+    "id": "01KQWQR50HPP1W4E5AMN4X6KS7",
+    "source": "01KQWQR4R4NVQKW1R1CRH5SJDH",
+    "target": "01KQWQR50CW5QPHZ9CHVQVF1M9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used @ include in global-memory.md rather than inlining the table"
+    },
+    "created_at": "2026-05-05T18:52:31.634Z"
+  },
+  {
+    "id": "01KQWQR50MYMX19TG37W22BKT8",
+    "source": "01KQWQR4R7CNQ0JB3YDEBHFTB2",
+    "target": "01KQWQR50CW5QPHZ9CHVQVF1M9",
+    "type": "decided_by",
+    "properties": {
+      "decision_summary": "Used @ include in global-memory.md rather than inlining the table"
+    },
+    "created_at": "2026-05-05T18:52:31.636Z"
   }
 ]
