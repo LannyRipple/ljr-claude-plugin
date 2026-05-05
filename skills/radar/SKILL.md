@@ -129,6 +129,10 @@ MUST run `date` before building the agenda to get the current date. Do not rely 
 agent context or `last-date-check` — these can be stale across long sessions. Use the
 system date for the agenda header, reminder evaluation, and GUS cadence checks.
 
+MUST fetch the calendar and Gmail fresh every time the agenda is built — do not reuse
+data from earlier in the session. Both can change (reschedules, new invites, new mail)
+without entering the conversation context.
+
 MUST present the date-check and reminder output in a show-and-go pane opened above Claude
 Code. All tmux commands require `dangerouslyDisableSandbox: true`. If problems occur with
 tmux, load the `using-tmux` skill to troubleshoot.
