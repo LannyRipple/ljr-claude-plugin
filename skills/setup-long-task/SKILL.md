@@ -84,6 +84,12 @@ this vocabulary.
    (e.g., "first categorize, then count patterns, then re-examine a subset" — if so,
    caching raw fetched data locally avoids re-querying a rate-limited API)
 
+9. **Is there a cheap pre-scan you can do before hitting the rate-limited source?**
+   (e.g., message previews already cached locally, a metadata file already downloaded,
+   or a fast local index to scan before making expensive API calls)
+   If yes: structure RESUME.md with an explicit Phase 0 (free scan) before Phase 1 (API
+   reads). Phase 0 exhausts what's cheap; Phase 1 only touches items that actually need it.
+
 ---
 
 ## Step 4: Determine elements
@@ -177,10 +183,18 @@ observed limit'` and flag this in the handoff summary.
 
 **Reconciliation script** — If both inventory and accumulator are present, write a small
 Python script (`check_progress.py`) that:
-- Reads the accumulator to get completed item IDs
+- Reads the completion tracker (not the results accumulator) to get examined item IDs
 - Reads the inventory to find pending items
 - Prints pending items sorted by a relevant priority field for this task (e.g., severity,
   date, or reply count for message-based tasks)
+
+If using the two-file variant (completion tracker + results accumulator), cross the
+inventory against the completion tracker — not the results file. Crossing against results
+conflates "no output found" with "not yet examined."
+
+Design the helper script with a CLI argument interface for any writes (see shell injection
+gotcha in protocol-elements.md §9). Read-only scripts (status, reconciliation) don't
+need this.
 
 ---
 

@@ -34,7 +34,7 @@ A skill is invoked as `/{SKILL_NAME}` in Claude Code. The `name` field in SKILL.
 
 ## Hooks in This Repo
 
-- **precompact-auto** — Fires on automatic compaction. Calls the Claude API to generate tailored compaction instructions, copies to clipboard, then halts auto-compaction so the user can run `/compact` manually with the generated instructions.
+- **precompact-auto** — Fires on automatic compaction. Calls the Claude API to generate tailored compaction instructions, copies them to the clipboard, then lets auto-compaction proceed.
 
 ## Adding a Skill or Hook
 

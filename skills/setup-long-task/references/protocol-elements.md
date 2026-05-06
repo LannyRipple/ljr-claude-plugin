@@ -73,6 +73,24 @@ to be useful standalone: item ID, timestamp, key output fields.
 report, a summary), a plain output file is fine. The accumulator pattern is for tasks
 where "done so far" is meaningful independently of "done entirely."
 
+**Two-file variant (when most items produce no output):** If only a fraction of items
+produce a result record (e.g., scanning 460 messages to find 26 referrals), use a
+separate completion tracker alongside the results accumulator:
+
+- `checked.jsonl` — one entry per examined item, whether or not it produced output.
+  The reconciliation script crosses the inventory against this file to show progress.
+- `results.jsonl` — only items that produced output.
+
+Do not cross the inventory against `results.jsonl` for progress: that conflates "nothing
+found" with "not yet examined." Without a completion tracker, a resumed session cannot
+distinguish the two.
+
+**Completion detection — specify the format upfront:** The reconciliation script must
+have an unambiguous rule for what counts as "done." Define it explicitly in GOAL.md or
+in the script itself — which field and which value/prefix mark an item complete. If the
+format drifts across sessions (e.g., note field uses different prefixes), items will be
+silently miscounted. Decide once and enforce it in the helper script.
+
 ---
 
 ### 5. Cursor / pagination state — Position tracker (when data is paginated)
@@ -158,6 +176,21 @@ severity). On resume, running this script gives an instant status without token 
 **When not needed:** simple tasks with a single linear sequence don't need a script —
 RESUME.md is sufficient.
 
+**Shell injection gotcha — use named-arg CLI scripts for state writes:** Claude Code's
+built-in shell injection check blocks Python dict literals (`{'key': value}`) inside
+bash heredocs, regardless of the heredoc delimiter style. This fires whenever a helper
+script needs to write JSON state (rate-limit.json, checked.jsonl, results.jsonl) from
+within a bash command. The workaround: extract all logic that uses dict literals into a
+`.py` file and call it with named CLI arguments:
+
+```bash
+python3 bookkeep.py --ts 1234567890 --no-result
+python3 bookkeep.py --ts 1234567890 --result --category "Auth" --referred-to "some-team"
+```
+
+Design helper scripts with a CLI argument interface from the start. Scripts that only
+read and print (reconciliation, status) are fine as heredocs.
+
 ---
 
 ### 10. Raw data cache — Fetched source material (when re-fetching is costly)
@@ -190,12 +223,20 @@ The setup wizard asks these questions to determine which elements to include:
 | What external APIs or services will this involve? | Rate limit state (6) — if service is rate-limited; cursor (5) — if service is paginated |
 | Does the API/service have pagination or cursor-based navigation? | Cursor (5) |
 | Is there a known list of items to process, or is scope discovered as you go? | Item inventory (3) |
-| Does output accumulate item by item, or is it a single document at the end? | Results accumulator (4) |
+| Does output accumulate item by item, or is it a single document at the end? | Results accumulator (4); two-file variant (4) if most items produce no output |
 | Do you expect some items to fail (deleted, forbidden, API errors)? | Error log (7) |
 | Do you expect this to span many sessions or days? | Session log (8), helper scripts (9) |
 | Might the analysis question evolve, or will you need multiple passes over the same data? | Raw data cache (10) |
+| Is there a cheap pre-scan you can do before hitting the rate-limited source? | Phase structure in RESUME.md — see below |
 
 Elements 1 (GOAL.md) and 2 (RESUME.md) are always included.
+
+**Cheap pre-scan phase:** If some signal can be extracted from already-available data
+(cached files, local copies, message previews) before making any rate-limited API calls,
+structure the task into explicit phases: Phase 0 (free scan, no API calls) → Phase 1
+(API reads for items that need it). Phase 0 exhausts what's cheap before touching the
+rate-limited source. The RESUME.md phase structure should name these phases explicitly
+and track which phase is active. This often reduces the number of API calls substantially.
 
 ---
 

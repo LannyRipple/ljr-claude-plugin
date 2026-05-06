@@ -72,9 +72,13 @@ the next step with `CronCreate` and let Claude exit. The cron tick resumes from 
 at the right moment.
 
 **The reconciliation pattern.** For large tasks, the inventory is written once and never
-mutated. Completions are appended to the accumulator. A small script crosses the two.
+mutated. Completions are appended to a completion tracker. A small script crosses the two.
 This is safer than updating status in the inventory — appends can't corrupt partially
-written JSON.
+written JSON. If only a fraction of items produce output (e.g., scanning 460 messages
+to find 26 results), use two files: a completion tracker (one entry per examined item)
+and a results accumulator (only items with output). Cross the inventory against the
+completion tracker — not the results file — or "nothing found" and "not yet examined"
+become indistinguishable.
 
 **The raw data cache.** If your task involves a rate-limited API and your analysis
 question might evolve (first categorize, then count patterns, then re-examine a subset),

@@ -51,9 +51,8 @@ Reviews a previous session's JSONL transcript and generates instructions for it.
 
 **The `precompact-auto` hook does this automatically.** When auto-compaction triggers,
 the hook calls the Claude API directly, generates instructions, copies them to the
-clipboard, and then halts the compaction so you can run `/compact` manually with the
-generated instructions. You don't need to invoke this skill manually unless you want to
-review or modify the instructions before using them.
+clipboard, and then lets auto-compaction proceed. You don't need to invoke this skill
+manually unless you want to review or tweak the instructions before compacting.
 
 **Instructions follow a fixed structure.** The retain/drop header is always verbatim;
 the structured sections (`### User Intent`, `### Completed Work`, etc.) are generated
