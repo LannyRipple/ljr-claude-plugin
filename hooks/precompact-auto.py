@@ -22,33 +22,31 @@ RETAIN_DROP = (
 )
 
 SYSTEM_PROMPT = (
-    "You are helping summarize a Claude Code session for manual compaction.\n"
-    "The user will paste your output directly into /compact.\n\n"
-    "Rules:\n"
-    "- Start with this exact block, verbatim:\n\n"
-    f"{RETAIN_DROP}\n\n"
-    "- Then write a structured summary using these sections (### headers, omit sections with nothing to say):\n\n"
-    "  ### User Intent\n"
-    "  What the user was trying to accomplish overall.\n\n"
-    "  ### Completed Work\n"
-    "  What was finished. Include exact file paths, symbol names, and identifiers.\n\n"
-    "  ### Errors & Corrections\n"
-    "  Mistakes made and how resolved. User corrections verbatim.\n\n"
-    "  ### Active Work\n"
-    "  What was in progress when compaction triggered.\n\n"
-    "  ### Pending Tasks\n"
-    "  Outstanding items not yet started.\n\n"
-    "  ### Key References\n"
-    "  File paths, config values, identifiers, and constraints a resumed session needs.\n\n"
+    "You are summarizing a Claude Code session for compaction.\n"
+    "Your output will be passed directly as compaction instructions.\n\n"
+    "Write a structured summary using these sections (### headers; omit sections with nothing to say).\n\n"
+    f"Start with this block verbatim:\n{RETAIN_DROP}\n\n"
+    "Then write the sections:\n\n"
+    "### User Intent\n"
+    "What the user was trying to accomplish overall.\n\n"
+    "### Completed Work\n"
+    "What was finished. Include exact file paths, symbol names, and identifiers.\n\n"
+    "### Errors & Corrections\n"
+    "Mistakes made and how resolved. User corrections verbatim.\n\n"
+    "### Active Work\n"
+    "What was in progress when compaction triggered.\n\n"
+    "### Pending Tasks\n"
+    "Outstanding items not yet started.\n\n"
+    "### Key References\n"
+    "File paths, config values, identifiers, and constraints a resumed session needs.\n\n"
     "Preserve always: exact file paths, symbol names, error messages verbatim, user corrections, "
     "specific config values, technical constraints.\n\n"
     "Compression rules: weight recent messages more heavily; omit pleasantries, exploratory dead "
     "ends, and resolved errors already captured above; keep each section under 500 words; "
     "cut filler before cutting facts.\n\n"
-    "- If work was in progress when compaction triggered, end with a 'Next action:' line "
-    "stating the specific next step — not a vague goal, but the concrete first action.\n"
-    "- Write in second person (you/your) so it reads as instructions to a future Claude instance.\n"
-    "- No preamble or closing remarks. Output the retain/drop block then the sections, nothing else."
+    "If work was in progress when compaction triggered, end with a 'Next action:' line "
+    "stating the specific next step — not a vague goal, but the concrete first action.\n\n"
+    "Write in second person (you/your). No preamble or closing remarks."
 )
 
 OUTPUT_PATH = Path("/tmp/claude-502/compaction-instructions.md")
@@ -165,14 +163,8 @@ def main() -> None:
     transcript_path = event.get("transcript_path", "")
 
     if not transcript_path or not Path(transcript_path).exists():
-        result = {
-            "continue": False,
-            "stopReason": (
-                "Auto-compaction intercepted but transcript not found. "
-                f"Run /compact manually. (expected: {transcript_path})"
-            ),
-        }
-        print(json.dumps(result))
+        sys.stderr.write(f"precompact-auto: transcript not found: {transcript_path}\n")
+        print(json.dumps({"continue": True}))
         return
 
     turns = extract_turns(transcript_path)
@@ -197,14 +189,7 @@ def main() -> None:
     write_output(instructions)
     copy_to_clipboard(instructions)
 
-    result = {
-        "continue": False,
-        "stopReason": (
-            f"Auto-compaction intercepted. Compaction instructions written to "
-            f"{OUTPUT_PATH} and copied to clipboard. "
-            "Run /compact (manual) and paste to compact with context."
-        ),
-    }
+    result = {"continue": True}
     print(json.dumps(result))
 
 

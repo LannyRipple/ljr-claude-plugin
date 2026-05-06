@@ -99,10 +99,10 @@
     "name": ".claude-plugin/plugin.json",
     "type": "file",
     "properties": {
-      "scope": "skills/setup-long-task, skills/resume-long-task"
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
     },
     "created_at": "2026-04-21T23:15:59.169Z",
-    "updated_at": "2026-05-05T22:09:00.332Z"
+    "updated_at": "2026-05-05T23:04:28.499Z"
   },
   {
     "id": "01KQ7FV4YSWD939FEM2S7KBBVA",
@@ -764,30 +764,30 @@
     "name": "skills/setup-long-task/SKILL.md",
     "type": "file",
     "properties": {
-      "scope": "skills/setup-long-task"
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
     },
     "created_at": "2026-05-05T22:09:00.155Z",
-    "updated_at": "2026-05-05T22:31:06.908Z"
+    "updated_at": "2026-05-05T23:04:28.451Z"
   },
   {
     "id": "01KQX2ZX7YFZFEVD7PSQE1BXGY",
     "name": "skills/setup-long-task/references/protocol-elements.md",
     "type": "file",
     "properties": {
-      "scope": "skills/setup-long-task"
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
     },
     "created_at": "2026-05-05T22:09:00.158Z",
-    "updated_at": "2026-05-05T22:31:06.911Z"
+    "updated_at": "2026-05-05T23:04:28.454Z"
   },
   {
     "id": "01KQX2ZX82KET9NWYY08MGAXSR",
     "name": "skills/resume-long-task/SKILL.md",
     "type": "file",
     "properties": {
-      "scope": "skills/resume-long-task"
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
     },
     "created_at": "2026-05-05T22:09:00.162Z",
-    "updated_at": "2026-05-05T22:39:46.897Z"
+    "updated_at": "2026-05-05T23:04:28.457Z"
   },
   {
     "id": "01KQX2ZXD2Y71HC19A1WWGS8ZJ",
@@ -821,5 +821,146 @@
     },
     "created_at": "2026-05-05T22:39:46.896Z",
     "updated_at": "2026-05-05T22:39:46.896Z"
+  },
+  {
+    "id": "01KQX65FH2ZBE2T2YMK952RFK0",
+    "name": "01KQX65FF5375197Z5DMQPZ0Z3",
+    "type": "concept",
+    "properties": {
+      "summary": "docs/ depth is 'somewhere between README entry and reading the full SKILL.md'",
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.450Z",
+    "updated_at": "2026-05-05T23:04:28.450Z"
+  },
+  {
+    "id": "01KQX65FHCWEHKTPGZY17RMDRC",
+    "name": "docs/setup-long-task.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.460Z",
+    "updated_at": "2026-05-05T23:04:28.460Z"
+  },
+  {
+    "id": "01KQX65FHFKPYMV9SFV66GWKJ4",
+    "name": "docs/resume-long-task.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.463Z",
+    "updated_at": "2026-05-05T23:04:28.463Z"
+  },
+  {
+    "id": "01KQX65FHH01ZHCFEH28TWVEY6",
+    "name": "docs/bye.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.465Z",
+    "updated_at": "2026-05-05T23:04:28.465Z"
+  },
+  {
+    "id": "01KQX65FHNBXQ5YN8NVGBFD3YC",
+    "name": "docs/compaction-instructions.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.469Z",
+    "updated_at": "2026-05-05T23:04:28.469Z"
+  },
+  {
+    "id": "01KQX65FHQA0B91QF2GE8TAD2F",
+    "name": "docs/dev-panes.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.471Z",
+    "updated_at": "2026-05-05T23:04:28.471Z"
+  },
+  {
+    "id": "01KQX65FHTSVKGXXRAQQ3ASXFP",
+    "name": "docs/google-workspace-access.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.474Z",
+    "updated_at": "2026-05-05T23:04:28.474Z"
+  },
+  {
+    "id": "01KQX65FHYKFZ8SD70VK9CGG81",
+    "name": "docs/hooks.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.478Z",
+    "updated_at": "2026-05-05T23:04:28.478Z"
+  },
+  {
+    "id": "01KQX65FJ1EN3N58PKM4PZ2KWE",
+    "name": "docs/notify-me.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.481Z",
+    "updated_at": "2026-05-05T23:04:28.481Z"
+  },
+  {
+    "id": "01KQX65FJ5PQ17NYFDW34ZA6WP",
+    "name": "docs/radar.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.485Z",
+    "updated_at": "2026-05-05T23:04:28.485Z"
+  },
+  {
+    "id": "01KQX65FJ88HGE8N1V23D7PNVD",
+    "name": "docs/search-sessions.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.488Z",
+    "updated_at": "2026-05-05T23:04:28.488Z"
+  },
+  {
+    "id": "01KQX65FJCRFJCSMYJS0M008HE",
+    "name": "docs/skill-review.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.492Z",
+    "updated_at": "2026-05-05T23:04:28.492Z"
+  },
+  {
+    "id": "01KQX65FJEVT37D6XW0BTKYRE5",
+    "name": "docs/using-tmux.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.494Z",
+    "updated_at": "2026-05-05T23:04:28.494Z"
+  },
+  {
+    "id": "01KQX65FJGE9B4EZAESXWB9P6H",
+    "name": "CLAUDE.md",
+    "type": "file",
+    "properties": {
+      "scope": "skills/setup-long-task, skills/resume-long-task, docs/"
+    },
+    "created_at": "2026-05-05T23:04:28.496Z",
+    "updated_at": "2026-05-05T23:04:28.496Z"
   }
 ]

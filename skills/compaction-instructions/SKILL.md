@@ -72,16 +72,12 @@ grep -q "^# Auto-Compact Instructions" ~/.claude/CLAUDE.md && echo "EXISTS" || e
 ```
 # Auto-Compact Instructions
 
-You are to build the instructions to follow for auto-compaction.  Start with:
+When auto-compaction fires, write a structured summary using these sections
+(### headers; omit sections with nothing to say):
 
-\`\`\`
 Retain: work intent, decisions made, what was accomplished, any open questions.
 Drop: file contents, resolved errors, build logs, tool call details.
-\`\`\`
 
-Then write a structured summary using these sections (### headers, omit sections with nothing to say):
-
-\`\`\`
 ### User Intent
 What the user was trying to accomplish overall.
 
@@ -99,20 +95,16 @@ Outstanding items not yet started.
 
 ### Key References
 File paths, config values, identifiers, and constraints a resumed session needs.
-\`\`\`
 
 Preserve always: exact file paths, symbol names, error messages verbatim, user corrections,
 specific config values, technical constraints.
 
 Compression rules: weight recent messages more heavily; omit pleasantries, exploratory dead
-ends, and resolved errors already captured above; keep each section under 500 words; cut
-filler before cutting facts.
+ends, and resolved errors already captured above; keep each section under 500 words;
+cut filler before cutting facts.
 
-Add any additional instructions to carry on work that might be currently ongoing.
-State the next concrete action explicitly — not just the open question, but the specific
-step that should happen first on resume.
-
-Once you have these instructions constructed use them for the Auto-Compaction.
+If work was in progress when compaction triggered, end with a `Next action:` line
+stating the specific next step — not a vague goal, but the concrete first action on resume.
 ```
 
 Tell the user the section was added.

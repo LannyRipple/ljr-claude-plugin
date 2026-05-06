@@ -790,5 +790,35 @@
     ],
     "affected_symbols": [],
     "commit_hashes": []
+  },
+  {
+    "id": "01KQX65FF5375197Z5DMQPZ0Z3",
+    "timestamp": "2026-05-05T23:04:28.389Z",
+    "domain": "implementation",
+    "scope": "skills/setup-long-task, skills/resume-long-task, docs/",
+    "summary": "docs/ depth is 'somewhere between README entry and reading the full SKILL.md'",
+    "confidence": "medium",
+    "status": "active",
+    "affected_files": [
+      "skills/setup-long-task/SKILL.md",
+      "skills/setup-long-task/references/protocol-elements.md",
+      "skills/resume-long-task/SKILL.md",
+      "docs/setup-long-task.md",
+      "docs/resume-long-task.md",
+      "docs/bye.md",
+      "docs/compaction-instructions.md",
+      "docs/dev-panes.md",
+      "docs/google-workspace-access.md",
+      "docs/hooks.md",
+      "docs/notify-me.md",
+      "docs/radar.md",
+      "docs/search-sessions.md",
+      "docs/skill-review.md",
+      "docs/using-tmux.md",
+      "CLAUDE.md",
+      ".claude-plugin/plugin.json"
+    ],
+    "affected_symbols": [],
+    "commit_hashes": []
   }
 ]
